@@ -34,8 +34,9 @@ public class DispatcherServlet extends HttpServlet{
         HelperLoader.init();
 
         ServletContext servletContext = config.getServletContext();
+        //注册 处理jsp的 Servlet
         ServletRegistration jspServlet = servletContext.getServletRegistration("jsp");
-        //jspServlet.addMapping(ConfigHelper.getAppJspPath());
+        jspServlet.addMapping(ConfigHelper.getAppJspPath()+"*");
         ServletRegistration defaultServlet = servletContext.getServletRegistration("default");
         defaultServlet.addMapping(ConfigHelper.getAppAssetPath()+"*");
     }

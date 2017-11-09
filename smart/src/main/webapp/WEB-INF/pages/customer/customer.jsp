@@ -14,7 +14,7 @@
       <th>邮箱</th>
       <th>操作</th>
     </tr>
-    <c:forEach var="customer" items="customers">
+    <c:forEach var="customer" items="${customers}">
       <tr>
         <td>${customer.name}</td>
         <td>${customer.contact}</td>
