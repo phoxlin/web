@@ -14,20 +14,22 @@ import java.util.Map;
  */
 public final class IocHelper {
 
-    private static final Map<Class<?>,Object> beanMap;
-
     static {
-        beanMap = BeanHelper.getBeanMap();
+        Map<Class<?>,Object> beanMap = BeanHelper.getBeanMap();
         if (CollectionUtil.isNotEmpty(beanMap)){
             for (Class<?> beanClass :beanMap.keySet()){
                 Object beanInstance = beanMap.get(beanClass);
-                Field[] beanFields = beanClass.getFields();
+                //获取类的所有成员变量
+                Field[] beanFields = beanClass.getDeclaredFields();
                 if (ArrayUtil.isNotEmpty(beanFields)){
                     for(Field beanField:beanFields){
-                        Class<?> beanFieldClass = beanField.getType();
-                        if (beanFieldClass.isAnnotationPresent(Inject.class)){
+                        //判断是否有Inject注解
+                        if (beanField.isAnnotationPresent(Inject.class)){
+                            Class<?> beanFieldClass = beanField.getType();
+                            //从beanMap中获取成员变量的实例
                             Object beanFieldInstance = beanMap.get(beanFieldClass);
                             if (beanFieldInstance!=null){
+                                //反射初始化Field的值
                                 ReflectionUtil.setField(beanInstance,beanField,beanFieldInstance);
                             }
                         }
