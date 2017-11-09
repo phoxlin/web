@@ -20,6 +20,7 @@ public final class ClassHelper {
     static {
         String basePackage = ConfigHelper.getAppBasePackage();
         CLASS_SET = ClassUtil.getClassSet(basePackage);
+        // System.out.print("..........class_set...............");
     }
 
     /**
@@ -34,7 +35,7 @@ public final class ClassHelper {
      */
     public static Set<Class<?>> getServiceClassSet(){
         Set<Class<?>> classSet = new HashSet<>();
-        for (Class<?> cls:CLASS_SET){
+        for (Class<?> cls:getClassSet()){
             if (cls.isAnnotationPresent(Service.class)){
                 classSet.add(cls);
             }
@@ -48,7 +49,8 @@ public final class ClassHelper {
      */
     public static Set<Class<?>> getControllerClassSet(){
         Set<Class<?>> classSet = new HashSet<>();
-        for (Class<?> cls:CLASS_SET){
+        Set<Class<?>> set = getClassSet();
+        for (Class<?> cls:set){
             if (cls.isAnnotationPresent(Controller.class)){
                 classSet.add(cls);
             }

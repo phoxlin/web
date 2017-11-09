@@ -15,6 +15,7 @@ import java.util.Map;
 public final class IocHelper {
 
     static {
+        //System.out.println("================IocHelper:============");
         Map<Class<?>,Object> beanMap = BeanHelper.getBeanMap();
         if (CollectionUtil.isNotEmpty(beanMap)){
             for (Class<?> beanClass :beanMap.keySet()){
@@ -38,4 +39,5 @@ public final class IocHelper {
             }
         }
     }
+
 }

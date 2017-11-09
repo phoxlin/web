@@ -31,7 +31,8 @@ public final class ControllerHelper {
                             //从Action注解中获取URL规则
                             Action action =  method.getAnnotation(Action.class);
                             String mapping = action.value();
-                            if (mapping.matches("\\w+/:\\w*")){
+                            //System.out.println("===========Action mapping:"+mapping);
+                            if (mapping.matches("\\w+:/\\w*")){
                                 String[] array = mapping.split(":");
                                 if (ArrayUtil.isNotEmpty(array)&&array.length==2){
                                     String requestMethod = array[0];

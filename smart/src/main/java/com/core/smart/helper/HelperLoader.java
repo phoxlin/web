@@ -11,6 +11,7 @@ public final class HelperLoader {
     public static void init(){
         Class<?>[] classes = {ClassHelper.class,BeanHelper.class,ControllerHelper.class,IocHelper.class};
         for (Class<?> cls:classes){
+            //System.out.println("init:"+cls.getName());
             ClassUtil.loadClass(cls.getName(),true);
         }
     }

@@ -11,6 +11,7 @@ import com.core.smart.http.response.View;
 import com.core.smart.tools.*;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,6 +26,7 @@ import java.util.Map;
  * 请求转发器
  * Created by Administrator on 2017/11/9.
  */
+@WebServlet(urlPatterns = "/*",loadOnStartup = 0)
 public class DispatcherServlet extends HttpServlet{
     @Override
     public void init(ServletConfig config) throws ServletException {
@@ -33,6 +35,7 @@ public class DispatcherServlet extends HttpServlet{
 
         ServletContext servletContext = config.getServletContext();
         ServletRegistration jspServlet = servletContext.getServletRegistration("jsp");
+        jspServlet.addMapping(ConfigHelper.getAppJspPath());
         ServletRegistration defaultServlet = servletContext.getServletRegistration("default");
         defaultServlet.addMapping(ConfigHelper.getAppAssetPath()+"*");
     }
@@ -48,7 +51,7 @@ public class DispatcherServlet extends HttpServlet{
             //获取Controller类及其实例
             Class<?> controllerClass = handler.getControllerClass();
             Object controllerBean = BeanHelper.getBean(controllerClass);
-            Map<String,Object> paramMap = new HashMap<>();
+            /*Map<String,Object> paramMap = new HashMap<>();
             Enumeration<String> paramNames = request.getParameterNames();
             while (paramNames.hasMoreElements()){
                 String paramName = paramNames.nextElement();
@@ -69,9 +72,9 @@ public class DispatcherServlet extends HttpServlet{
                     }
                 }
             }
-            Param param = new Param(paramMap);
+            Param param = new Param(paramMap);*/
             Method actionMethod = handler.getActionMethod();
-            Object result = ReflectionUtil.invokeMethod(controllerBean,actionMethod,param);
+            Object result = ReflectionUtil.invokeMethod(controllerBean,actionMethod,request);
             //处理返回值
             if(result instanceof View){
                 View view = (View)result;
@@ -83,7 +86,8 @@ public class DispatcherServlet extends HttpServlet{
                         Map<String,Object> model = view.getModel();
                         for(Map.Entry<String,Object> entry:model.entrySet()){
                             request.setAttribute(entry.getKey(),entry.getValue());
-                            request.getRequestDispatcher(ConfigHelper.getAppJspPath()+path).forward(request,response);
+                            System.out.println("============" + ConfigHelper.getAppJspPath() + path + "============");
+                            request.getRequestDispatcher(ConfigHelper.getAppJspPath() + path).forward(request,response);
                         }
                     }
                 }

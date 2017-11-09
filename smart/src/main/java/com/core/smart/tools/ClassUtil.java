@@ -79,7 +79,7 @@ public final class ClassUtil {
             LOGGER.error("get class set failure",e);
             throw new RuntimeException(e);
         }
-
+        //System.out.println("========class_set:"+classSet);
         return classSet;
     }
 
@@ -94,7 +94,7 @@ public final class ClassUtil {
             String fileName = file.getName();
             if (file.isFile()){
                 String className = fileName.substring(0,fileName.lastIndexOf("."));
-                if (StringUtil.isEmpty(packageName)){
+                if (StringUtil.isNotEmpty(packageName)){
                     className = packageName+"."+className;
                 }
                 doAddClass(classSet,className);
