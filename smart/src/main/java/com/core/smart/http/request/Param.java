@@ -19,6 +19,14 @@ public class Param {
         return CastUtil.castLong(paramMap.get(name));
     }
 
+    public int getInt(String name){
+        return CastUtil.castInt(paramMap.get(name));
+    }
+
+    public double getDouble(String name){
+        return CastUtil.castDouble(paramMap.get(name));
+    }
+
     public Map<String,Object> getMap(){
         return paramMap;
     }

@@ -8,8 +8,6 @@ import com.core.smart.http.request.Param;
 import com.core.smart.http.response.Data;
 import com.core.smart.http.response.View;
 import com.core.smart.model.Customer;
-
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -37,4 +35,5 @@ public class CustomerController {
         Customer customer = customerService.getCustomer(id);
         return new Data(customer);
     }
+
 }

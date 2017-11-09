@@ -5,7 +5,6 @@ import com.core.smart.helper.DatabaseHelper;
 import com.core.smart.model.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.util.List;
 
 /**
