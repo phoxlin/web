@@ -84,6 +84,7 @@ public final class DatabaseHelper {
     public static <T> boolean deleteEntity(Class<T> entityClass,Long id)
     {
         String sql = "DELETE FROM "+getTableName(entityClass)+" WHERE id=?";
+        LOGGER.info("sql:"+sql);
         return executeUpdate(sql,id)==1;
     }
 
@@ -106,6 +107,7 @@ public final class DatabaseHelper {
         paramList.addAll(fieldMap.values());
         paramList.add(id);
         Object[] params = paramList.toArray();
+        LOGGER.info("sql:"+sql);
         return executeUpdate(sql,params)==1;
     }
 
@@ -129,6 +131,7 @@ public final class DatabaseHelper {
         values.replace(values.lastIndexOf(", "),values.length(),")");
         sql += columns+ "VALUES" + values;
         Object[] params = fieldMap.values().toArray();
+        LOGGER.info("sql:"+sql);
         return executeUpdate(sql,params)==1;
     }
 
@@ -137,6 +140,7 @@ public final class DatabaseHelper {
      * 执行更新语句（update,delete,insert）
      */
     public static int executeUpdate(String sql,Object... params){
+        LOGGER.info("sql:"+sql);
         int rows=0;
         try{
             Connection conn = getConnectionByThreadLocal();
@@ -153,6 +157,7 @@ public final class DatabaseHelper {
      * 执行查询语句
      */
     public static List<Map<String,Object>> executeQuery(String sql,Object... params){
+        LOGGER.info("sql:"+sql);
         List<Map<String,Object>> result;
         try{
             Connection conn = getConnectionByThreadLocal();
@@ -169,6 +174,7 @@ public final class DatabaseHelper {
      * 查询实体列表(更新后，by ThreadLocal)
      */
     public static <T> List<T> queryEntityListByThreadLocal(Class<T> entityClass,String sql,Object... params ){
+        LOGGER.info("sql:"+sql);
         List<T> entityList =null;
         try {
             Connection conn=getConnectionByThreadLocal();
@@ -186,6 +192,7 @@ public final class DatabaseHelper {
      * 查询实体(更新后，By ThreadLocal)
      */
     public static <T> T queryEntityByThreadLocal(Class<T> entityClass,String sql,Object... params){
+        LOGGER.info("sql:"+sql);
         T entity =null;
         try {
             Connection conn=getConnectionByThreadLocal();
