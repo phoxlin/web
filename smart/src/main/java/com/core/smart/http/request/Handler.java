@@ -1,4 +1,4 @@
-package com.core.smart.http;
+package com.core.smart.http.request;
 
 
 import java.lang.reflect.Method;

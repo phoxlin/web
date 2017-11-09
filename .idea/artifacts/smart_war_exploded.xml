@@ -24,7 +24,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/smart/target/smart-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="D:\Documents\web\smart\target/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="smart/web/Web" />
     </root>

@@ -1,4 +1,4 @@
-package com.core.smart.http;
+package com.core.smart.http.request;
 
 /**
  * 封装请求信息
