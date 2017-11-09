@@ -26,4 +26,12 @@ public class CustomerService {
         return DatabaseHelper.queryEntityListByThreadLocal(Customer.class,sql,null);
     }
 
+    /**
+     * 获取客户
+     */
+    public Customer getCustomer(long id){
+        String sql = "select * from customer where id = ?";
+        return DatabaseHelper.queryEntityByThreadLocal(Customer.class,sql,id);
+    }
+
 }

@@ -51,7 +51,7 @@ public class DispatcherServlet extends HttpServlet{
             //获取Controller类及其实例
             Class<?> controllerClass = handler.getControllerClass();
             Object controllerBean = BeanHelper.getBean(controllerClass);
-            /*Map<String,Object> paramMap = new HashMap<>();
+            Map<String,Object> paramMap = new HashMap<>();
             Enumeration<String> paramNames = request.getParameterNames();
             while (paramNames.hasMoreElements()){
                 String paramName = paramNames.nextElement();
@@ -72,9 +72,9 @@ public class DispatcherServlet extends HttpServlet{
                     }
                 }
             }
-            Param param = new Param(paramMap);*/
+            Param param = new Param(paramMap);
             Method actionMethod = handler.getActionMethod();
-            Object result = ReflectionUtil.invokeMethod(controllerBean,actionMethod,request);
+            Object result = ReflectionUtil.invokeMethod(controllerBean,actionMethod,param);
             //处理返回值
             if(result instanceof View){
                 View view = (View)result;
@@ -86,10 +86,7 @@ public class DispatcherServlet extends HttpServlet{
                         Map<String,Object> model = view.getModel();
                         for(Map.Entry<String,Object> entry:model.entrySet()){
                             request.setAttribute(entry.getKey(),entry.getValue());
-                            System.out.println("============" + ConfigHelper.getAppJspPath() + path + "============");
-
-                            request.getRequestDispatcher(ConfigHelper.getAppJspPath() + path).forward(request,response);
-                            System.out.println("============end:"+request.getServletContext().getContextPath()+"============");
+                            request.getRequestDispatcher(ConfigHelper.getAppJspPath() + path).forward(request, response);
                         }
                     }
                 }
@@ -110,14 +107,6 @@ public class DispatcherServlet extends HttpServlet{
 
     }
 
-    /*protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
-    }
-
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doPost(req,resp);
-    }*/
 
 
 }
