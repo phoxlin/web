@@ -35,7 +35,7 @@ public class DispatcherServlet extends HttpServlet{
 
         ServletContext servletContext = config.getServletContext();
         ServletRegistration jspServlet = servletContext.getServletRegistration("jsp");
-        jspServlet.addMapping(ConfigHelper.getAppJspPath());
+        //jspServlet.addMapping(ConfigHelper.getAppJspPath());
         ServletRegistration defaultServlet = servletContext.getServletRegistration("default");
         defaultServlet.addMapping(ConfigHelper.getAppAssetPath()+"*");
     }
@@ -87,7 +87,9 @@ public class DispatcherServlet extends HttpServlet{
                         for(Map.Entry<String,Object> entry:model.entrySet()){
                             request.setAttribute(entry.getKey(),entry.getValue());
                             System.out.println("============" + ConfigHelper.getAppJspPath() + path + "============");
+
                             request.getRequestDispatcher(ConfigHelper.getAppJspPath() + path).forward(request,response);
+                            System.out.println("============end:"+request.getServletContext().getContextPath()+"============");
                         }
                     }
                 }
@@ -108,13 +110,14 @@ public class DispatcherServlet extends HttpServlet{
 
     }
 
+    /*protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
+    }
+
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPost(req,resp);
+    }*/
 
 
-    }
-
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
-    }
 }
