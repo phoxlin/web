@@ -5,7 +5,8 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * JDK的动态代理
+ * JDK的动态代理(只能代理接口)
+ * CGLib动态代理可以代理没有接口的类
  * Created by Administrator on 2017/11/10.
  */
 public class DynamicProxy implements InvocationHandler {
