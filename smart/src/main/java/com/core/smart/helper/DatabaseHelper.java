@@ -58,6 +58,61 @@ public final class DatabaseHelper {
     }
 
     /**
+     * 回滚事务
+     */
+    public static void rollbackTransaction(){
+        Connection conn = getConnectionByThreadLocal();
+        if (conn!=null){
+            try {
+                conn.rollback();
+                conn.close();
+            }catch (SQLException e){
+                LOGGER.error("rollback transaction failure",e);
+                throw new RuntimeException(e);
+            }finally {
+                CONNECTION_HOLDER.remove();
+            }
+        }
+    }
+
+    /**
+     * 提交事务
+     */
+    public static void commitTransaction(){
+        Connection conn = getConnectionByThreadLocal();
+        if (conn!=null){
+            try{
+                conn.commit();
+                conn.close();
+            }catch (SQLException e){
+                LOGGER.error("commit transaction failure",e);
+                throw new RuntimeException(e);
+            }finally {
+                CONNECTION_HOLDER.remove();
+            }
+        }
+    }
+
+    /**
+     * 开启事务
+     */
+    public static void beginTransaction()
+    {
+        Connection connection = getConnectionByThreadLocal();
+        if (connection!=null){
+            try{
+                connection.setAutoCommit(false);
+            }catch (SQLException e){
+                LOGGER.error("begin transaction failure",e);
+                throw new RuntimeException(e);
+            }finally {
+                CONNECTION_HOLDER.set(connection);
+            }
+        }
+
+    }
+
+    /**
      * 执行sql文件
      */
     public static void executeSqlFile(String filePath)
@@ -73,8 +128,6 @@ public final class DatabaseHelper {
             LOGGER.error("Execute sql file failure",e);
             throw new RuntimeException(e);
         }
-
-
     }
 
 

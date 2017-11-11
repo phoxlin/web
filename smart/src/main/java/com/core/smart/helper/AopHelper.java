@@ -1,9 +1,11 @@
 package com.core.smart.helper;
 
 import com.core.smart.annotation.Aspect;
+import com.core.smart.annotation.Transaction;
 import com.core.smart.proxy.AspectProxy;
 import com.core.smart.proxy.Proxy;
 import com.core.smart.proxy.ProxyManager;
+import com.core.smart.proxy.TransactionProxy;
 import com.core.smart.tools.CollectionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,6 +35,14 @@ public final class AopHelper {
         }
     }
 
+    private static Map<Class<?>,Set<Class<?>>> createProxyMap()throws Exception{
+        Map<Class<?>,Set<Class<?>>> proxyMap = new HashMap<>();
+        addAspectProxy(proxyMap);
+        addTransactionProxy(proxyMap);
+        return proxyMap;
+    }
+
+
     private static Set<Class<?>> createTargetClassSet(Aspect aspect)throws Exception
     {
         Set<Class<?>> targetClassSet = new HashSet<>();
@@ -43,9 +53,15 @@ public final class AopHelper {
         return targetClassSet;
     }
 
-    private static Map<Class<?>,Set<Class<?>>> createProxyMap()throws Exception
+    private static void addTransactionProxy(Map<Class<?>,Set<Class<?>>> proxyMap)throws Exception
     {
-        Map<Class<?>,Set<Class<?>>> proxyMap = new HashMap<>();
+        Set<Class<?>> serviceClassSet = ClassHelper.getServiceClassSet();
+        proxyMap.put(TransactionProxy.class,serviceClassSet);
+
+    }
+
+    private static void addAspectProxy(Map<Class<?>,Set<Class<?>>> proxyMap)throws Exception
+    {
         Set<Class<?>> proxyClassSet = ClassHelper.getClassSetBySuper(AspectProxy.class);
         for(Class<?> proxyClass:proxyClassSet){
             if (proxyClass.isAnnotationPresent(Aspect.class)){
@@ -55,7 +71,6 @@ public final class AopHelper {
             }
         }
 
-        return proxyMap;
     }
 
     private static Map<Class<?>,List<Proxy>> createTargetMap(Map<Class<?>,Set<Class<?>>> proxyMap)throws Exception
