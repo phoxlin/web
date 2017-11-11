@@ -1,6 +1,7 @@
 package com.core.smart.http.request;
 
 import com.core.smart.tools.CastUtil;
+import com.core.smart.tools.CollectionUtil;
 
 import java.util.Map;
 
@@ -13,6 +14,10 @@ public class Param {
 
     public Param(Map<String, Object> paramMap) {
         this.paramMap = paramMap;
+    }
+
+    public boolean isEmpty(){
+        return CollectionUtil.isEmpty(paramMap);
     }
 
     public long getLong(String name){
