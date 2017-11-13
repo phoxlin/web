@@ -1,7 +1,7 @@
 package com.core.smart.helper;
 
 import com.core.smart.annotation.Aspect;
-import com.core.smart.proxy.AspectProxy;
+import com.core.smart.proxy.Aspect.AspectProxy;
 import com.core.smart.proxy.Proxy;
 import com.core.smart.proxy.ProxyManager;
 import com.core.smart.proxy.Aspect.TransactionProxy;

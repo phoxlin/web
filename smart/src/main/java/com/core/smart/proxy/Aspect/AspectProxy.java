@@ -1,5 +1,7 @@
-package com.core.smart.proxy;
+package com.core.smart.proxy.Aspect;
 
+import com.core.smart.proxy.Proxy;
+import com.core.smart.proxy.ProxyChain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,7 +11,7 @@ import java.lang.reflect.Method;
  * 切面代理
  * Created by Administrator on 2017/11/11.
  */
-public abstract class AspectProxy implements Proxy{
+public abstract class AspectProxy implements Proxy {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AspectProxy.class);
 
