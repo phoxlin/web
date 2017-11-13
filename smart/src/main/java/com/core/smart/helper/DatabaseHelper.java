@@ -54,7 +54,7 @@ public final class DatabaseHelper {
 
 
     private static String  getTableName(Class<?> entityClass){
-        return entityClass.getSimpleName();
+        return entityClass.getSimpleName().toLowerCase();
     }
 
     /**
@@ -265,7 +265,9 @@ public final class DatabaseHelper {
     public static Connection getConnectionByThreadLocal(){
         Connection conn = CONNECTION_HOLDER.get();
         try{
-            conn = DATA_SOURCE.getConnection();
+            if (conn==null)
+                conn = DATA_SOURCE.getConnection();
+            System.out.println("connection hash_code:"+System.identityHashCode(conn)+",commit status:"+conn.getAutoCommit());
         }catch (SQLException e){
             LOGGER.error("get connection failure",e);
             throw new RuntimeException(e);

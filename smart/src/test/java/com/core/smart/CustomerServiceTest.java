@@ -4,6 +4,9 @@ import com.core.smart.tools.PropsUtil;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Properties;
 
 /**
@@ -11,6 +14,9 @@ import java.util.Properties;
  * Created by Administrator on 2017/11/9.
  */
 public class CustomerServiceTest {
+
+    private static  Connection conn ;
+
     @Before
     public void init(){
         Properties conf = PropsUtil.loadProps("smart.properties");
@@ -18,6 +24,11 @@ public class CustomerServiceTest {
         String url = conf.getProperty("jdbc.url");
         String username = conf.getProperty("jdbc.username");
         String password = conf.getProperty("jdbc.password");
+        try{
+            conn = DriverManager.getConnection(url,username,password);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
 
     }
 
