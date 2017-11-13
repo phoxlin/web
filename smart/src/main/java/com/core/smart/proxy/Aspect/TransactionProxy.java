@@ -1,7 +1,9 @@
-package com.core.smart.proxy;
+package com.core.smart.proxy.Aspect;
 
 import com.core.smart.annotation.Transaction;
 import com.core.smart.helper.DatabaseHelper;
+import com.core.smart.proxy.Proxy;
+import com.core.smart.proxy.ProxyChain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,7 +13,7 @@ import java.lang.reflect.Method;
  * 事务代理切面类
  * Created by Administrator on 2017/11/11.
  */
-public class TransactionProxy implements  Proxy{
+public class TransactionProxy implements Proxy {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TransactionProxy.class);
 
