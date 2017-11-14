@@ -2,10 +2,14 @@ package com.core.smart.helper;
 
 import com.core.smart.annotation.Action;
 import com.core.smart.http.request.Handler;
+import com.core.smart.http.request.MethodParam;
 import com.core.smart.http.request.Request;
 import com.core.smart.tools.ArrayUtil;
 import com.core.smart.tools.CollectionUtil;
+
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -17,6 +21,7 @@ import java.util.Set;
 public final class ControllerHelper {
 
     private static final Map<Request,Handler> ACTION_MAP = new HashMap<>();
+    private static final Map<Request,MethodParam> METHOD_MAP = new HashMap<>();
 
     static {
         //Action注解方法的请求处理等
@@ -40,6 +45,19 @@ public final class ControllerHelper {
                                     Request request = new Request(requestMethod,requestPath);
                                     Handler handler = new Handler(controllerClass,method);
                                     ACTION_MAP.put(request,handler);
+
+                                    //参数
+                                    Parameter[] parameters = method.getParameters();
+                                    for (Parameter parameter : parameters){
+                                        if (parameter.isAnnotationPresent(com.core.smart.annotation.Parameter.class)){
+                                            com.core.smart.annotation.Parameter p = parameter.getAnnotation(com.core.smart.annotation.Parameter.class);
+                                            if (p.value()){
+                                                MethodParam methodParam = new MethodParam(parameter.getName(),parameter.getType(),p.value());
+                                                METHOD_MAP.put(request,methodParam);
+                                            }
+                                        }
+                                    }
+
                                 }
                             }
                         }
@@ -56,6 +74,14 @@ public final class ControllerHelper {
     {
         Request request = new Request(requestMethod,requestPath);
         return ACTION_MAP.get(request);
+    }
+
+    /**
+     * 获取Action方法参数
+     */
+    public static MethodParam getMethodParam(String requestMethod,String requestPath){
+        Request request = new Request(requestMethod,requestPath);
+        return METHOD_MAP.get(request);
     }
 
 }

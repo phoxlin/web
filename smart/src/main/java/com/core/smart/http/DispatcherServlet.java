@@ -5,6 +5,7 @@ import com.core.smart.helper.ConfigHelper;
 import com.core.smart.helper.ControllerHelper;
 import com.core.smart.helper.HelperLoader;
 import com.core.smart.http.request.Handler;
+import com.core.smart.http.request.MethodParam;
 import com.core.smart.http.request.Param;
 import com.core.smart.http.response.Data;
 import com.core.smart.http.response.View;
@@ -48,7 +49,14 @@ public class DispatcherServlet extends HttpServlet{
         String requestPath = request.getPathInfo();
 
         Handler handler = ControllerHelper.getHandler(requestMethod,requestPath);
+        MethodParam methodParam = ControllerHelper.getMethodParam(requestMethod,requestPath);
         if (handler!=null){
+            /*if (methodParam!=null){
+                if (methodParam.getIsNeed()){
+                    methodParam.getParamName();
+                }
+            }*/
+
             //获取Controller类及其实例
             Class<?> controllerClass = handler.getControllerClass();
             Object controllerBean = BeanHelper.getBean(controllerClass);
