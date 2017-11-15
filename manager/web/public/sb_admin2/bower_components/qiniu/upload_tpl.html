@@ -1,0 +1,17 @@
+<script type="text/html" id="upload_result_tpl">
+		<%
+			for(var i=0;i<info.length;i++){
+				var file=info[i];
+				var url=file.url;
+				var filename=file.filename;
+				var baseId=field_name+"_"+i;
+				var id="_1"+field_name+"_"+i;
+				var id2="_2"+field_name+"_"+i;
+				%>
+				
+				<a id='<%=id%>' href='<%=url%>' ><%=filename%></a>
+				<img id='<%=id2%>' style='cursor:pointer' src='/public/sb_admin2/bower_components/qiniu/images/del.png' onclick="deleteFile('<%=baseId%>','<%=field_name%>')" >
+				<%
+			}
+		%>
+</script>

@@ -1,0 +1,180 @@
+<script type="text/html" id="msUploadTpl">
+<%
+	var defaultVal=data.defaultValue;
+	var controlTitle=data.display;
+	var controlName=name+"__"+data.name;
+	var onelineFlag="N";
+	var width=data.width;
+	if(oneline){
+		width="98%";
+	}
+	var ext="*"; try{ext=data.ext; if(ext=='undefined'||ext==undefined){ext="*";}  }catch(e){}
+	var count=1;try{count=data.count;if(count=='undefined'||count==undefined){count=1;}}catch(e){}
+	
+	var pics=['jpg','gif','png'];
+	var defaultView="";
+	if(defaultVal!=null&&defaultVal.length>0){
+		var dvals=defaultVal.split(',');
+		if(dvals.length>0){
+			
+			for(var i=0;i<dvals.length;i++){
+				var d=dvals[i];
+				if(d.length>0){
+				var fileExt=d.fileExt();
+				var urls=d.split('_._');
+				var fileName=urls[urls.length-1];
+				var isPic=false;
+				for(var k=0;k<pics.length;k++){
+					if(fileExt==pics[k]){
+						isPic=true;
+						break;
+					}
+				}
+				if(isPic){
+					defaultView+="<a href='"+d+"' target='_blank'><img src='"+d+"?imageView2/1/w/50/h/50'></a>";
+				}else{
+					defaultView+="<a href='"+d+"' target='_blank'>"+fileName+"</a>";
+				}
+				}
+			}
+		}
+	}
+	
+%>
+	<input id="<%=controlName%>" name="<%=controlName%>" type="hidden" value="<%=defaultVal%>">
+	<a href="javascript:uploadFile('<%=controlName%>','<%=ext%>','<%=count%>');" class="btn btn-xs btn-default btn-block" style="width: 100px;">上传文件</a>
+	<div id="_<%=controlName%>" name="_<%=controlName%>"><%:=defaultView%></div>	
+</script>
+
+<script type="text/html" id="msTextareaTpl">
+<%
+	var defaultVal=data.defaultValue;
+	var controlTitle=data.display;
+	var controlName=name+"__"+data.name;
+	var onelineFlag="N";
+	var width=data.width;
+	if(oneline){
+		width="98%";
+	}
+%>
+	<textarea type="text" id="<%=controlName%>" name="<%=controlName%>" data-onlineValue="<%=onelineFlag%>"
+		style="width:<%=width%>;height:<%=data.height%>;" class="form-control easyui-validatebox input-sm" 
+		data-options="required:<%=!data.nullable%>"  placeholder="<%=controlTitle%>"><%=defaultVal%></textarea>
+</script>
+<script type="text/html" id="msEasyui-timespinnerTpl">
+<%
+	var defaultVal=data.defaultValue;
+	var controlTitle=data.display;
+	var controlName=name+"__"+data.name;
+	var onelineFlag="N";
+	var width=data.width;
+	if(oneline){
+		width="98%";
+	}
+%>
+	<input type="text" id="<%=controlName%>" name="<%=controlName%>" data-onlineValue="<%=onelineFlag%>"
+		style="width:<%=width%>;height:<%=data.height%>;" class="form-control easyui-timespinner" 
+		data-options="required:<%=!data.nullable%>, showSeconds:false,value:'<%=defaultVal%>'"  placeholder="<%=controlTitle%>">
+</script>
+
+<script type="text/html" id="msEasyui-dateboxTpl">
+<%
+	var defaultVal=data.defaultValue;
+	var controlTitle=data.display;
+	var controlName=name+"__"+data.name;
+%>
+	<input name="<%=controlName%>" id="<%=controlName%>" type="text" class="easyui-datebox" value="<%=defaultVal%>" data-options="required:<%=!data.nullable%>">
+</script>
+
+<script type="text/html" id="msEasyui-datetimeboxTpl">
+<%
+	var defaultVal=data.defaultValue;
+	var controlTitle=data.display;
+	var controlName=name+"__"+data.name;
+%>
+	<input name="<%=controlName%>" id="<%=controlName%>" type="text" class="easyui-datetimebox" value="<%=defaultVal%>" data-options="required:<%=!data.nullable%>">
+</script>
+
+
+
+<script type="text/html" id="processEasyui-comboboxTpl">
+<%
+	var defaultVal=data.defaultValue;
+	var controlTitle=data.display;
+	var dataFetchType=data.dataFetchType;
+	var placeholder=controlTitle;
+	if('FILL'==dataFetchType){
+		placeholder="用户填写";
+	}else if('ONCLICK'==dataFetchType){
+		placeholder="点击获取";
+	}else if('AUTO'==dataFetchType){
+		placeholder="系统自动获取";
+	}
+%>
+	<select class="col-xs-<%=fieldColumn%> easyui-combobox input-sm <%=column_clz%>" name="<%=name%>" 
+	id="<%=name%>" style="background-image: none;border: 1px solid #ccc; <%=column_style%>" data-options="editable:false,validType:'myRequired[<%=data.nullable?0:1%>]'">
+		
+		<option value="" >请选择</option>
+		<%
+			for(var i=0;i<data.bindData.length;i++){
+				var db=data.bindData[i];
+				var code=db.code;
+				var note=db.note;
+				var eq="";
+				if(code==defaultVal){
+					eq="selected='selected'";
+				}
+				%>
+		<option value="<%=code%>" <%=eq%>><%=note%></option>		
+				<%
+			}
+		%>
+		
+	</select>
+</script>
+
+<script type="text/html" id="processEasyui-validateboxTpl">
+<%
+	var defaultVal=data.defaultValue;
+	var controlTitle=data.display;
+	var dataFetchType=data.dataFetchType;
+	var placeholder=controlTitle;
+	if('FILL'==dataFetchType){
+		placeholder="用户填写";
+	}else if('ONCLICK'==dataFetchType){
+		placeholder="点击获取";
+	}else if('AUTO'==dataFetchType){
+		placeholder="系统自动获取";
+	}
+%>
+	<input type="text" id="<%=name%>" name="<%=name%>" 
+		style="background-image: none;border: 1px solid #ccc; <%=column_style%>" class="col-xs-<%=fieldColumn%> easyui-validatebox input-sm <%=column_clz%>" 
+		data-options="required:<%=!data.nullable%>"  placeholder="<%=placeholder%>" value="<%=defaultVal%>">
+</script>
+
+<script type="text/html" id="msEasyui-numberboxTpl">
+<%
+	var defaultVal=data.defaultValue;
+	var controlTitle=data.display;
+	var controlName=name+"__"+data.name;
+	var width="60%";
+	if(oneline){
+		width="98%";
+	}
+	
+	var hasPresision=false;
+	if(data.precision>0){
+		hasPresision=true;
+	}
+	
+	var hasMax=false;
+	
+	if(data.max>0){
+		hasMax=true;
+	}
+	
+%>
+	<input type="text" id="<%=controlName%>" name="<%=controlName%>" 
+		style="width:<%=width%>" class="form-control easyui-numberbox input-sm" 
+		data-options="required:<%=!data.nullable%>,min:<%=data.min%>,<%if(hasPresision){%>precision:<%=data.precision%>,<%}%><%if(hasMax){%>max:<%=data.max%><%}%>"  placeholder="<%=controlTitle%>" value="<%=defaultVal%>">
+</script>

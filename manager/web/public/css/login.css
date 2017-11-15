@@ -1,0 +1,144 @@
+/*********  登录   ********/
+body, html {
+	font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial,
+		sans-serif;
+}
+.bg {
+	width: 100%;
+	height: 100%;
+	background: url("../images/login_bg.jpg") left center no-repeat;
+	background-size: cover;
+}
+
+.filter {
+	-webkit-filter: blur(15px);
+	-moz-filter: blur(15px);
+	-o-filter: blur(15px);
+	-ms-filter: blur(15px);
+	filter: blur(15px);
+}
+
+.login_bg {
+	position: absolute;
+	right: 20%;
+	top: 50%;
+	margin-right: -150px;
+	margin-top: -220px;
+	min-width: 20%;
+	min-height: 25%;
+	padding: 50px 35px;
+	background-color: rgba(51, 51, 51, 0.12);
+}
+
+.login_bg .header {
+	text-align: center;
+}
+
+.login_bg .header div {
+	display: inline-block;
+	text-align: center;
+}
+
+.logo {
+	display: inline-block;
+	width: 60%;
+}
+
+.logo img {
+	width: 90%;
+	max-width: 220px;
+	margin-bottom: 10px;
+}
+
+.c p {
+	color: #ffba00;
+	width: 100%;
+	text-align: center;
+	padding: 15px 10px;
+	font-size: 22px;
+	letter-spacing: 1px;
+}
+
+.input-container {
+	position: relative;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #252525;
+}
+
+.input-container span {
+	display: inline-block;
+	width: 20%;
+	height: 100%;
+}
+
+.input-container span i {
+	display: inline-block;
+	width: 55%;
+	height: 25px;
+	margin: 6px 10px;
+	background-position: center;
+}
+
+.input-container .user {
+	background-image: url("../images/user.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.input-container .pwd {
+	background-image: url("../images/pwd.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.input-container input {
+	position: absolute;
+	width: 80%;
+	padding-left: 4%;
+	line-height: 35px;
+	border: 0;
+	font-size: 16px;
+	color: #fff;
+	background: transparent;
+}
+input:-webkit-autofill{
+	box-shadow: 0 0 0px 1000px #191919 inset;
+	-webkit-box-shadow: 0 0 0px 1000px #191919 inset;
+	-webkit-text-fill-color: #fff !important;
+}
+.input-container input:focus {
+	outline: none;
+	color: #fff !important;
+}
+
+.forget-btn {
+	color: #fff;
+}
+
+.login-btn {
+	display: block;
+	width: 100%;
+	margin-top: 30px;
+	padding: 8px 0;
+	font-size: 20px;
+	text-align: center;
+	text-decoration: none;
+	background-color: #fcfcfc;
+	color: #4f4f4f;
+}
+.login-btn.active{
+	background-color: #ffba00;
+	color: #fff;
+}
+
+.login-btn.active:focus, .login-btn.active:active {
+	outline: none;
+	background-color: #ffba00;
+	color: #fff;
+}
+.login-btn:hover{text-decoration: none;color: #4f4f4f;}
+.login-btn.active:hover {
+	color: #fff;
+}
+/*********  登录   ********/

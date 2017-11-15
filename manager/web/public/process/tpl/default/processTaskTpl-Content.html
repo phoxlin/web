@@ -1,0 +1,161 @@
+<script type="text/html" id="jhProcessTpl">
+<form id="<%=task.process_code%>_Form" name="<%=task.process_code%>_Form" method="post" class="form-inline">
+	
+	<%
+		var showAutoFetchBtn=false;
+	%>	
+
+	<input id="instrance_id" name="instrance_id" type="hidden" value="<%=task.instrance_id%>">
+	<input id="task_instrance_id" name="task_instrance_id" type="hidden" value="<%=task.task_instrance_id%>">
+	<input id="process_version" name="process_version" type="hidden" value="<%=task.process_version%>">
+
+	<input id="showType" name="showType" type="hidden" value="<%=task.showType%>">
+	<input id="state" name="state" type="hidden" value="<%=task.state%>">
+
+	<input id="task_instrance_pid" name="task_instrance_pid" type="hidden" value="<%=task.task_instrance_pid%>">
+	<input id="process_code" name="process_code" type="hidden" value="<%=task.process_code%>">
+	<input id="process_name" name="process_name" type="hidden" value="<%=task.process_name%>">
+	
+
+
+<!-- ----------内容框---------- -->
+	 <div class="panel panel-info">
+		  <div class="panel-body" style="margin-top: 5px;">
+		     <%
+		     	for(var i=0;i<task.content.legends.li.length;i++){
+		     		var legend=task.content.legends.li[i];
+		     		var showlegendId=false;
+		     		if(legend.code.length>0){
+		     			showlegendId=true;
+		     		}
+		     		%>
+		     		
+		     		<fieldset>
+		     			<%if(showlegendId){%>
+						<legend  name="<%=legend.code%>" id="<%=legend.code%>" style="display: block;width: 100%;padding: 0;margin-bottom: 5px;font-size: 21px;line-height: inherit;color: #333;border: 0;border-bottom: 1px solid #e5e5e5;">
+							<%=legend.display%>
+							<%
+								if(legend.dataSourceName){
+									%>
+									<img onclick="autoFetch('<%=legend.code%>','<%=task.task_instrance_id%>','<%=legend.dataSourceName%>',this);" src="public/process/tpl/default/img/autoLoad.png" style="width: 30px;height: 30px;">
+									<%
+								}
+							%>
+						</legend><%}%>
+		     			<%
+		     			for(var k=0;k<legend.row.length;k++){
+							var row=legend.row[k];
+
+							if(row.type=='row'){
+								var legend_tablename=legend.tablename;
+							%>
+							<div class="row " style="margin-right: 0;margin-left: 0;padding:2px;">
+								<%
+								for(var m=0;m<row.cols.length;m++){
+									var col=row.cols[m];
+									var labelColumn=col.labelCols;
+									var fieldColumn=col.fieldCols;
+									var cols=col.cols;
+
+									var labelClass=col.labelClass;
+									var labelStyle=col.labelStyle;
+									if(labelClass==null||labelClass.length<=0){labelClass=""}
+									if(labelStyle==null||labelStyle.length<=0){labelStyle=""}
+
+									var column_clz=col.clz;
+									var column_style=col.style;
+									if(column_clz==null||column_clz.length<=0){column_clz=""}
+									if(column_style==null||column_style.length<=0){column_style=""}
+
+									var showfieldId=false;
+						     		if(col.code.length>0){
+						     			showfieldId=true;
+						     		}
+
+						     		var hidden=col.hidden;
+						     		if(!hidden){
+										if(col.dataFetchType=='AUTO'){showAutoFetchBtn=true;}
+									%>
+									<div class="col-xs-<%=cols%>">
+										<div class="form-group" style="display: block;">
+											<label class="col-xs-<%=labelColumn%> input-sm <%=labelClass%>" style="<%=labelStyle%>">
+												<%=col.display%>
+											</label>
+											<%
+												var inputStr=createProcessComponent(legend_tablename+"__"+col.code,col,fieldColumn,column_clz,column_style);
+											%>
+											<%:=inputStr%>
+										</div>
+									</div>
+									<%
+									}else{
+										%>
+										<input <%if(showfieldId){%> id="<%=legend_tablename%>__<%=col.code%>" name="<%=legend_tablename%>__<%=col.code%>" <%}%>
+												type="hidden" value="<%=col.defaultValue%>">
+										<%
+									}
+								}
+								%>
+							</div>
+							<%
+		     			}else{
+		     				var gridtype=row.gridtype;
+		     				if(gridtype=='QM'){
+
+		     				%>
+								<div id="<%=row.code%>" style="margin-top: 5px"></div>
+								
+		     				<%
+								cq(row.code,'qm');
+	     					}else{
+	
+	     						%>
+									<div id="<%=row.code%>" style="margin-top: 5px"></div>
+
+	     						<%
+		     						cq(row.code,'ms');
+	     					}
+		     			}
+		     		}
+		     			%>
+		     			
+		     		</fieldset>
+		     		<%
+		     	}
+		     
+		     %>
+		  </div>
+	</div>			
+
+</form>
+<!-- -------------确认提交开始---------- -->
+
+<div class="row" style="margin-top:20px;">
+		<div class="col-md-5 col-md-offset-4">
+			<div class="row">
+			<div class="col-md-3 col-md-offset-1">
+				<button type="button" class="btn btn-default" onclick="saveDraft('<%=task.process_code%>_Form')">保存草稿</button>
+			</div>
+			<%
+				var next_step_count=task.next_step_count;
+				if(next_step_count>0){
+					%>
+			<div class="col-md-3">
+				<button type="button" class="btn btn-info" onclick="saveAndForward('<%=task.process_code%>_Form')">保存&下一步</button>
+			</div>			
+					<%
+				}else{
+					%>
+			<div class="col-md-3">
+				<button type="button" class="btn btn-info" onclick="saveAndClose('<%=task.process_code%>_Form')">保存&完成任务</button>
+			</div>	
+					<%
+				}
+			%>
+			
+	 		</div>
+		</div>
+  </div>
+  <!-- -------------确认提交结束---------- -->
+
+</script>

@@ -1,0 +1,112 @@
+<script type="text/html" id="jhProcess_forwardTpl">
+	<#
+		var trans=li.trans;
+		
+		var decistionName=li.decistionName;
+
+
+
+
+	#>
+		<form id="<#=name#>_Form" class="form-inline" style="width:<#=width#>;height:<#=height#>" method="post">
+			<input type="hidden" value="<#=li.task_instrance_id#>" id="task_instrance_id" >
+			<div class="row">
+				<div class="col-md-6">
+					<ul class="nav nav-tabs" id="<#=decistionName#>_tabs"  role="tablist">
+					<#
+						for(var i=0;i<trans.length;i++){
+							var tranClass=""; if(i==0){ tranClass="active";}
+							var tranHref=decistionName+"_"+i;
+							var tran=trans[i];
+							var display=tran.display;
+							if(i==0){
+							#>
+							<input id="traned2Name" type="hidden" value="<#=tran.to#>" >
+							<#							
+							}
+							#>
+							<li role="presentation" class="<#=tranClass#>"><a data-href='<#=tranHref#>' data-tran2name='<#=tran.to#>'><#=display#></a></li>
+							<#
+						}
+					#>
+					</ul>
+				</div>
+			</div>
+			<div class="tab-content" style="margin-bottom: 20px;">
+				<#
+					for(var i=0;i<trans.length;i++){
+						var tranClass=""; if(i==0){ tranClass="active";}
+						var tranHref=decistionName+"_"+i;
+						var tran=trans[i];
+						var display=tran.display;
+						var hasRemark=false;
+						if(tran.remark.length>0){hasRemark=true;}
+						#>
+						<div role="tabpanel" class="tab-pane <#=tranClass#>" id="<#=tranHref#>">
+							<#
+								if(hasRemark){
+									#>
+									<div class="tab-text">
+										<h6 class="list-group-item list-group-item-warning"><#=tran.remark#></h6>
+									</div>
+									<#
+								}else{
+									#>
+									<div class="tab-text">
+										<h6 class="list-group-item list-group-item-warning">请确定操作人员</h6>
+									</div>
+									<#
+
+								}
+								#>
+								<div class="row">
+								<#
+								var hasUser =tran.hasUser;
+								
+								if("Y"==hasUser){
+									for(var k=0;k<tran.users.length;k++){
+										var u=tran.users[k];
+										var real_name=u.real_name;
+										var uid=u.id;
+										if(uid=='undefined'||uid==undefined){
+											uid=u._id;
+										}
+										#>
+										<div class="col-md-2">
+											<input type="radio" name="forward_users" value="<#=uid#>"><#=real_name#>
+										</div>
+										<#
+									}
+								}
+							#>
+							</div>
+						</div>
+						<#
+					}
+				#>
+			</div>
+			<!------------ -tabs结束------------ -->
+			<!-- ------------备注开始---------- -->
+
+			<div class="end-container">
+				<div class="input-group" style="width:100#;">
+					<span class="input-group-addon" width="width: 80px;" id="basic-addon">备注 </span> 
+					<input type="text" class="form-control" id="forward_remark" name="forward_remark" placeholder="请填写备注...">
+				</div>
+
+			</div>
+			<!-- -------------确认提交开始---------- -->
+			<div class="row">
+				<div class="col-md-6 col-md-offset-4">
+						<div class="checkbox col-md-4" style="padding: 0px;line-height: 40px;">
+							<label> <input type="checkbox" id="forward_confirm">我已确认
+							</label>
+						</div>
+						<div class="col-md-4" style="line-height: 40px;">
+							<button type="button" class="btn btn-info" onclick="forwardConfirm();">提交</button>
+						</div>
+				</div>
+			</div>
+		<!-- -------------确认提交结束---------- -->
+	</form>
+</script>

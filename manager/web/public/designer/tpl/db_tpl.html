@@ -1,0 +1,179 @@
+<script type="text/html" id="sysDesignerTpl">
+<%
+if(data.size>0){
+	for(var i=0; i<data.db.length; i++){
+		var li=data.db[i];
+		%>
+			<div class="lyrow" data-name="db_table_name">
+		      <div class="preview">
+		        <label onclick="loadDBDesigner('<%=li._id%>')"><%=li.tablecode%> - <%=li.tablename%></label>
+		        <input type="hidden" name="data-layout" data-code="<%=li.tablecode%>" data-name="<%=li.tablename%>" data-type="<%=li.tabletype%>" data-id="<%=li._id%>" value="">
+		      </div>
+		    </div>
+		<%		
+	}
+}
+%>
+</script>
+
+<script type="text/html" id="sysTaskDesignerTpl">
+<%
+if(data.size>0){
+	for(var i=0; i<data.db.length; i++){
+		var li=data.db[i];
+		%>
+			<div class="lyrow" data-name="db_table_name">
+		      <div class="preview">
+		        <label onclick="loadTaskDesigner('<%=li._id%>')">(<%=li.isFirstTask%>)<%=li.task_code%> - <%=li.task_name%></label>
+		      </div>
+		    </div>
+		<%		
+	}
+}
+%>
+</script>
+
+
+<script type="text/html" id="componentModelTpl">
+<%
+if(data.li.length>0){
+	for(var i=0; i<data.li.length; i++){
+		var o=data.li[i];
+		%>
+			<div class="lyrow ui-draggable">
+				<a class="label high-setting" onclick="highSettingToggle(this);"><i class="icon-signal icon-white"></i></a> <a  class="remove label label-important"><i class="icon-remove icon-white"></i>删除</a> <span class="drag label"><i class="icon-move"></i>拖动</span>
+				<div class="view">
+					<div class="control-group">
+						<div class="input-prepend input-append" style="width: 120px">
+							<input name="name" class="span11" type="text" value="<%=o.comment%>" placeholder="Name"  />
+						</div>
+						<div class="input-prepend input-append" style="width: 120px">
+							<input name="code" class="span11" type="text" value="<%=o.name%>" placeholder="Code"  />
+						</div>
+
+						<select style="width: 120px;"  name="controlType">
+							<option value="validatebox" <%=o.controlType=='easyui-validatebox'?'selected="selected"':''%>>单行输入框</option>
+							<option value="chooseUser" <%=o.controlType=='chooseUser'?'selected="selected"':''%>>用户选择器</option>
+							<option value="numberbox" <%=o.controlType=='easyui-numberbox'?'selected="selected"':''%>>数字输入框</option>
+							<option value="password" <%=o.controlType=='password'?'selected="selected"':''%>>密码输入框</option>
+							<option value="datebox" <%=o.controlType=='easyui-datebox'?'selected="selected"':''%>>日期</option>
+							<option value="datetimebox" <%=o.controlType=='easyui-datetimebox'?'selected="selected"':''%>>日期时间</option>
+							<option value="select" <%=o.controlType=='easyui-combobox'?'selected="selected"':''%>>下拉框</option>
+							<option value="tree" <%=o.controlType=='easyui-combotree'?'selected="selected"':''%>>树形下拉框</option>
+							<option value="area_text" <%=o.controlType=='textarea'?'selected="selected"':''%>>文本编辑框</option>
+							<option value="editor" <%=o.controlType=='editor'?'selected="selected"':''%>>富文本编辑框</option>
+							<option value="upload" <%=o.controlType=='upload'?'selected="selected"':''%>>七牛文件上传</option>
+							<option value="uploadFile" <%=o.controlType=='old-upload'?'selected="selected"':''%>>普通文件上传</option>
+							<option value="timespinner" <%=o.controlType=='easyui-timespinner'?'selected="selected"':''%>>时间微调</option>
+							<option value="numberspinner" <%=o.controlType=='easyui-numberspinner'?'selected="selected"':''%>>数字调整器</option>
+						</select>
+						<div class="input-prepend input-append" style="width: 110px;">
+							<span class="add-on">宽度</span> <input  name="width" class="span5" type="text" value="<%=o.width<=0?'100':o.width%>"  /> <span class="add-on">px</span>
+						</div>
+						<div class="input-prepend input-append" style="width: 90px;">
+							<span class="add-on">长度</span> <input  name="length" class="span7" type="text" value="<%=o.length<=0?'100':o.length%>"  />
+						</div>
+
+						<label class="checkbox"> <input name="nullable" type="checkbox" value="on" <%=!o.nullable?'checked="checked"':''%>  />必</label> 
+						<label class="checkbox"> <input name="list" type="checkbox" value="on" checked="checked"  />列 </label> 
+						<label class="checkbox"> <input name="sort" type="checkbox" value="on" checked="checked"  />排 </label> 
+						<label class="checkbox"> <input name="ignore" type="checkbox" value="on"  />忽</label> 
+						<label class="checkbox"> <input name="edit" type="checkbox" value="on" checked="checked"  />编</label> 
+						<label class="checkbox"> <input name="hidden" type="checkbox" value="on"   />隐</label> 
+						<label class="checkbox"> <input name="readonly" type="checkbox" value="on"  />只</label>
+						<label class="checkbox"> <input name="line" type="checkbox" value="on"  />行</label>
+					</div>
+					<div class="control-group control-row2" style="display: none;">
+						<div class="input-prepend input-append" style="width: 150px;">
+							<span class="add-on">数据表名</span> <input name="input_tablename" class="span7" type="text" value="<%=o.input_tablename%>"  />
+						</div>
+						<div class="input-prepend input-append" style="width: 100px">
+							<input name="placeholder" class="span11" type="text" value="<%=o.placeholder%>" placeholder="Placeholder"  />
+						</div>
+						<div class="input-prepend input-append" style="width: 150px;">
+							<span class="add-on">格式化</span> <input name="format" class="span8" type="text" value="<%=o.format%>"  />
+						</div>
+						<div class="input-prepend input-append" style="width: 120px;">
+							<span class="add-on">小数位数</span> <select style="width: 60px;"  name="decamial">
+								<option <%=o.decamial=='0'?'selected="selected"':''%>>0</option>
+								<option <%=o.decamial=='1'?'selected="selected"':''%>>1</option>
+								<option <%=o.decamial=='2'?'selected="selected"':''%>>2</option>
+								<option <%=o.decamial=='3'?'selected="selected"':''%>>3</option>
+								<option <%=o.decamial=='4'?'selected="selected"':''%>>4</option>
+							</select>
+						</div>
+						<div class="input-prepend input-append" style="width: 120px;">
+							<span class="add-on">最小值</span> <input name="min" class="span6" type="text" value="<%=o.min%>"  />
+						</div>
+						<div class="input-prepend input-append" style="width: 120px;">
+							<span class="add-on">最大值</span> <input name="max" class="span6" type="text" value="<%=o.max%>"  />
+						</div>
+						<select style="width: 120px;" name="bindtype">
+							<option <%=o.bindType=='no'?'selected="selected"':''%>>不绑定</option>
+							<option <%=o.bindType=='codetable'?'selected="selected"':''%>>一般码表</option>
+							<option <%=o.bindType=='treecodetable'?'selected="selected"':''%>>树形码表</option>
+							<option <%=o.bindType=='sql'?'selected="selected"':''%>>SQL</option>
+							<option <%=o.bindType=='mgo'?'selected="selected"':''%>>MGO</option>
+						</select>
+						<div class="input-prepend input-append" style="width: 380px;">
+							<span class="add-on">绑定值</span> <input name="binddata" class="span10" type="text" value="<%=o.bindData%>"  />
+						</div>
+						<div class="input-prepend input-append" style="width: 250px;">
+							<span class="add-on">默认值</span> <input name="defaultValue" class="span9" type="text" value=""  />
+						</div>
+						
+						<div class="input-prepend input-append" style="width: 150px;">
+							<span class="add-on">Class</span> <input name="col_class" class="span9" type="text" value=""  />
+						</div>
+						<div class="input-prepend input-append" style="width: 150px;">
+							<span class="add-on">Style</span> <input name="col_style" class="span9" type="text" value=""  />
+						</div>
+						<div class="input-prepend input-append" style="width: 150px;">
+							<span class="add-on">Cols</span> <input name="cols" class="span5" type="text" value="6"  />
+						</div>						
+						<div class="input-prepend input-append" style="width: 150px;">
+							<span class="add-on">LabelCols</span> <input name="labelCols" class="span5" type="text" value="4"  />
+						</div>
+						<div class="input-prepend input-append" style="width: 150px;">
+							<span class="add-on">FieldCols</span> <input name="fieldCols" class="span5" type="text" value="6"  />
+						</div>
+						<div class="input-prepend input-append" style="width: 150px;">
+							<span class="add-on">InputHeight</span> <input name="InputHeight" class="span5" type="text" value="50"  />
+						</div>
+						<div class="input-prepend input-append" style="width: 150px;">
+							<span class="add-on">跨列</span> <input name="InputSpanCol" class="span5" type="text" value="1"  />
+						</div>
+						<div class="input-prepend input-append" style="width: 150px;">
+							<span class="add-on">搜索比较</span> 
+							<select style="width: 120px;" name="search_compare">
+								<option value="" <%=o.compare==''?'selected="selected"':''%>>请选择</option>
+								<option value="gt" <%=o.compare=='gt'?'selected="selected"':''%>>大于</option>
+								<option value="lt" <%=o.compare=='lt'?'selected="selected"':''%>>小于</option>
+								<option value="=" <%=o.compare=='eq'?'selected="selected"':''%>>等于</option>
+								<option value="like" <%=o.compare=='like'?'selected="selected"':''%>>Like</option>
+							</select>
+						</div>
+						<div class="input-prepend input-append" style="width: 825px;">
+							<span class="add-on">其他设置</span> <input name="otherset" class="span10" type="text" value="<%=o.otherset%>"  />
+						</div>
+
+
+
+					</div>
+				</div>
+			</div>
+		<%		
+	}
+}
+%>
+</script>
+<script type="text/html" id="rowComponentModelTpl">
+<div class="lyrow ui-draggable">
+	<a  class="remove label label-important"><i class="icon-remove icon-white"></i>删除</a> <a class="label addComponent" onclick="addComponent(this);"><i class="icon-plus-sign icon-white"></i>添加控件</a> <span class="drag label"><i class="icon-move"></i>拖动</span>
+	<div class="view">
+		<div class="row-fluid clearfix">
+			<div class="span12 column rowContent" data-type="rowContent"><%:=content%></div>
+		</div>
+	</div>
+</div>
+</script>

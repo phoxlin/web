@@ -1,0 +1,344 @@
+/********新UI*******/
+/******************* 主界面 start ***********************/
+body, html {
+	width: 100%;
+	height: 100%;
+	font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial,
+		sans-serif !important;
+	background: #fff;
+}
+.widget.main-bg{
+	width: 100%;
+	min-height: 100%;
+}
+.main-bg{
+	background: transparent url("../images/main_bg.jpg") center center no-repeat;
+	background-size: cover;
+}
+
+/*面包屑*/
+.bread {
+	color: #333333;
+	font-size: 14px;
+	margin: 20px 0 0;
+}
+
+.bread img {
+	vertical-align: baseline;
+}
+
+.bread a {
+	cursor: pointer;
+	color: #333333;
+}
+
+.bread a:HOVER {
+	text-decoration: none;
+}
+
+.bread .back {
+	display: inline-block;
+	width: 60px;
+	height: 30px;
+	line-height: 30px;
+	color: #666666;
+	background: url(../images/main/back.png) no-repeat 10px center;
+	background-size: 12px;
+	font-size: 13px;
+	padding-right: 10px;
+	background-color: #fff;
+	border-radius: 3px 3px 0 0;
+}
+
+.bread .position {
+	background: url(../images/main/b_position.png) no-repeat;
+	background-size: 100% 100%;
+	padding: 10px 30px;
+	background-position: 4px -4px;
+}
+
+/*主体*/
+.widget>.container-fluid {
+	height: calc(100% - 120px);
+	-moz-height: calc(100% - 120px);
+	-webkit-height: calc(100% - 120px);
+	padding: 0;
+	background-color: #fff;
+}
+
+.main {
+	width: 70%;
+/* 	min-width: 1024px; */
+	height: 100%;
+	margin: 0 auto;
+	padding-top: 120px;
+}
+.main>.row{height: 100%;margin: 0;}
+.main.main2{width: calc(100% - 100px);margin: 130px 50px 0;padding: 0;}
+
+.main .menu-container {
+	margin-bottom: 30px;
+}
+
+.main .menu-container:LAST-CHILD {
+	margin-bottom: 0;
+}
+
+.main .menu-container .header {
+	color: #fff;
+	font-size: 20px;
+	padding: 15px 0 10px 20px;
+}
+
+.main .menu-container .menus {
+	padding: 40px 20px 20px;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.main .menu-container .menus a {
+	display: inline-block;
+	width: 9.5%;
+	min-width: 100px;
+	margin-right: 30px;
+	margin-bottom: 20px;
+	padding:2px 0 5px;
+	color: #fff;
+	font-size: 15px;
+	text-align: center;
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.35);
+	border-radius: 2px;
+}
+
+.main .menu-container .menus a:hover, .main .menu-container .menus a:VISITED
+{
+	color: #fff;
+	text-decoration: none;
+}
+.main .menu-container .menus a span{display: block;margin-top: -3px;}
+
+/*主体数据*/
+.main>.row>.col-lg-12, .main>.row>.col-md-12, .main>.row>.col-xs-12 {
+	height: 100%;padding: 0;
+}
+.main>.row>.col-lg-12>div, .main>.row>.col-md-12>div, .main>.row>.col-xs-12>div,
+.main>.row>.col-lg-12>div>form, .main>.row>.col-md-12>div>form, .main>.row>.col-xs-12>div>form
+{height: 100%;}
+
+.main>.row .panel {
+	height: 92%;
+	border: 1px solid #d8d8d8;
+	box-shadow: none;
+}
+
+.main>.row>.col-lg-12>ul, .main>.row>.col-md-12>ul, .main>.row>.col-xs-12>ul
+	{
+	margin-right: 30px;
+	border-radius: 5px;
+	background-color: #fff;
+}
+
+.main>.row .panel-body {
+	height: 100%;border: 0;overflow-y: hidden;
+}
+
+.main>.row fieldset {
+	height: 100%;padding: 0;
+}
+
+.main>.row fieldset>legend {
+	display: block;
+	width: 100%;
+	padding: 0;
+	border: 0;
+}
+
+/*主体分左右*/
+.main>.row>.col-lg-3, .main>.row>.col-md-3 {
+	width: 20%;
+}
+
+.main>.row>.col-lg-9, .main>.row>.col-md-9 {
+	width: 80%;
+}
+
+.main>.row>.col-lg-3>div, .main>.row>.col-md-3>div {
+	margin-right: 30px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	padding: 15px 0;
+	background: #fff;
+}
+
+.easyui-tree.tree>li, .easyui-tree.tree>li>div {
+	border-bottom: 1px solid #e9e9e9;
+	padding: 10px 0;
+	height: auto;
+}
+
+.easyui-tree.tree>li>div {
+	border-bottom: 0;
+	padding: 0;
+	padding-left: 15px;
+}
+
+.easyui-tree.tree>li>ul {
+	border-top: 1px solid #e9e9e9;
+	padding: 15px 0 5px 0;
+}
+
+.easyui-tree.tree>li>ul>li {
+	padding: 3px 0;
+	color: #666666;
+	font-size: 13px;
+}
+
+.easyui-tree.tree>li>.tree-title, .easyui-tree.tree>li>div>.tree-title {
+	color: #333333;
+	font-size: 15px;
+}
+
+.tree-folder-open, .tree-folder, .tree-file {
+	background: transparent;
+	width: 0;
+}
+
+.tree-node-selected {
+	background: transparent;
+	color: #ffba00;
+}
+
+.easyui-tree.tree>li>.tree-node-selected .tree-title {
+	color: #ffba00;
+}
+
+.left-main label {
+	font-weight: normal;
+}
+
+.left-main input {
+	border: 1px solid #d8d8d8;
+	border-radius: 0;
+	box-shadow: none;
+	color: #333333;
+	font-size: 13px;
+}
+
+.btn-xx {
+	background-color: transparent;
+	color: #999999;
+	border: 0;
+}
+
+.btn-xx:hover, .btn-xx:active, .btn-xx:visited {
+	background-color: transparent;
+	color: #ffba00;
+	border: 0;
+}
+
+/******************* 主界面 end ***********************/
+.messager-body {
+	padding: 0 !important;
+}
+
+.main .col-lg-12.panel, .main .col-md-12.panel, .main .col-xs-12.panel {
+	padding: 10px 20px !important;
+}
+
+.main .col-lg-12.panel .card, .main .col-md-12.panel .card, .main .col-xs-12.panel .card
+	{
+	margin-bottom: 80px;
+}
+
+.main .col-lg-12.panel label, .main .col-md-12.panel label, .main .col-xs-12.panel label
+	{
+	font-weight: normal;
+}
+
+.main .col-lg-12.panel p, .main .col-md-12.panel p, .main .col-xs-12.panel p
+	{
+	margin: 10px;
+}
+
+.main .col-lg-12.panel h4, .main .col-md-12.panel h4, .main .col-xs-12.panel h4
+	{
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+
+.main .col-lg-12.panel input, .main .col-md-12.panel input, .main .col-xs-12.panel input,
+	.main .col-lg-12.panel span.textbox, .main .col-md-12.panel span.textbox,
+	.main .col-xs-12.panel span.textbox {
+	width: 70% !important;
+}
+
+.main .col-lg-12.panel .col-lg-12, .main .col-md-12.panel .col-lg-12,
+	.main .col-xs-12.panel .col-lg-12 {
+	padding: 0 10px;
+}
+
+.main .col-lg-12.panel .col-lg-3, .main .col-md-12.panel .col-lg-3,
+	.main .col-xs-12.panel .col-lg-3 {
+	padding: 0;
+}
+
+/***********选项卡  start************/
+ul.tabs-inner{-webkit-padding-start: 0;}
+.tabs-inner{height: 40px;line-height: 38px;margin-bottom: 0;background: #fff;border-top: 1px solid #d8d8d8; border-bottom: 1px solid #d8d8d8;}
+.tabs-inner li{float: left;width: 180px;height: 100%;list-style: none;text-align: center;border-right: 1px solid #fff;cursor: pointer;}
+.tabs-inner li.active{line-height: 38px; background: #fff;border-bottom: 2px solid #ffba00;color: #ffba00;}
+.tabs-inner li.active a{color: #ffba00;cursor: pointer;}
+.tabs-inner a,.tabs-inner a:hover{color: #666; font-size: 16px;text-decoration: none;}
+.tabs-inner li:hover{background-color: #fff;}
+.tab-content>div{display: none;}
+.tab-content>.active{display: block;}
+/***********选项卡  end************/
+.main-content{padding: 35px 55px;margin: 0;background: #fff;}
+.main-content-border{border: 1px solid #ffba00;}
+
+/*排班*/
+.pri-scheduler table{width: 100%;border-collapse: collapse;color: #666666;}
+.pri-scheduler table td{border: 1px solid #d8d8d8;font-size: 18px;}
+.pri-scheduler table tr:first-child td{border-top: 0;}
+.pri-scheduler table tr:last-child td{border-bottom: 0;}
+.pri-scheduler table tr td:first-child{width: 20%;text-align: center;}
+.pri-scheduler table tr td:first-child div{line-height: 1.8;}
+.day{display: inline-block;margin: 1% 1%;padding: 0 1%; color: #fff;font-size: 17px;background: #eee;text-align: center;line-height: 2;}
+.day-1{background: #ffba00;}
+.day-2{background: #76c967;}
+.day-3{background: #9989ff;}
+.day-4{background: #6ebbff;}
+.day-5{background: #fba62d;}
+.day-6{background: #f35857;}
+.day-7{background: #cc57f3;}
+.edit-plan{
+	display: inline-block;position: absolute;left: 69%;top: 43%;
+	width: 20px; height: 20px;cursor: pointer;
+	background: transparent url("../images/edit_plan.png") center center no-repeat;
+	background-size: contain;
+}
+@media screen and (max-width: 1360px) {
+    .edit-plan {
+        left: 77%;
+    }
+}
+.no-plan .edit-plan{top: 25%;}
+
+.icon-update{
+	display: inline-block;
+	width: 16px; height: 16px;cursor: pointer;margin-right: 10px;
+	background: transparent url("../images/icon/icon-edit.png") center center no-repeat;
+	background-size: contain;
+}
+.icon-remove{
+	display: inline-block;
+	width: 16px; height: 16px;cursor: pointer;margin-right: 10px;
+	background: transparent url("../images/icon/icon-delete.png") center center no-repeat;
+	background-size: contain;
+}
+.icon-detail{
+	display: inline-block;
+	width: 16px; height: 16px;cursor: pointer;margin-right: 10px;
+	background: transparent url("../images/icon/icon-detail.png") center center no-repeat;
+	background-size: contain;
+}

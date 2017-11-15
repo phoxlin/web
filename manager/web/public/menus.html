@@ -1,0 +1,32 @@
+<div class="left">
+	<a href="pages/user_manage.jsp" data-attr="users" data-model-code="USERS_MANAGE" title="入场">
+		<i class="user_manage"></i>
+		<span class="menuname">会员管理</span>
+	</a>
+	<a href="pages/operate_manage.jsp" data-attr="operate" data-model-code="OPERTATE_MANAGE"  title="运营管理" >
+		<i class="operate_manage"></i>
+		<span class="menuname">运营管理</span>
+	</a>
+	<a href="pages/report_manage.jsp" data-attr="reports" data-model-code="REPORT_MANAGE" title="报表管理">
+		<i class="report_manage"></i>
+		<span class="menuname">报表管理</span>
+	</a>
+	<a href="pages/basic_page.jsp" data-attr="basic" data-model-code="BASIC_MANAGE" title="基础设置">
+		<i class="basic_manage"></i>
+		<span class="menuname">基础设置</span>
+	</a>
+</div>
+<script>
+	$(function() {
+		$(".left a").removeClass("active");
+		$("[data-attr='*']").addClass("active");
+		
+		var height = $(window).height() - $(".top").height();
+		$(".content").height(height);
+		
+		window.onresize = function(){
+			var height = $(window).height() - $(".top").height();
+			$(".content").height(height);
+		}
+	});
+</script>

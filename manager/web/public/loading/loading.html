@@ -1,0 +1,70 @@
+<html>
+<head>
+<style type="text/css">
+.mask {
+	position: absolute;
+	top: 0px;
+	filter: alpha(opacity = 60);
+	background-color: #777;
+	z-index: 1002;
+	left: 0px;
+	opacity: 0.5;
+	-moz-opacity: 0.5;
+}
+</style>
+
+
+<script type="text/javascript">
+	var opts = {
+		lines : 11, // The number of lines to draw
+		length : 7, // The length of each line
+		width : 3, // The line thickness
+		radius : 9, // The radius of the inner circle
+		corners : 0.5, // Corner roundness (0..1)
+		rotate : 59, // The rotation offset
+		color : '#000', // #rgb or #rrggbb
+		speed : 0.8, // Rounds per second
+		trail : 62, // Afterglow percentage
+		shadow : true, // Whether to render a shadow
+		hwaccel : true, // Whether to use hardware acceleration
+		className : 'spinner', // The CSS class to assign to the spinner
+		zIndex : 2e9, // The z-index (defaults to 2000000000)
+		top : 'auto', // Top position relative to parent in px
+		left : 'auto' // Left position relative to parent in px
+	};
+	var target = document.getElementById('foo');
+	var spinner = new Spinner(opts).spin(target);
+
+	$.fn.spin = function(opts) {
+		this.each(function() {
+			var $this = $(this), data = $this.data();
+			if (data.spinner) {
+				data.spinner.stop();
+				delete data.spinner;
+			}
+			if (opts !== false) {
+				data.spinner = new Spinner($.extend({
+					color : $this.css('color')
+				}, opts)).spin(this);
+			}
+		});
+		return this;
+	};
+
+	//显示遮罩层    
+	function showMask() {
+		$("#mask").css("height", $(document).height());
+		$("#mask").css("width", $(document).width());
+		$("#mask").show();
+	}
+	//隐藏遮罩层  
+	function hideMask() {
+		$("#mask").hide();
+	}
+</script>
+</head>
+
+<body>
+	<div id="foo" ></div>
+</body>
+</html>

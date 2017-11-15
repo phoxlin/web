@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="<!--#{request.scheme}-->://<!--#{request.serverName}-->:<!--#{request.serverPort}--><!--#{request.contextPath}-->/">
+<title>数据库可视化设计系统</title>
+<!-- Le styles -->
+<link href="public/designer/files/bootstrap-combined.min.css" rel="stylesheet">
+<link href="public/designer/files/layoutit.css" rel="stylesheet">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+	<![endif]-->
+
+<!-- Fav and touch icons -->
+<script type="text/javascript" src="public/designer/files/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="public/designer/files/bootstrap.min.js"></script>
+<script type="text/javascript" src="public/designer/files/jquery-ui.js"></script>
+<script type="text/javascript" src="public/designer/files/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src="public/designer/files/jquery.htmlClean.js"></script>
+<script type="text/javascript" src="public/designer/files/jquery-getHtml-value.js"></script>
+<script type="text/javascript" src="public/designer/files/scripts.js"></script>
+<script type="text/javascript" charset="utf-8" src="public/js/json2.js"></script>
+<script type="text/javascript" charset="utf-8" src="public/js/template.js"></script>
+<!-- #include file="public/designer/tpl/db_tpl.html" -->
+
+
+
+<script type="text/javascript">
+	function initList() {
+		//初始化一些东西
+		//初始化左边的数据库表的列
+		$.ajax({
+			type : 'POST',
+			url : 'designer-init-dblist',
+			dataType : 'json',
+			data : {},
+			success : function(data) {
+				if (data.rs == 'Y') {
+					var sysDesignerTpl = document
+							.getElementById('sysDesignerTpl').innerHTML;
+					var html = template(sysDesignerTpl, {
+						data : data
+					});
+					$("#estRows").html(html);
+				}
+			}
+		});
+	}
+
+	function initDBData(div){
+		var loadingTableName = $("#tablecode").val();
+		var tabletype = $('#tabletype').val();
+		var rdb = ("R"==tabletype)?true:false;
+		$.ajax({
+			type : 'POST',
+			url : 'designer-initGridData',
+			dataType : 'json',
+			data : {
+				loadingTableName : loadingTableName,
+				rdb:rdb
+			},
+			success : function(data) {
+				if (data.rs == 'Y') {
+					var componentModelTpl = document.getElementById('componentModelTpl').innerHTML;
+					var html = template(componentModelTpl, { data : data });
+					
+					var content = $(div).parent().find('.rowContent');
+					content.append(html);
+				} else {
+					alert(data.rs);
+				}
+			}
+		});
+	}
+	
+	function loadDBDesigner(_id) {
+		$.ajax({
+			type : 'POST',
+			url : 'designer-load-dbset',
+			dataType : 'json',
+			data : {
+				_id : _id
+			},
+			success : function(data) {
+				var layoutdata = JSON.parse(data.layoutdata);
+				localStorage.setItem('layoutdata', layoutdata);
+				location.reload();
+			}
+		});
+
+	}
+
+	function saveTableSet() {
+		var tabletype = $('#tabletype').val();
+		var tablename = $('#tablename').val();
+		var tablecode = $('#tablecode').val();
+		var layoutdata = localStorage.getItem('layoutdata');
+		layoutdata = JSON.stringify(layoutdata);
+		$.ajax({
+			type : 'POST',
+			url : 'designer-save-dbset',
+			dataType : 'json',
+			data : {
+				layoutdata : layoutdata,
+				tabletype : tabletype,
+				tablename : tablename,
+				tablecode : tablecode
+			},
+			success : function(data) {
+				if (data.rs == 'Y') {
+					alert("保存成功");
+				} else {
+					alert(data.rs);
+				}
+			}
+		});
+	}
+
+	function reCreateTableCfg() {
+		var tabletype = $('#tabletype').val();
+		var tablename = $('#tablename').val();
+		var tablecode = $('#tablecode').val();
+		var layoutdata = $('#mainContent').formhtml();
+		$.ajax({
+			type : 'POST',
+			url : 'designer-recreate-tablecfg',
+			dataType : 'json',
+			data : {
+				layoutdata : layoutdata,
+				tabletype : tabletype,
+				tablename : tablename,
+				tablecode : tablecode
+			},
+			success : function(data) {
+				if (data.rs == 'Y') {
+					alert("保存成功");
+				} else {
+					alert(data.rs);
+				}
+			}
+		});
+	}
+	
+	function reCreateTableDB(){
+		var tabletype = $('#tabletype').val();
+		if("R"!=tabletype){
+			alert("MongoDB 只需要生成配置文件，不需要建表")
+		}else{
+			var tablename = $('#tablename').val();
+			var tablecode = $('#tablecode').val();
+			var layoutdata = $('#mainContent').formhtml();
+			$.ajax({
+				type : 'POST',
+				url : 'designer-recreate-tableDB',
+				dataType : 'json',
+				data : {
+					layoutdata : layoutdata,
+					tabletype : tabletype,
+					tablename : tablename,
+					tablecode : tablecode
+				},
+				success : function(data) {
+					if (data.rs == 'Y') {
+						alert("保存成功");
+					} else {
+						alert(data.rs);
+					}
+				}
+			});
+		}
+	}
+</script>
+</head>
+
+
+<body style="min-height: 654px; cursor: auto;" class="edit">
+	<form class="form-inline" id="myform">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+					</button>
+					<a class="brand"><img src="public/designer/files/favicon.png"> 数据库设计器</a>
+					<div class="nav-collapse collapse">
+						<ul class="nav" id="menu-layoutit">
+							<li class="divider-vertical"></li>
+							<li>
+								<div class="btn-group" data-toggle="buttons-radio">
+									<button type="button" id="edit" class="btn btn-primary active">
+										<i class="icon-edit icon-white"></i>编辑
+									</button>
+									<button type="button" class="btn btn-primary" id="sourcepreview">
+										<i class="icon-eye-open icon-white"></i>预览
+									</button>
+								</div>
+								<div class="btn-group">
+									<button type="button" class="btn btn-primary" data-target="#downloadModal" data-toggle="modal">
+										<i class="icon-chevron-down icon-white"></i>下载
+									</button>
+									<button class="btn btn-primary" href="#clear" id="clear">
+										<i class="icon-trash icon-white"></i>清空
+									</button>
+								</div>
+								<div class="btn-group">
+									<a class="btn btn-primary"  id="undo">
+										<i class="icon-arrow-left icon-white"></i>撤销
+									</a>
+									<a class="btn btn-primary" id="redo">
+										<i class="icon-arrow-right icon-white"></i>重做
+									</a>
+								</div>
+								<div class="btn-group">
+									<a class="btn btn-primary" onclick="addTableComponent();"> <i class="icon-tint icon-white"></i>添加表
+									</a>
+								</div>
+								<div class="btn-group">
+									<a class="btn btn-primary" href='public/designer/index.html'> <i class="icon-hand-right icon-white"></i>通用查询设计器
+									</a>
+								</div>
+							</li>
+						</ul>
+						<ul class="nav pull-right">
+						</ul>
+					</div>
+					<!--/.nav-collapse -->
+				</div>
+			</div>
+		</div>
+
+
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="">
+					<div class="sidebar-nav">
+						<ul class="nav nav-list accordion-group">
+							<li class="nav-header"><i class="icon-th-list icon-white"></i>Table列</li>
+							<li style="display: list-item;height: 660px;overflow-y: auto;" class="rows" id="estRows">
+								<div class="lyrow" data-name="db_table_name">
+									<div class="preview">
+										<label></label> <input type="hidden" name="data-layout" value="">
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--/span-->
+				<div id="mainContent"  class="demo ui-sortable">
+					<div style="min-height: 584px;" class="demo ui-sortable" id="task_content"></div>
+				</div>
+				<!--/span-->
+				<div id="download-layout">
+					<div class="container-fluid"></div>
+				</div>
+			</div>
+			<!--/row-->
+		</div>
+	</form>
+	<div style="display: none;">
+		<div id="gridComponentModel">
+			<div class="lyrow ui-draggable">
+				<div class="input-prepend  label legendName tableType">
+					<select style="width: 120px;" name="tabletype" id="tabletype">
+						<option value="R">关系数据库</option>
+						<option value="M">MongoDB</option>
+					</select>
+				</div>
+				<div class="input-prepend  label legendName addComponent2">
+					<span class="add-on" style="color: black;">中文表名</span> <input class="span8" type="text" placeholder="中文表名" value="" id="tablename" name="tablename"  />
+				</div>
+				<div class="input-prepend  label legendName addComponent3">
+					<span class="add-on" style="color: black;">表名编码</span> <input class="span9" type="text" placeholder="表名编码" value="" id="tablecode" name="tablecode"  />
+				</div>
+				<a  class="remove label label-important"> <i class="icon-remove icon-white"></i>删除 </a> 
+				<a class="label addComponent" onclick="addComponent(this);"> <i class="icon-plus-sign icon-white"></i>添加控件 </a>
+				<a class="label drag" onclick="initDBData(this);"> <i class="icon-leaf icon-white"></i>加载</a>  
+				<a class="label saveTableComponent" onclick="saveTableSet();"> <i class="icon-hdd icon-white"></i>保存 </a> 
+				<a class="label saveTableComponent" onclick="reCreateTableCfg();"> <i class="icon-repeat icon-white"></i>重新生成配置文件</a> 
+				<a class="label saveTableComponent" onclick="reCreateTableDB();"> <i class="icon-retweet icon-white"></i>重新生成数据库 </a>
+				<div class="view">
+					<div class="row-fluid clearfix grid-legend">
+						<div class="span12 column rowContent gridContent"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
