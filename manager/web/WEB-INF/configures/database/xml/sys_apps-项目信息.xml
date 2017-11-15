@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datas>
+	<data appId="jh_57675b2eee665706d5b2d15d" appSecret="a4ce04f806004b1a351cdebb60ba9e3bec69d8dd" jhIdentityImpl="com.jinhua.impl.JhIdentityImpl" />
+	<!-- <data appId="jh_57675b2eee665706d5b2d15f" appSecret="a4ce04f806004b1a351cdebb60ba9e3bec69d8dd" url="http://192.168.2.121:8000" /> -->
+</datas>

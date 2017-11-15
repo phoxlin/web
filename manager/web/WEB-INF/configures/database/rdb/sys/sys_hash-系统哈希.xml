@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_hash" comment="系统哈希">
+  <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="sys_hash" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare="" iskey="true" isAutoGenerate="true"/>
+  <column name="hash_code" field="hash_code" type="string" comment="哈希码" length="50" nullable="false" controlType="easyui-validatebox" input_tablename="sys_hash" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="filename" field="filename" type="string" comment="文件名称" length="255" nullable="false" controlType="easyui-validatebox" input_tablename="sys_hash" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="file_size" field="file_size" type="string" comment="文件大小" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="sys_hash" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="extension" field="extension" type="string" comment="文件后缀" length="10" nullable="false" controlType="easyui-validatebox" input_tablename="sys_hash" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+</table>

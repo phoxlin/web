@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="yp_charge" comment="充值记录">
+  <column name="id" field="id" type="string" comment="ID" length="24" nullable="false" controlType="easyui-validatebox" input_tablename="yp_charge" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare="" iskey="true" isAutoGenerate="true"/>
+  <column name="type" field="type" type="string" comment="类型" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="yp_charge" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="amt" field="amt" type="string" comment="金额" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="yp_charge" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="fk_dir_id" field="fk_dir_id" type="string" comment="司机ID" length="24" nullable="false" controlType="easyui-validatebox" input_tablename="yp_charge" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="dir_name" field="dir_name" type="string" comment="司机名" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="yp_charge" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="before_amt" field="before_amt" type="string" comment="充前余额" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="yp_charge" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="after_amt" field="after_amt" type="string" comment="充后余额" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="yp_charge" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="op_time" field="op_time" type="datetime" format="yyyy-MM-dd HH:mm:ss" comment="充值时间" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="yp_charge" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="state" field="state" type="string" comment="状态" length="24" nullable="false" controlType="easyui-validatebox" input_tablename="yp_charge" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="fk_active_id" field="fk_active_id" type="string" comment="活动ID" length="24" nullable="true" controlType="easyui-validatebox" input_tablename="yp_charge" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="pay_type" field="pay_type" type="string" comment="支付类型" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="yp_charge" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="out_trade_no" field="out_trade_no" type="string" comment="支付订单号" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="yp_charge" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="remark" field="remark" type="string" comment="备注" length="400" nullable="true" controlType="easyui-validatebox" input_tablename="yp_charge" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+</table>

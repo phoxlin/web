@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_task_draft" comment="工作流草稿数据">
+  <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder="" iskey="true" isAutoGenerate="true"/>
+  <column name="instance_id" field="instance_id" type="string" comment="实例ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="step_id" field="step_id" type="string" comment="步骤ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="taskcode" field="taskcode" type="string" comment="流程代码" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="fieldname" field="fieldname" type="string" comment="字段名称" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="fieldtype" field="fieldtype" type="string" comment="字段类型" length="50" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="fieldvalue" field="fieldvalue" type="text" comment="字段值" length="-1" nullable="false" controlType="textarea" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+</table>

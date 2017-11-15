@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<data type="FLOW_STATE" note="流水记录" canedit="Y" ispublic="N">
+		<item code="001" note="已付款" sort="1" />
+		<item code="002" note="未付款" sort="2" />
+		<item code="003" note="已取消" sort="2" />
+		<item code="004" note="被分单" sort="2" />
+		<item code="005" note="员工撤单" sort="2" />
+	</data>
+
+	<data type="checkin_type" note="入场状态" canedit="Y" ispublic="N">
+		<item code="001" note="天数卡入场" sort="1" />
+		<item code="002" note="储值卡入场" sort="2" />
+		<item code="003" note="次卡入场" sort="3" />
+		<item code="004" note="时间卡入场" sort="4" />
+		<item code="005" note="私课入场" sort="6" />
+	</data>
+	<data type="checkin_state" note="入场状态" canedit="Y" ispublic="N">
+		<item code="001" note="未入场" sort="1" />
+		<item code="002" note="场内" sort="2" />
+		<item code="003" note="自动离场" sort="3" />
+		<item code="004" note="出场" sort="4" />
+		<item code="004-2" note="出场收费" sort="5" />
+		<item code="005" note="拒绝入场" sort="6" />
+	</data>
+	<data type="checkin_state" note="拒绝入场状态" canedit="Y" ispublic="N">
+		<item code="001" note="取消" sort="1" />
+		<item code="005" note="拒绝入场" sort="6" />
+	</data>
+	<data type="BUY_CARD_STATE" note="会员卡状态" canedit="Y" ispublic="N">
+		<item code="001" note="未激活" sort="1" />
+		<item code="002" note="已激活" sort="2" />
+		<item code="003" note="退费" sort="3" />
+		<item code="004" note="请假" sort="4" />
+		<item code="005" note="挂失" sort="5" />
+		<item code="006" note="补卡" sort="6" />
+		<item code="007" note="转卡" sort="7" />
+		<item code="008" note="退卡" sort="8" />
+	</data>
+	<data type="user_state" note="会员状态" canedit="Y" ispublic="N">
+		<item code="001" note="激活" sort="1" />
+		<item code="002" note="未激活" sort="2" />
+		<item code="003" note="会籍跟踪" sort="3" />
+		<item code="004" note="公共池" sort="4" />
+		<item code="005" note="请假中" sort="5" />
+		<item code="006" note="挂失中" sort="6" />
+		<item code="007" note="转卡" sort="7" />
+		<item code="008" note="退卡" sort="8" />
+	</data>
+	<data type="LEAVE_STATE" note="会员请假状态" canedit="Y" ispublic="N">
+		<item code="001" note="请假中" sort="1" />
+		<item code="002" note="请假结束" sort="2" />
+		<item code="003" note="未付款" sort="3" />
+		<item code="004" note="超时未付款" sort="4" />
+	</data>
+	<data type="MSG_SIGN_TYPE" note="短信签名类型" canedit="Y" ispublic="N">
+		<item code="001" note="也跑" sort="1" />
+		<item code="002" note="会所" sort="2" />
+	</data>
+	<data type="CONTRACT_NAME" note="合同名称" canedit="Y" ispublic="N">
+		<item code="会籍合同" note="会籍合同" sort="1" />
+		<item code="私教合同" note="私教合同" sort="2" />
+		<item code="团课合同" note="团课合同" sort="2" />
+	</data>
+	<data type="CLASS_STATE" note="上课状态" canedit="Y" ispublic="N">
+		<item code="001" note="预约中" sort="1" />
+		<item code="002" note="上课中" sort="2" />
+		<item code="003" note="上课结束" sort="3" />
+		<item code="004" note="取消预约" sort="4" />
+		<item code="005" note="失约" sort="5" />
+		<item code="006" note="教练预约" sort="1" />
+	</data>
+	<data type="DEAL_STATE" note="成交状态" canedit="Y" ispublic="N">
+		<item code="Y" note="已付款" sort="1" />
+		<item code="N" note="未付款" sort="2" />
+		<item code="E" note="待审核" sort="3" />
+		<item code="F" note="审核不通过" sort="4" />
+		<item code="C" note="退费" sort="5" />
+	</data>
+	<data type="LESSON_TYPE" note="课程类型" canedit="Y" ispublic="N">
+		<item code="001" note="私课" sort="1" />
+		<item code="002" note="团课" sort="2" />
+	</data>
+	<data type="TODO_TYPE" note="任务类型" canedit="Y" ispublic="N">
+		<item code="跟单" note="跟单" sort="1" />
+		<item code="会籍跟单" note="会籍跟单" sort="2" />
+		<item code="教练跟单" note="教练跟单" sort="3" />
+		<item code="教练审核" note="教练审核" sort="4" />
+	</data>
+	<data type="CARD_TYPE" note="卡种类型" canedit="Y" ispublic="N">
+		<item code="001" note="天数卡" sort="1" />
+		<item code="002" note="储值卡" sort="2" />
+		<item code="003" note="次数卡" sort="3" />
+		<item code="004" note="计时卡" sort="4" />
+		<item code="005" note="单次入场卷" sort="5" />
+	</data>
+
+	<data type="MS_POSITION" note="职位" canedit="Y" ispublic="Y">
+		<item code="001" note="会籍" sort="1" />
+		<item code="002" note="教练" sort="2" />
+		<item code="003" note="会员" sort="4" />
+	</data>
+	<data type="MS_EMP_POSITION" note="职位" canedit="Y" ispublic="Y">
+		<item code="004" note="财务" sort="3" />
+		<item code="005" note="前台" sort="4" />
+		<item code="006" note="普通员工" sort="5" />
+	</data>
+	<data type="PUB_PLACE" note="场地状态" canedit="Y" ispublic="N">
+		<item code="001" note="使用中" sort="1" />
+		<item code="002" note="空闲" sort="2" />
+		<item code="003" note="维修" sort="3" />
+	</data>
+
+	<data type="TODO_STATE" note="待办状态" canedit="Y" ispublic="N">
+		<item code="001" note="待处理" sort="1" />
+		<item code="002" note="已处理" sort="2" />
+		<item code="003" note="已关闭" sort="2" />
+		<item code="004" note="审核不通过" sort="2" />
+		<item code="005" note="审核通过" sort="2" />
+	</data>
+
+
+	<data type="BOX_STATE" note="箱柜状态" canedit="Y" ispublic="N">
+		<item code="001" note="空闲" sort="1" />
+		<item code="002" note="租用" sort="2" />
+		<item code="003" note="使用" sort="3" />
+		<item code="004" note="维修" sort="4" />
+	</data>
+	<data type="BOX_AREA" note="箱柜区域" canedit="Y" ispublic="N">
+		<item code="001" note="男" sort="1" />
+		<item code="002" note="女" sort="2" />
+		<item code="003" note="私人男" sort="3" />
+		<item code="004" note="私人女" sort="3" />
+	</data>
+
+
+	<data type="MSG_TYPE" note="消息类型" canedit="Y" ispublic="N">
+		<item code="mem_buy_card" note="会员购卡" sort="1" />
+		<item code="mem_buy_lesson" note="会员购课" sort="2" />
+		<item code="mem_order_private" note="预约私教课" sort="3" />
+		<item code="mem_order_grp" note="预约团课" sort="4" />
+		<item code="mem_calcel_order" note="取消预约" sort="5" />
+		<item code="mem_free_holiday" note="免费请假" sort="6" />
+		<item code="mem_fee_holiday" note="付费请假" sort="7" />
+		<item code="mem_recharge" note="充值" sort="8" />
+		<item code="mem_unbind" note="解绑账号" sort="10" />
+		<item code="mem_loss" note="卡挂失" sort="11" />
+		<item code="mem_trans" note="会员转卡" sort="12" />
+<!-- 		<item code="mem_leave" note="会员离场" sort="13" /> -->
+		<item code="mem_rent_box" note="租用箱柜" sort="14" />
+		<item code="mem_buy_goods" note="购买商品" sort="15" />
+		<item code="mem_addcard" note="会员补卡" sort="16" />
+		<item code="mem_remove_card" note="会员退卡" sort="17" />
+		<item code="mem_remove_box" note="退柜" sort="18" />
+		<item code="mem_upgrade_block" note="会员卡升级" sort="19" />
+		<item code="mem_add_block" note="会员续卡" sort="20" />
+		<item code="mem_prefee" note="预付订金" sort="21" />
+		<item code="mem_remove_lesson" note="退课" sort="22" />
+		<item code="mem_trans_lesson" note="转课" sort="23" />
+		<item code="mem_reduce_lesson" note="消课" sort="24" />
+		<item code="mem_remove_next" note="消次" sort="25" />
+		<item code="other" note="其他" sort="26" />
+	</data>
+	<data type="CHECKIN_METHOD" note="入场方式" canedit="Y" ispublic="N">
+		<item code="001" note="自动入场" sort="1" />
+		<item code="002" note="手动入场" sort="2" />
+	</data>
+	<data type="LEAVE_TYPE" note="请假类型" canedit="Y" ispublic="N">
+		<item code="free" note="免费请假" sort="1" />
+		<item code="pay" note="付费请假" sort="2" />
+	</data>
+	<data type="MODEL_TYPE" note="所属终端" canedit="Y" ispublic="N">
+		<item code="001" note="后台" sort="1" />
+		<item code="002" note="收银" sort="2" />
+		<item code="003" note="APP" sort="3" />
+	</data>
+
+	<data type="ACTIVE_TYPE" note="开卡类型" canedit="Y" ispublic="N">
+		<item code="001" note="立即激活" sort="1" />
+		<item code="002" note="首次刷卡" sort="2" />
+		<item code="003" note="指定日期" sort="3" />
+		<item code="004" note="统一开卡" sort="4" />
+	</data>
+	<data type="STORE_TYPE" note="仓库类型" canedit="Y" ispublic="N">
+		<item code="001" note="主仓库" sort="1" />
+		<item code="002" note="子仓库" sort="2" />
+	</data>
+	
+	<data type="COMMISSION_TYPE" note="提成类型" canedit="Y" ispublic="N">
+		<item code="001" note="业绩提成" sort="1" />
+		<item code="002" note="上课提成" sort="2" />
+		<item code="003" note="团课提成" sort="3" />
+	</data>
+</root>

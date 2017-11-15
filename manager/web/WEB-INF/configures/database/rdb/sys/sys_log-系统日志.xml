@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_log" comment="系统日志">
+  <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="sys_log" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" iskey="true" isAutoGenerate="true"/>
+  <column name="aid" field="aid" type="string" comment="模块ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="sys_log" width="100" min="0" max="10000" decamial="0" otherset="" placeholder=""/>
+  <column name="action" field="action" type="string" comment="模块名称" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="sys_log" width="100" min="0" max="10000" decamial="0" otherset="" placeholder=""/>
+  <column name="method" field="method" type="string" comment="日志类型" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="sys_log" width="100" min="0" max="10000" decamial="0" otherset="" placeholder=""/>
+  <column name="level_type" field="level_type" type="string" comment="日志类型" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="sys_log" width="100" min="0" max="10000" decamial="0" otherset="" placeholder=""/>
+  <column name="log" field="log" type="text" comment="日志内容" length="-1" nullable="false" controlType="textarea" input_tablename="sys_log" width="100" min="0" max="10000" decamial="0" otherset="" placeholder=""/>
+  <column name="log_time" field="log_time" type="datetime" comment="日志时间" nullable="false" controlType="easyui-datetimebox" input_tablename="sys_log" width="100" min="0" max="10000" decamial="0" otherset="" placeholder=""/>
+  <column name="slience" field="slience" type="string" comment="静默记录日志" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="sys_log" width="100" min="0" max="10000" decamial="0" otherset="" placeholder=""/>
+</table>

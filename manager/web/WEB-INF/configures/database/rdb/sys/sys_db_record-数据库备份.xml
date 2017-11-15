@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_db_record" comment="数据库备份">
+  <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="sys_db_record" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare="" iskey="true" isAutoGenerate="true"/>
+  <column name="op_type" field="op_type" type="string" comment="操作类型" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="sys_db_record" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="op_time" field="op_time" type="datetime" comment="操作时间" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="sys_db_record" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="file_name" field="file_name" type="string" comment="文件名" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="sys_db_record" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="is_zip" field="is_zip" type="string" comment="是否压缩" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="sys_db_record" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="bak_size" field="bak_size" type="string" comment="文件大小" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="sys_db_record" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="hash_code" field="hash_code" type="string" comment="哈希码" length="50" nullable="false" controlType="easyui-validatebox" input_tablename="sys_db_record" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="fk_file_id" field="fk_file_id" type="string" comment="文件ID" length="50" nullable="false" controlType="easyui-validatebox" input_tablename="sys_db_record" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="result" field="result" type="string" comment="结果" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="sys_db_record" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="cause" field="cause" type="string" comment="原因" length="4000" nullable="true" controlType="easyui-validatebox" input_tablename="sys_db_record" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="remark" field="remark" type="string" comment="备注" length="400" nullable="true" controlType="easyui-validatebox" input_tablename="sys_db_record" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+</table>

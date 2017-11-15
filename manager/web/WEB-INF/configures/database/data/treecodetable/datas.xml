@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<data type="TR_001" note="" remark="">
+		<item id="1" pid="" code="001" note="数据1" sort="1" />
+		<item id="2" pid="" code="002" note="数据2" sort="2" />
+	</data>
+</root>

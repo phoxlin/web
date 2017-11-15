@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_db_bak_set" comment="数据备份规则">
+  <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="sys_db_bak_set" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare="" iskey="true" isAutoGenerate="true"/>
+  <column name="zip" field="zip" type="string" comment="是否压缩" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="sys_db_bak_set" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="rule" field="rule" type="string" comment="备份规则" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="sys_db_bak_set" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="remark" field="remark" type="string" comment="备注" length="400" nullable="true" controlType="easyui-validatebox" input_tablename="sys_db_bak_set" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="save_type" field="save_type" type="string" comment="保存方式" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="sys_db_bak_set" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="save_val" field="save_val" type="string" comment="保存数量" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="sys_db_bak_set" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+</table>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<data type="PUB_TASK_STEP_STATUS" note="工作流任务状态">
+		<item code="waitview" note="待查看" sort="1" />
+		<item code="viewed" note="已查看" sort="2" />
+		<item code="drafted" note="保存草稿" sort="3" />
+		<item code="transfered" note="已提交" sort="4" />
+		<item code="closed" note="处理完成" sort="5" />
+		<item code="cancel" note="流程取消" sort="6" />
+	</data>
+</root>

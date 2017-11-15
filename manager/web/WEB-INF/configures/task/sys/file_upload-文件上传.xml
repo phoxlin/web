@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+  <task code="file_upload" name="文件上传" load-on-startup="1" isTask="N" isFirstTask="N" left_col_number="0" right_col_number="12">
+    <decision/>
+    <content>
+      <legend type="data-grid" code="sys_file" name="文件上传" rdb="Y" autoLoadingData="N" initSql="select * from sys_file" entity="sys_file" column_show_num="2" spaceWidth="40" titleWidth="90" inputWidth="170" winWidth="700" winHeight="500">
+        <toolbars>
+          <toolbar class="btn-danger" text="删除" js="del" name="del" visible_code="file_upload_del"/>
+        </toolbars>
+        <columns>
+          <column code="id" display="ID" width="100" length="32" format="" show="N" send="Y" sort="Y" nullable="Y" ignore="N" edit="Y" hidden="Y" readonly="N" line="N" query="Y" placeholder="" bindType="no" bindData="" controlType="easyui-validatebox" defaultValue="" tablename="sys_file" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1" search_compare=""/>
+          <column code="re_name" display="文件名" width="300" length="255" format="" show="Y" send="Y" sort="Y" nullable="Y" ignore="N" edit="Y" hidden="N" readonly="N" line="N" query="Y" placeholder="" bindType="no" bindData="" controlType="easyui-validatebox" defaultValue="" tablename="sys_file" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1" search_compare=""/>
+          <column code="file_size" display="文件大小" width="100" length="100" format="" show="Y" send="Y" sort="Y" nullable="Y" ignore="N" edit="Y" hidden="N" readonly="N" line="N" query="Y" placeholder="" bindType="no" bindData="" controlType="easyui-validatebox" defaultValue="" tablename="sys_file" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1" search_compare=""/>
+          <column code="create_time" display="上传时间" width="150" length="150" format="yyyy-MM-dd HH:mm:ss" show="Y" send="Y" sort="Y" nullable="Y" ignore="N" edit="Y" hidden="N" readonly="N" line="N" query="Y" placeholder="" bindType="no" bindData="" controlType="easyui-datetimebox" defaultValue="" tablename="sys_file" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1" search_compare=""/>
+        </columns>
+      </legend>
+    </content>
+  </task>
+</root>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_task_instance" comment="流程实例表">
+  <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder="" iskey="true" isAutoGenerate="true"/>
+  <column name="instance_no" field="instance_no" type="string" comment="实例编号" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="taskcode" field="taskcode" type="string" comment="流程代码" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="taskname" field="taskname" type="string" comment="流程名称" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="userid" field="userid" type="string" comment="用户ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="createtime" field="createtime" type="datetime" comment="创建时间" nullable="false" controlType="easyui-datetimebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="state" field="state" type="string" comment="状态" length="20" nullable="false" controlType="easyui-combobox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+</table>

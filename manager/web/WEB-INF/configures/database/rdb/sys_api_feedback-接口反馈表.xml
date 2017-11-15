@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_api_feedback" comment="接口反馈表">
+  <column name="id" field="id" type="string" comment="ID" length="24" nullable="false" controlType="easyui-validatebox" input_tablename="sys_api_feedback" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="ID" search_compare="" iskey="true" isAutoGenerate="true"/>
+  <column name="pid" field="pid" type="string" comment="PID" length="24" nullable="false" controlType="easyui-validatebox" input_tablename="sys_api_feedback" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="PID" search_compare=""/>
+  <column name="interface_id" field="interface_id" type="string" comment="接口ID" length="24" nullable="false" controlType="easyui-validatebox" input_tablename="sys_api_feedback" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="接口ID" search_compare=""/>
+  <column name="type" field="type" type="string" comment="反馈类型" length="20" nullable="false" bindType="codetable" bindData="PUB_REBACK_TYPE"  controlType="easyui-validatebox" input_tablename="sys_api_feedback" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="反馈类型" search_compare=""/>
+  <column name="title" field="title" type="string" comment="标题" length="400" nullable="false" controlType="easyui-validatebox" input_tablename="sys_api_feedback" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="标题" search_compare=""/>
+  <column name="content" field="content" type="text" comment="内容" length="-1" nullable="false" controlType="textarea" input_tablename="sys_api_feedback" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="内容" search_compare=""/>
+  <column name="finish" field="finish" type="string" comment="是否完成" length="24" nullable="false" controlType="easyui-validatebox" input_tablename="sys_api_feedback" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="是否完成" search_compare=""/>
+  <column name="create_time" field="create_time" type="datetime" comment="创建时间" nullable="false" controlType="easyui-datetimebox" input_tablename="sys_api_feedback" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="创建时间" search_compare=""/>
+  <column name="user_id" field="user_id" type="string" comment="创建人" length="24" nullable="false" controlType="easyui-validatebox" input_tablename="sys_api_feedback" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="创建人" search_compare=""/>
+</table>

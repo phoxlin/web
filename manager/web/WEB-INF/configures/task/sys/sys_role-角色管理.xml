@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+  <task code="sys_role" name="角色管理" load-on-startup="1" isTask="N" isFirstTask="N" left_col_number="0" right_col_number="12">
+    <decision/>
+    <content>
+      <legend type="data-grid" code="sys_role" name="角色管理" rdb="Y" autoLoadingData="N" initSql="select * from sys_role" entity="sys_role" column_show_num="2" spaceWidth="40" titleWidth="90" inputWidth="170" winWidth="700" winHeight="500">
+        <toolbars>
+          <toolbar class="btn-primary" text="详细信息" js="detail" name="detail" visible_code="sys_role_detail"/>
+          <toolbar class="btn-primary" text="添加" js="add" name="add" visible_code="sys_role_add"/>
+          <toolbar class="btn-primary" text="修改" js="edit" name="edit" visible_code="sys_role_edit"/>
+          <toolbar class="btn-primary" text="设置可见模块" js="set" name="set" visible_code="sys_role_set"/>
+          <toolbar class="btn-primary icon-delete" text="删除" js="del" name="del" visible_code="sys_role_del"/>
+        </toolbars>
+        <columns>
+          <column code="id" display="ID" width="100" length="24" format="" show="N" send="Y" sort="N" nullable="N" ignore="N" edit="N" hidden="Y" readonly="N" line="N" query="Y" placeholder="" bindType="no" bindData="" controlType="easyui-validatebox" defaultValue="" tablename="sys_role" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1" search_compare=""/>
+          <column code="cust_name" display="客户" width="100" length="20" format="" show="N" send="Y" sort="Y" nullable="Y" ignore="N" edit="Y" hidden="Y" readonly="N" line="N" query="Y" placeholder="" bindType="sql" bindData="select gym code, gym_name note from yp_gym" controlType="easyui-combobox" defaultValue="" tablename="sys_role" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1" search_compare=""/>
+          <column code="code" display="角色代码" width="150" length="50" format="" show="N" send="Y" sort="Y" nullable="Y" ignore="N" edit="Y" hidden="N" readonly="N" line="N" query="Y" placeholder="" bindType="no" bindData="" controlType="easyui-validatebox" defaultValue="" tablename="sys_role" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1" search_compare=""/>
+          <column code="role_name" display="角色名称" width="200" length="20" format="" show="Y" send="Y" sort="Y" nullable="Y" ignore="N" edit="Y" hidden="N" readonly="N" line="N" query="Y" placeholder="" bindType="no" bindData="" controlType="easyui-validatebox" defaultValue="" tablename="sys_role" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1" search_compare=""/>
+          <column code="remark" display="备注" width="300" length="100" format="" show="N" send="Y" sort="Y" nullable="N" ignore="N" edit="Y" hidden="N" readonly="N" line="Y" query="Y" placeholder="" bindType="no" bindData="" controlType="textarea" defaultValue="" tablename="sys_role" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1" search_compare=""/>
+        </columns>
+      </legend>
+    </content>
+  </task>
+</root>

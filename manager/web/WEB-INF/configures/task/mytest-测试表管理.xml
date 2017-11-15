@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+  <task code="mytest" name="测试表管理" load-on-startup="1" isTask="N" isFirstTask="N" left_col_number="0" right_col_number="12">
+    <decision/>
+    <content>
+      <legend type="data-grid" code="mytest" name="测试表管理" rdb="Y" autoLoadingData="N" initSql="select * from mytest" entity="mytest" column_show_num="1" spaceWidth="40" titleWidth="90" inputWidth="170" winWidth="450" winHeight="240">
+        <toolbars>
+          <toolbar class="btn-primary" text="详细信息" js="detail" name="detail" visible_code="mytest_detail"/>
+          <toolbar class="btn-primary" text="添加" js="add" name="add" visible_code="mytest_add"/>
+          <toolbar class="btn-primary" text="修改" js="edit" name="edit" visible_code="mytest_edit"/>
+          <toolbar class="btn-danger" text="删除" js="del" name="del" visible_code="mytest_del"/>
+          <toolbar class="btn-danger" text="我的按钮" js="mybtn" name="mybtn" visible_code="mytest_mybtn"/>
+        </toolbars>
+        <columns>
+          <column code="id" display="id" width="100" length="32" format="" show="N" send="Y" sort="Y" nullable="Y" ignore="N" edit="Y" hidden="Y" readonly="N" line="N" query="Y" placeholder="" bindType="no" bindData="" controlType="easyui-validatebox" defaultValue="" tablename="mytest" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1" search_compare=""/>
+          <column code="test_name" display="姓名" width="200" length="100" format="" show="Y" send="Y" sort="Y" nullable="Y" ignore="N" edit="Y" hidden="N" readonly="N" line="N" query="Y" placeholder="" bindType="no" bindData="" controlType="easyui-validatebox" defaultValue="" tablename="mytest" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1" search_compare="like"/>
+          <column code="test_number" display="编号" width="200" length="100" format="" show="Y" send="Y" sort="Y" nullable="Y" ignore="N" edit="Y" hidden="N" readonly="N" line="N" query="Y" placeholder="" bindType="no" bindData="" controlType="easyui-validatebox" defaultValue="" tablename="mytest" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1" search_compare=""/>
+          <column code="sex" display="性别" width="150" length="20" format="" show="Y" send="Y" sort="Y" nullable="Y" ignore="N" edit="Y" hidden="N" readonly="N" line="N" query="Y" placeholder="" bindType="codetable" bindData="PUB_C001" controlType="easyui-combobox" defaultValue="" tablename="mytest" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1" search_compare="="/>
+        </columns>
+      </legend>
+    </content>
+  </task>
+</root>

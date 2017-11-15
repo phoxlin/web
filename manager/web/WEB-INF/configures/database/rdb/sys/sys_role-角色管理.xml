@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_role" comment="角色管理">
+  <column name="id" field="id" type="string" comment="ID" length="24" nullable="false" controlType="easyui-validatebox" input_tablename="sys_role" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare="" iskey="true" isAutoGenerate="true"/>
+  <column name="cust_name" field="cust_name" type="string" comment="客户" length="20" nullable="false" controlType="easyui-combobox" input_tablename="sys_role" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="code" field="code" type="string" comment="角色代码" length="50" nullable="false" controlType="easyui-validatebox" input_tablename="sys_role" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="role_name" field="role_name" type="string" comment="角色名称" length="20" nullable="false" controlType="easyui-numberbox" input_tablename="sys_role" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="remark" field="remark" type="text" comment="备注" length="-1" nullable="true" controlType="textarea" input_tablename="sys_role" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="PT" field="PT" type="text" comment="教练" length="-1" nullable="true" controlType="textarea" input_tablename="sys_role" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="MC" field="MC" type="text" comment="会籍" length="-1" nullable="true" controlType="textarea" input_tablename="sys_role" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="EX" field="EX" type="text" comment="主管" length="-1" nullable="true" controlType="textarea" input_tablename="sys_role" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="OP" field="OP" type="text" comment="运营" length="-1" nullable="true" controlType="textarea" input_tablename="sys_role" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+</table>

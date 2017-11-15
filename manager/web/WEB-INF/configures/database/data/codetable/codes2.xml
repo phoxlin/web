@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<data type="PUB_C002" note="是否有效" canedit="Y" ispublic="N">
+		<item code="001" note="有效" sort="1" />
+		<item code="002" note="无效" sort="2" />
+		<item code="003" note="错误" sort="3" />
+	</data>
+	<data type="GOODS_BUY" note="购买状态" canedit="Y" ispublic="Y">
+		<item code="001" note="订单" sort="1" />
+		<item code="002" note="付款" sort="2" />
+		<item code="003" note="撤销" sort="3" />
+	</data>
+	<data type="GYM_TYPE" note="会所类型" canedit="Y" ispublic="Y">
+		<item code="001" note="终身制" sort="1" />
+		<item code="002" note="年费" sort="2" />
+	</data>
+	<data type="marital_status" note="婚姻状态" canedit="Y" ispublic="Y">
+		<item code="001" note="未婚" sort="1" />
+		<item code="002" note="已婚" sort="2" />
+		<item code="003" note="保密" sort="2" />
+	</data>
+	<data type="up_size" note="上衣号码" canedit="Y" ispublic="Y">
+		<item code="001" note="S" sort="1" />
+		<item code="002" note="M" sort="2" />
+		<item code="003" note="L" sort="3" />
+		<item code="004" note="XL" sort="4" />
+		<item code="005" note="XXL" sort="5" />
+		<item code="006" note="XXXL" sort="6" />
+	</data>
+	<data type="shoe_size" note="鞋子号码" canedit="Y" ispublic="Y">
+		<item code="001" note="36" sort="1" />
+		<item code="002" note="37" sort="2" />
+		<item code="003" note="38" sort="3" />
+		<item code="004" note="39" sort="4" />
+		<item code="005" note="40" sort="5" />
+		<item code="006" note="41" sort="6" />
+		<item code="007" note="42" sort="7" />
+		<item code="008" note="43" sort="8" />
+		<item code="009" note="44" sort="9" />
+		<item code="010" note="45" sort="10" />
+		<item code="011" note="46" sort="11" />
+	</data>
+	<data type="gym_level" note="会所等级" canedit="Y" ispublic="Y">
+		<item code="1" note="1级" sort="1" />
+		<item code="2" note="2级" sort="2" />
+		<item code="3" note="3级" sort="3" />
+		<item code="4" note="4级" sort="4" />
+		<item code="5" note="5级" sort="5" />
+		<item code="6" note="6级" sort="6" />
+		<item code="7" note="7级" sort="7" />
+		<item code="8" note="8级" sort="8" />
+		<item code="9" note="9级" sort="9" />
+		<item code="10" note="10级" sort="10" />
+	</data>
+	<data type="emp_level" note="员工等级" canedit="Y" ispublic="Y">
+		<item code="1" note="1级" sort="1" />
+		<item code="2" note="2级" sort="2" />
+		<item code="3" note="3级" sort="3" />
+		<item code="4" note="4级" sort="4" />
+		<item code="5" note="5级" sort="5" />
+		<item code="6" note="6级" sort="6" />
+		<item code="7" note="7级" sort="7" />
+		<item code="8" note="8级" sort="8" />
+		<item code="9" note="9级" sort="9" />
+		<item code="10" note="10级" sort="10" />
+	</data>
+	<data type="edu" note="学历" canedit="Y" ispublic="Y">
+		<item code="1" note="专科" sort="1" />
+		<item code="2" note="本科" sort="2" />
+		<item code="3" note="研究生" sort="3" />
+		<item code="4" note="其他" sort="4" />
+	</data>
+	<data type="act_type" note="活动类型" canedit="Y" ispublic="Y">
+		<item code="1" note="满赠" sort="1" />
+		<item code="2" note="满减" sort="2" />
+	</data>
+
+
+	
+	<data type="CLASS_BUY" note="课程购买状态" canedit="Y" ispublic="N">
+		<item code="001" note="已付款" sort="1" />
+		<item code="002" note="待付款" sort="2" />
+		<item code="003" note="审核不通过" sort="3" />
+		<item code="004" note="待审核" sort="4" />
+	</data>
+
+	<data type="FLOW_TYPE" note="流水类型" canedit="Y" ispublic="N">
+		<item code="散客购票" note="散客购票" sort="1" />
+		<item code="教练端购课" note="教练端购课" sort="2" />
+		<item code="购买团课课程" note="购买团课课程" sort="3" />
+		<item code="购买私教课课程" note="购买私教课课程" sort="4" />
+		<item code="会籍成交" note="会籍成交" sort="5" />
+		<item code="购买会员卡" note="购买会员卡" sort="6" />
+		<item code="付费请假" note="付费请假" sort="7" />
+		<item code="账户充值" note="账户充值" sort="8" />
+		<item code="收银台储物柜出租" note="收银台储物柜出租" sort="9" />
+		<item code="收银台商品销售" note="收银台商品销售" sort="10" />
+		<item code="单次入场券入场" note="单次入场券入场" sort="11" />
+		<item code="天数卡入场" note="天数卡入场" sort="12" />
+		<item code="次卡入场" note="次卡入场" sort="13" />
+		<item code="时间卡入场" note="时间卡入场" sort="14" />
+		<item code="健身房购买短信" note="健身房购买短信" sort="15" />
+		<item code="收银台补卡" note="收银台补卡" sort="16" />
+		<item code="收银台发卡押金收费" note="收银台发卡押金收费" sort="17" />
+		<item code="会籍端预付定金" note="会籍端预付定金" sort="18" />
+		<item code="收银台转卡手续费" note="收银台转卡手续费" sort="19" />
+		<item code="收银台续卡" note="收银台续卡" sort="20" />
+		<item code="续卡" note="续卡" sort="21" />
+		<item code="升级" note="升级" sort="22" />
+		<item code="私课入场" note="私课入场" sort="23" />
+		<item code="储值卡入场" note="储值卡入场" sort="24" />
+	</data>
+
+	<data type="MODEL_LEVEL" note="菜单级别" canedit="Y" ispublic="N">
+		<item code="001" note="一级菜单" sort="1" />
+		<item code="002" note="二级菜单" sort="2" />
+	</data>
+	<data type="LESSON_LEVEL" note="课程等级" canedit="Y" ispublic="N">
+		<item code="1" note="一级" sort="1" />
+		<item code="2" note="二级" sort="2" />
+		<item code="3" note="三级" sort="3" />
+		<item code="4" note="四级" sort="4" />
+		<item code="5" note="五级" sort="5" />
+		<item code="6" note="六级" sort="6" />
+		<item code="7" note="七级" sort="7" />
+		<item code="8" note="八级" sort="8" />
+		<item code="9" note="九级" sort="9" />
+		<item code="10" note="十级" sort="10" />
+	</data>
+	<data type="GOOD_STATE" note="商品状态" canedit="Y" ispublic="N">
+		<item code="sale" note="在售" sort="1" />
+		<item code="close" note="停售" sort="2" />
+	</data>
+</root>

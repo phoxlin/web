@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_file" comment="系统文件">
+  <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="sys_file" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare="" iskey="true" isAutoGenerate="true"/>
+  <column name="pid" field="pid" type="string" comment="PID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="sys_file" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="fk_user_id" field="fk_user_id" type="string" comment="用户ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="sys_file" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="filename" field="filename" type="string" comment="文件名称" length="255" nullable="false" controlType="easyui-validatebox" input_tablename="sys_file" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="re_name" field="re_name" type="string" comment="重命名" length="255" nullable="false" controlType="easyui-validatebox" input_tablename="sys_file" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="file_size" field="file_size" type="string" comment="文件大小" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="sys_file" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="extension" field="extension" type="string" comment="文件后缀" length="10" nullable="false" controlType="easyui-validatebox" input_tablename="sys_file" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="hash_code" field="hash_code" type="string" comment="HASH码" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="sys_file" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="session_id" field="session_id" type="string" comment="上传回话ID" length="50" nullable="false" controlType="easyui-validatebox" input_tablename="sys_file" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="create_time" field="create_time" type="datetime" format="yyyy-MM-dd HH:mm:ss" comment="上传时间" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="sys_file" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="is_pic" field="is_pic" type="string" comment="是否图片" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="sys_file" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="width" field="width" type="string" comment="宽度" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="sys_file" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="height" field="height" type="string" comment="高度" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="sys_file" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+</table>

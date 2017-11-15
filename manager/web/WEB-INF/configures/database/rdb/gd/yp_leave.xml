@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="yp_leave" comment="会员请假">
+  <columns>
+    <column name="id" field="id" type="string" comment="ID" length="24" nullable="false" iskey="true" isAutoGenerate="true"/>
+    <column name="cust_name" field="cust_name" type="string" comment="客户" length="10" nullable="false"/>
+    <column name="gym" field="gym" type="string" comment="所属会所" length="10" nullable="false"/>
+    <column name="mem_id" field="mem_id" type="string" comment="会员ID" length="24" nullable="false"/>
+    <column name="leave_type" field="leave_type" type="string" comment="请假类型" length="20" nullable="false"/>
+    <column name="content" field="content" type="text" comment="请假内容" length="65000" nullable="false"/>
+    <column name="start_time" field="start_time" type="datetime" format="yyyy-MM-dd HH:mm:ss" comment="开始时间" nullable="false"/>
+    <column name="end_time" field="end_time" type="datetime" format="yyyy-MM-dd HH:mm:ss" comment="结束时间" nullable="false"/>
+    <column name="flow_num" field="flow_num" type="long" comment="流水号" nullable="false"/>
+    <column name="flow_table_name" field="flow_table_name" type="string" comment="流水表名" length="20" nullable="false"/>
+    <column name="state" field="state" type="string" comment="状态" length="20" nullable="false"/>
+    <column name="create_time" field="create_time" type="datetime" comment="创建时间" nullable="true"/>
+    <column name="resume_time" field="resume_time" type="datetime" comment="销假时间" nullable="true"/>
+  </columns>
+</table>

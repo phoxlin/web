@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<data type="BMX_ORDER_STATE" note="订单状态" canedit="Y" ispublic="N">
+		<item code="CREATE" note="创建" sort="1" />
+		<item code="START" note="开始计费" sort="2" />
+		<item code="WAIT" note="等待" sort="3" />
+		<item code="FINISH" note="完成" sort="4" />
+		<item code="CANCEL" note="取消" sort="5" />
+	</data>
+</root>

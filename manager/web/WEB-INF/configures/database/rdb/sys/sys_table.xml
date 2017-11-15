@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_table">
+  <columns>
+    <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" iskey="true" isAutoGenerate="true"/>
+    <column name="table_code" field="table_code" type="string" comment="表代码" length="30" nullable="false"/>
+    <column name="table_name" field="table_name" type="string" comment="表名" length="100" nullable="true"/>
+    <column name="xml_field_name" field="xml_field_name" type="string" comment="程序字段名" length="50" nullable="false"/>
+    <column name="db_field_name" field="db_field_name" type="string" comment="数据库字段名" length="50" nullable="false"/>
+    <column name="db_field_comment" field="db_field_comment" type="string" comment="字段备注" length="100" nullable="true"/>
+    <column name="c_type" field="c_type" type="string" comment="类型" length="20" nullable="false"/>
+    <column name="nullable" field="nullable" type="string" comment="可以为空" length="20" nullable="false"/>
+    <column name="length" field="length" type="long" comment="长度" nullable="false"/>
+    <column name="is_key" field="is_key" type="string" comment="是否主键" length="20" nullable="false"/>
+    <column name="is_auto_gen" field="is_auto_gen" type="string" comment="是否自动产生" length="20" nullable="false"/>
+    <column name="sort" field="sort" type="long" comment="排序" nullable="false"/>
+  </columns>
+</table>

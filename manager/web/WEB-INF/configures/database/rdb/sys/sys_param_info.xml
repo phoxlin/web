@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_param_info">
+  <columns>
+    <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" iskey="true" isAutoGenerate="true"/>
+    <column name="param_name" field="param_name" type="string" comment="参数名" length="100" nullable="false"/>
+    <column name="param_value" field="param_value" type="string" comment="参数值" length="4000" nullable="false"/>
+    <column name="param_type" field="param_type" type="string" comment="参数类型" length="20" nullable="false"/>
+  </columns>
+</table>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_task_designer" comment="系统工作流设计">
+  <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder="" iskey="true" isAutoGenerate="true"/>
+  <column name="task_code" field="task_code" type="string" comment="task_code" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="task_name" field="task_name" type="string" comment="task_name" length="50" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="istask" field="istask" type="string" comment="isTask" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="isfirsttask" field="isfirsttask" type="string" comment="isFirstTask" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="layoutdata" field="layoutdata" type="text" comment="layoutdata" length="-1" nullable="false" controlType="editor" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="createtime" field="createtime" type="datetime" comment="createtime" nullable="false" controlType="easyui-datetimebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+</table>

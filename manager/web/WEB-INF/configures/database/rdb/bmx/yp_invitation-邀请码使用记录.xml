@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="yp_invitation" comment="邀请码使用记录">
+  <column name="id" field="id" type="string" comment="id" length="24" nullable="false" controltype="easyui-validatebox" input_tablename="yp_invitation" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare="" iskey="true" isAutoGenerate="true"/>
+  <column name="user_id" field="user_id" type="string" comment="使用人" length="20" nullable="false" controltype="easyui-validatebox" input_tablename="yp_invitation" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="code" field="code" type="string" comment="邀请码" length="20" nullable="false" controltype="easyui-validatebox" input_tablename="yp_invitation" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="op_time" field="op_time" type="datetime" format="yyyy-MM-dd HH:mm:ss" comment="创建时间" nullable="false" controltype="easyui-datetimebox" input_tablename="yp_invitation" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+  <column name="out_trade_no" field="out_trade_no" type="string" comment="订单号" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="yp_invitation" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" search_compare=""/>
+</table>

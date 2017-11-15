@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_page">
+  <columns>
+    <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" iskey="true" isAutoGenerate="true"/>
+    <column name="fk_menu_code" field="fk_menu_code" type="string" comment="菜单代码" length="50" nullable="false"/>
+    <column name="has_paging" field="has_paging" type="string" comment="是否分页" length="20" nullable="false"/>
+    <column name="page_size" field="page_size" type="long" comment="每页信息数" nullable="false"/>
+    <column name="page_model" field="page_model" type="string" comment="样式模板" length="50" nullable="false"/>
+    <column name="export_excel" field="export_excel" type="string" comment="是否导出Excel" length="20" nullable="false"/>
+    <column name="has_refresh" field="has_refresh" type="string" comment="是否有刷新按钮" length="20" nullable="false"/>
+    <column name="has_calc" field="has_calc" type="string" comment="是否需要计算" length="20" nullable="false"/>
+    <column name="is_win_open" field="is_win_open" type="string" comment="弹框编辑" length="20" nullable="false"/>
+    <column name="win_width" field="win_width" type="long" comment="宽度" nullable="false"/>
+    <column name="win_height" field="win_height" type="long" comment="高度" nullable="false"/>
+    <column name="show_col_num" field="show_col_num" type="long" comment="显示列数" nullable="false"/>
+    <column name="title_width" field="title_width" type="long" comment="标题宽度" nullable="false"/>
+    <column name="input_width" field="input_width" type="long" comment="输入框宽度" nullable="false"/>
+    <column name="space_width" field="space_width" type="long" comment="空白宽度" nullable="false"/>
+    <column name="java_class" field="java_class" type="string" comment="Java钩子" length="200" nullable="true"/>
+    <column name="js_method" field="js_method" type="string" comment="JS钩子" length="200" nullable="true"/>
+    <column name="action_package" field="action_package" type="string" comment="控制器package" length="400" nullable="false"/>
+    <column name="jsp_path" field="jsp_path" type="string" comment="JSP路径" length="400" nullable="false"/>
+    <column name="page_sql" field="page_sql" type="string" comment="PAGE_SQL" length="1000" nullable="true"/>
+  </columns>
+</table>

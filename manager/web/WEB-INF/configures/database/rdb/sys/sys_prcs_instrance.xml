@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_prcs_instrance" comment="流程实例">
+  <columns>
+    <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" iskey="true" isAutoGenerate="true"/>
+    <column name="pid" field="pid" type="string" comment="PID" length="32" nullable="false"/>
+    <column name="appid" field="appid" type="string" comment="项目ID" length="50" nullable="false"/>
+    <column name="process_code" field="process_code" type="string" comment="工作流编码" length="100" nullable="false"/>
+    <column name="process_name" field="process_name" type="string" comment="工作流名称" length="100" nullable="false"/>
+    <column name="version" field="version" type="long" comment="版本号" nullable="false"/>
+    <column name="prcs_key" field="prcs_key" type="string" comment="流程KEY" length="100" nullable="false"/>
+    <column name="fk_user_id" field="fk_user_id" type="string" comment="启动人ID" length="32" nullable="false"/>
+    <column name="create_time" field="create_time" type="datetime" format="yyyy-MM-dd HH:mm:ss" comment="启动时间" nullable="false"/>
+    <column name="log_id" field="log_id" type="string" comment="日志ID" length="32" nullable="false"/>
+    <column name="state" field="state" type="string" comment="状态" length="20" nullable="false"/>
+  </columns>
+</table>

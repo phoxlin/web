@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_user">
+  <columns>
+    <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" iskey="true" isAutoGenerate="true"/>
+    <column name="login_name" field="login_name" type="string" comment="登录名" length="50" nullable="false"/>
+    <column name="user_name" field="user_name" type="string" comment="用户名" length="50" nullable="false"/>
+    <column name="pwd" field="pwd" type="string" comment="密码" length="50" nullable="false"/>
+    <column name="fk_pid" field="fk_pid" type="string" comment="领导" length="32" nullable="false"/>
+    <column name="fk_dept_code" field="fk_dept_code" type="string" comment="部门代码" length="50" nullable="false"/>
+    <column name="org_code" field="org_code" type="string" comment="组织机构" length="50" nullable="false"/>
+    <column name="area_code" field="area_code" type="string" comment="区域代码" length="20" nullable="true"/>
+    <column name="phone" field="phone" type="string" comment="联系电话" length="20" nullable="true"/>
+    <column name="mobile_phone" field="mobile_phone" type="string" comment="手机" length="20" nullable="true"/>
+    <column name="qq" field="qq" type="string" comment="QQ" length="100" nullable="true"/>
+    <column name="email" field="email" type="string" comment="EMail" length="100" nullable="true"/>
+    <column name="addr" field="addr" type="string" comment="联系地址" length="200" nullable="true"/>
+    <column name="create_time" field="create_time" type="date" format="yyyy-MM-dd" comment="注册时间" nullable="false"/>
+    <column name="is_active" field="is_active" type="string" comment="是否激活" length="20" nullable="false"/>
+    <column name="active_time" field="active_time" type="date" format="yyyy-MM-dd" comment="激活时间" nullable="true"/>
+    <column name="status" field="status" type="string" comment="状态" length="20" nullable="false"/>
+  </columns>
+</table>

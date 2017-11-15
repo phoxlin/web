@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_org">
+  <columns>
+    <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" iskey="true" isAutoGenerate="true"/>
+    <column name="org_code" field="org_code" type="string" comment="组织代码" length="50" nullable="false"/>
+    <column name="org_name" field="org_name" type="string" comment="组织名称" length="100" nullable="false"/>
+    <column name="fk_p_code" field="fk_p_code" type="string" comment="上级组织" length="50" nullable="false"/>
+    <column name="remark" field="remark" type="string" comment="组织描述" length="400" nullable="true"/>
+  </columns>
+</table>

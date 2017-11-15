@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table name="sys_prcs_version" comment="工作流版本信息">
+	<columns>
+		<column name="id" field="id" type="string" comment="ID" length="32" nullable="false" iskey="true" isAutoGenerate="true" />
+		<column name="appid" field="appid" type="string" comment="appid" length="50" nullable="false" />
+		<column name="hashcode" field="hashcode" type="string" comment="hashcode" length="50" nullable="false" />
+		<column name="prcs_name" field="prcs_name" type="string" comment="name" length="100" nullable="false" />
+		<column name="prcs_version" field="prcs_version" type="int" comment="version" nullable="false" />
+		<column name="prcs_key" field="prcs_key" type="string" comment="key" length="100" nullable="false" />
+	</columns>
+</table>

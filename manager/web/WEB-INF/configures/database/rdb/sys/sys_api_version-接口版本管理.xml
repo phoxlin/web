@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_api_version" comment="接口版本管理">
+  <column name="id" field="id" type="string" comment="ID" length="24" nullable="false" controlType="easyui-validatebox" input_tablename="sys_api_version" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="ID" search_compare="" iskey="true" isAutoGenerate="true"/>
+  <column name="interface_id" field="interface_id" type="string" comment="接口ID" length="24" nullable="false" controlType="easyui-validatebox" input_tablename="sys_api_version" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="接口ID" search_compare=""/>
+  <column name="version" field="version" type="string" comment="版本号" length="24" nullable="false" controlType="easyui-validatebox" input_tablename="sys_api_version" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="版本号" search_compare=""/>
+  <column name="update_time" field="update_time" type="datetime" format="yyyy-MM-dd HH:mm:ss" comment="更新时间" nullable="false" controlType="easyui-datetimebox" input_tablename="sys_api_version" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="更新时间" search_compare=""/>
+  <column name="remark" field="remark" type="text" comment="更新说明" length="65000" nullable="false" controlType="textarea" input_tablename="sys_api_version" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="更新说明" search_compare=""/>
+  <column name="op_id" field="op_id" type="string" comment="操作人" length="24" nullable="false" controlType="easyui-validatebox" input_tablename="sys_api_version" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="操作人" search_compare=""/>
+</table>

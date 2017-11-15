@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_db_designer" comment="系统表管理">
+  <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="sys_log" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="" iskey="true" isAutoGenerate="true"/>
+  <column name="tablecode" field="tablecode" type="string" comment="表代码" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="sys_log" width="100" min="0" max="10000" decamial="0" otherset="" placeholder=""/>
+  <column name="tablename" field="tablename" type="string" comment="表名称" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="sys_log" width="100" min="0" max="10000" decamial="0" otherset="" placeholder=""/>
+  <column name="tabletype" field="tabletype" type="string" comment="表类型" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="sys_log" width="100" min="0" max="10000" decamial="0" otherset="" placeholder=""/>
+  <column name="layoutdata" field="layoutdata" type="text" comment="内容" length="-1" nullable="false" controlType="editor" input_tablename="sys_log" width="100" min="0" max="10000" decamial="0" otherset="" placeholder=""/>
+  <column name="createtime" field="createtime" type="datetime" comment="建表日期" nullable="false" controlType="easyui-datetimebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+</table>

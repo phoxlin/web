@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<data type="PUB_S001" note="验证类型">
+		<item code="code" note="代码验证" sort="1" />
+		<item code="url" note="页面跳转" sort="2" />
+	</data>
+	<data type="PUB_S002" note="终端类型">
+		<item code="ios" note="苹果手机" sort="1" />
+		<item code="android" note="安卓手机" sort="2" />
+		<item code="pc" note="电脑端" sort="3" />
+		<item code="web" note="网页端" sort="4" />
+	</data>
+	<data type="PUB_S003" note="是否在线">
+		<item code="signed" note="验证" sort="1" />
+		<item code="sign-failed" note="验证失败" sort="2" />
+		<item code="online" note="在线" sort="3" />
+		<item code="offline" note="离线" sort="4" />
+	</data>
+	<data type="PUB_S004" note="消息接收类型">
+		<item code="all" note="广播" sort="1" remark="全体人员都需要接收，tag内容为{appId}，appId内容为all这表示所有项目的全体人员" />
+		<item code="c2c" note="一对一" sort="2" remark="指定人员ID进行发送消息，tag内容为{appId,id:[]}" />
+		<item code="c2b" note="一对组" sort="4" remark="指定角色代码进行发送消息，tag内容为{appId,id:[]}, id为对应的用户role" />
+		<item code="c2g" note="群组聊天" sort="6" remark="指定聊天群组进行发送消息，tag内容为{appId,id:[]}" />
+	</data>
+	<data type="PUB_S005" note="消息类型">
+		<item code="001" note="聊天消息" sort="1" remark="" />
+		<item code="002" note="系统消息" sort="2" remark="" />
+		<item code="003" note="付款消息" sort="3" remark="" />
+		<item code="s_ats" note="平均移交" sort="4" remark="会籍--资料移交(经理)--平均移交(SalesAction.averageToSales)" />
+		<item code="s_grab" note="抢单消息" sort="5" remark="会籍--公共池--抢单(SalesAction.grabUser)" />
+		<item code="s_exam" note="成交待审核" sort="6" remark="会籍--客户跟踪--成交->待审核(SalesAction.deal)" />
+		<item code="s_deal" note="成交成功" sort="7" remark="会籍--客户跟踪--成交->成功(SalesAction.deal)" />
+		<item code="s_exam_s" note="审核通过" sort="8" remark="会籍(经理)--审核->通过(SalesAction.examineDeal)" />
+		<item code="s_exam_f" note="审核未通过" sort="9" remark="会籍(经理)--审核->不通过(SalesAction.examineDeal)" />
+		<item code="s_cpo" note="跟单" sort="10" remark="会籍--客户跟踪--跟单(SalesAction.customerFollow)" />
+		<item code="s_tocpo" note="进入跟单" sort="10" remark="会籍--客户跟踪--跟单(SalesAction.customerFollow)" />
+		<item code="s_add" note="添加会员" sort="11" remark="会籍--资料登记(UserAction.frontAdd)" />
+		<item code="s_salesBackPreMoney" note="预付费退款申请" sort="11" remark="会籍--预付费退款申请(SalesAction.salesBackPreMoney)" />
+		<item code="s_cgsales" note="资料移交" sort="12" remark="会籍(经理)--资料移交--指定移交(UserAction.changeSales)" />
+
+		<item code="f_req" note="好友添加请求" sort="12" remark="聊天--添加好友(ChatMessageAction)" />
+		<item code="f_add" note="成功添加好友" sort="12" remark="聊天--添加好友(ChatMessageAction)" />
+		
+		<item code="c_sclass_free" note="教练邀请私课体验消息" sort="13" remark="" />
+		<item code="c_order_sclass" note="教练收到私课预约消息" sort="13" remark="" />
+		<item code="c_order_sclass_free" note="教练收到免费私课体验消息" sort="13" remark="" />
+
+		<item code="c_register" note="教练-会员登记" sort="13" remark="教练--登记客户资料(CoachAction.registerMember)" />
+		<item code="c_gendan" note="教练-跟单" sort="14" remark="教练--客户跟踪--意向客户--跟单(CoachAction.coachAddFollw)" />
+		<item code="c_apptc" note="教练（经理）-指定移交" sort="15" remark="教练--资料移交--指定移交(CoachAction.appointToCoach)" />
+		<item code="c_avgtc" note="教练（经理）-平均移交" sort="16" remark="教练--资料移交--平均移交(CoachAction.averageToCoach)" />
+		<item code="c_deal" note="教练-成交" sort="17" remark="教练--客户跟踪--意向客户--成交(CoachAction.coachAddDeal)" />
+	</data>
+	<data type="PUB_S006" note="消息状态">
+		<item code="send" note="发送成功" sort="1" />
+		<item code="recv" note="服务端收到消息" sort="2" />
+		<item code="procs" note="处理中" sort="3" />
+		<item code="procd" note="已处理" sort="4" />
+	</data>
+	<data type="PUB_S010" note="工作流实例状态">
+		<item code="started" note="实例开始" sort="1" />
+		<item code="end" note="实例结束" sort="2" />
+		<item code="end-error" note="错误结束" sort="3" />
+		<item code="end-cancel" note="取消结束" sort="4" />
+	</data>
+	<data type="PUB_S011" note="工作流任务状态">
+		<item code="INITED" note="初始化" sort="1" />
+		<item code="ACCEPTED" note="确认接收" sort="2" />
+		<item code="TASKVIEW" note="查看任务" sort="3" />
+		<item code="DRAFT" note="草稿保存" sort="4" />
+		<item code="TIMEOUT" note="时间超时" sort="5" />
+		<item code="REJECTED" note="任务驳回" sort="6" />
+		<item code="WITHDRAW" note="回退任务" sort="7" />
+		<item code="TRANSFER" note="流转中" sort="8" />
+		<item code="TRANSFERED" note="成功流转" sort="9" />
+		
+	</data>
+</root>

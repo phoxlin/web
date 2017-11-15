@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_task_step" comment="流程步骤表">
+  <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder="" iskey="true" isAutoGenerate="true"/>
+  <column name="instance_no" field="instance_no" type="string" comment="实例编号" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="instance_id" field="instance_id" type="string" comment="实例ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="taskcode" field="taskcode" type="string" comment="当前流程代码" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="taskname" field="taskname" type="string" comment="当前流程名称" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="prev_taskcode" field="prev_taskcode" type="string" comment="上一步代码" length="100" nullable="true" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="next_taskcode" field="next_taskcode" type="string" comment="下一步代码" length="100" nullable="true" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="userid" field="userid" type="string" comment="操作人ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="op_time" field="op_time" type="datetime" comment="操作时间" nullable="false" controlType="easyui-datetimebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="state" field="state" type="string" comment="状态" length="20" nullable="false" controlType="easyui-combobox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="remark" field="remark" type="string" comment="备注" length="4000" nullable="true" controlType="textarea" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+</table>

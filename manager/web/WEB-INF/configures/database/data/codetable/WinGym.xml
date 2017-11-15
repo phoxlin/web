@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<data type="PUB_W001" note="消费方式" canedit="Y" ispublic="N">
+		<item code="001" note="免费" sort="1" />
+		<item code="002" note="单次" sort="2" default="Y" />
+	</data>
+</root>

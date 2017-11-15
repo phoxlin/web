@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+  <task code="sys_db_designer" name="系统表管理" load-on-startup="1" isTask="N" isFirstTask="N">
+    <decision/>
+    <content>
+      <legend type="data-grid" code="sys_db_designer" name="系统表管理" rdb="Y" autoLoadingData="N" initSql="select * from sys_db_designer" entity="sys_db_designer" column_show_num="2" spaceWidth="40" titleWidth="90" inputWidth="170" winWidth="700" winHeight="500">
+        <toolbars>
+          <toolbar class="btn-primary" text="详细信息" js="detail" name="detail" visible_code="sys_db_designer_detail"/>
+          <toolbar class="btn-primary" text="添加" js="add" name="add" visible_code="sys_db_designer_add"/>
+          <toolbar class="btn-primary" text="修改" js="edit" name="edit" visible_code="sys_db_designer_edit"/>
+          <toolbar class="btn-danger" text="删除" js="del" name="del" visible_code="sys_db_designer_del"/>
+        </toolbars>
+        <columns>
+          <column code="id" display="ID" width="100" length="32" format="" show="Y" send="Y" sort="Y" nullable="Y" ignore="N" edit="Y" hidden="N" readonly="N" line="N" query="N" placeholder="" bindType="no" bindData="" controlType="easyui-validatebox" defaultValue="" tablename="sys_log" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1"/>
+          <column code="tablecode" display="表代码" width="100" length="20" format="" show="Y" send="Y" sort="Y" nullable="Y" ignore="N" edit="Y" hidden="N" readonly="N" line="N" query="N" placeholder="" bindType="no" bindData="" controlType="easyui-validatebox" defaultValue="" tablename="sys_log" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1"/>
+          <column code="tablename" display="表名称" width="100" length="20" format="" show="Y" send="Y" sort="Y" nullable="Y" ignore="N" edit="Y" hidden="N" readonly="N" line="N" query="N" placeholder="" bindType="no" bindData="" controlType="easyui-validatebox" defaultValue="" tablename="sys_log" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1"/>
+          <column code="tabletype" display="表类型" width="100" length="20" format="" show="Y" send="Y" sort="Y" nullable="Y" ignore="N" edit="Y" hidden="N" readonly="N" line="N" query="N" placeholder="" bindType="no" bindData="" controlType="easyui-validatebox" defaultValue="" tablename="sys_log" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1"/>
+          <column code="layoutdata" display="内容" width="100" length="100" format="" show="Y" send="Y" sort="Y" nullable="Y" ignore="N" edit="Y" hidden="N" readonly="N" line="N" query="N" placeholder="" bindType="no" bindData="" controlType="editor" defaultValue="" tablename="sys_log" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1"/>
+          <column code="createtime" display="建表日期" width="100" length="100" format="" show="Y" send="Y" sort="Y" nullable="Y" ignore="N" edit="Y" hidden="N" readonly="N" line="N" query="N" placeholder="" bindType="no" bindData="" controlType="easyui-datetimebox" defaultValue="" tablename="sys_db_designer" decamial="0" min="0" max="10000" otherset="" col_class="" col_style="" cols="6" labelCols="4" fieldCols="6" inputHeight="50" inputSpanCol="1"/>
+        </columns>
+      </legend>
+    </content>
+  </task>
+</root>

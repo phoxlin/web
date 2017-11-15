@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<data type="MEM_NATURE_DESC" note="性格描述" canedit="Y" ispublic="Y">
+		<item code="001" note="健谈" sort="1" />
+		<item code="002" note="寡言" sort="2" />
+		<item code="003" note="理性" sort="3" />
+		<item code="004" note="好爽" sort="4" />
+		<item code="005" note="优柔" sort="5" />
+		<item code="006" note="婆妈" sort="6" />
+		<item code="007" note="城府" sort="7" />
+		<item code="008" note="暴躁" sort="8" />
+	</data>
+	<data type="MEM_HEALTH_LEVEL" note="健康状况" canedit="Y" ispublic="Y">
+		<item code="001" note="良好" sort="1" />
+		<item code="002" note="一般" sort="2" />
+		<item code="003" note="亚健康" sort="3" />
+		<item code="004" note="差" sort="4" />
+	</data>
+	<data type="MEM_BODY_TYPE" note="体型" canedit="Y" ispublic="Y">
+		<item code="001" note="匀称" sort="1" />
+		<item code="002" note="健壮" sort="2" />
+		<item code="003" note="苗条" sort="3" />
+		<item code="004" note="肥胖" sort="4" />
+		<item code="005" note="瘦弱" sort="5" />
+	</data>
+	<data type="MEM_FITNESS_PURPOSE" note="健身目的" canedit="Y" ispublic="Y">
+		<item code="001" note="爱好" sort="1" />
+		<item code="002" note="增加力量" sort="2" />
+		<item code="003" note="增进柔韧性" sort="3" />
+		<item code="004" note="减体重和脂肪" sort="4" />
+		<item code="005" note="训练肌肉" sort="5" />
+		<item code="006" note="减腹" sort="6" />
+		<item code="007" note="改善饮食习惯" sort="7" />
+		<item code="008" note="增加体重和肌肉" sort="8" />
+		<item code="009" note="增加能量" sort="9" />
+		<item code="010" note="停止吸烟/饮酒" sort="10" />
+		<item code="011" note="预防损伤" sort="11" />
+		<item code="012" note="伤后康复" sort="12" />
+		<item code="013" note="提高心血管技能" sort="13" />
+		<item code="014" note="减少压力" sort="14" />
+		<item code="015" note="其他" sort="15" />
+	</data>
+
+	<data type="MEM_TRAIN_PART" note="想练部位" canedit="Y" ispublic="Y">
+		<item code="001" note="肚子" sort="1" />
+		<item code="002" note="大腿" sort="2" />
+		<item code="003" note="胳膊" sort="3" />
+		<item code="004" note="胸部" sort="4" />
+		<item code="005" note="其他" sort="5" />
+	</data>
+
+	<data type="MEM_CUSTOMER_TYPE" note="客户类型" canedit="Y" ispublic="Y">
+		<item code="001" note="派票" sort="1" />
+		<item code="002" note="来访" sort="2" />
+		<item code="003" note="会员介绍" sort="3" />
+		<item code="004" note="其他" sort="4" />
+	</data>
+
+	<data type="MEM_LIFE_HABIT" note="生活及饮食习惯" canedit="Y" ispublic="Y">
+		<item code="001" note="正常" sort="1" />
+		<item code="002" note="无规律" sort="2" />
+		<item code="003" note="不吃早餐" sort="3" />
+		<item code="004" note="不吃午餐" sort="4" />
+		<item code="005" note="经常吃夜宵" sort="5" />
+		<item code="006" note="过量饮酒" sort="6" />
+		<item code="007" note="过量抽烟" sort="7" />
+		<item code="008" note="过量引用咖啡" sort="8" />
+		<item code="009" note="经常熬夜" sort="9" />
+		<item code="010" note="经常出差" sort="10" />
+		<item code="011" note="其他" sort="11" />
+
+	</data>
+
+	<data type="MEM_DIET_HOBBY" note="日常饮食爱好" canedit="Y" ispublic="Y">
+		<item code="001" note="甜食" sort="1" />
+		<item code="002" note="零食" sort="2" />
+		<item code="003" note="油炸食品" sort="3" />
+		<item code="004" note="烤制食品" sort="4" />
+		<item code="005" note="膨化食品" sort="5" />
+		<item code="006" note="肉类" sort="6" />
+		<item code="007" note="鱼类" sort="7" />
+		<item code="008" note="蔬菜" sort="8" />
+		<item code="009" note="水果" sort="9" />
+	</data>
+
+	<data type="MEM_LIFE_STATE" note="情绪与压力" canedit="Y" ispublic="Y">
+		<item code="001" note="非常轻松" sort="1" />
+		<item code="002" note="中度紧张" sort="2" />
+		<item code="003" note="非常紧张" sort="3" />
+		<item code="004" note="其他" sort="4" />
+	</data>
+
+	<data type="MEM_SPORT_HISTORY" note="运动状况史" canedit="Y" ispublic="Y">
+		<item code="001" note="无运动" sort="1" />
+		<item code="002" note="有规律的运动" sort="2" />
+		<item code="003" note="习惯于久坐" sort="3" />
+		<item code="004" note="轻微活动" sort="4" />
+		<item code="005" note="中等程度的活动" sort="5" />
+	</data>
+
+	<data type="MEM_TREATMENT_HISTORY" note="医疗史" canedit="Y"
+		ispublic="Y">
+		<item code="001" note="心梗发作,冠动脉搭桥手术或心脏手术" sort="1" />
+		<item code="002" note="糖尿病" sort="2" />
+		<item code="003" note="(脑)卒中" sort="3" />
+		<item code="004" note="外周血管疾病" sort="4" />
+		<item code="005" note="踝部肿胀" sort="5" />
+		<item code="006" note="静脉炎,静脉栓塞" sort="6" />
+		<item code="007" note="风湿关节炎" sort="7" />
+		<item code="008" note="高血压" sort="8" />
+		<item code="009" note="低血压" sort="9" />
+		<item code="010" note="特异的,跳跃性或快速的心跳心悸" sort="10" />
+		<item code="011" note="胸部不适" sort="11" />
+		<item code="012" note="心脏杂音" sort="12" />
+		<item code="013" note="手脚冰冷" sort="13" />
+		<item code="014" note="不寻常的呼吸急促" sort="14" />
+		<item code="015" note="头晕目眩或晕厥" sort="15" />
+		<item code="016" note="贫血" sort="16" />
+		<item code="017" note="疝气" sort="17" />
+		<item code="018" note="癫痫,癫痫发作" sort="18" />
+		<item code="019" note="疲劳缺乏能量" sort="19" />
+		<item code="020" note="肺气肿" sort="20" />
+		<item code="021" note="支气管炎" sort="21" />
+		<item code="022" note="慢性的,反复发作的头痛" sort="22" />
+		<item code="023" note="滑囊炎" sort="23" />
+		<item code="024" note="增加的焦虑和沮丧" sort="24" />
+		<item code="025" note="情绪不稳定" sort="25" />
+		<item code="026" note="关节炎" sort="26" />
+		<item code="027" note="入睡困难" sort="27" />
+		<item code="028" note="偏头痛或反复发作的头痛·" sort="28" />
+		<item code="029" note="肿胀,僵硬或疼痛的关节" sort="29" />
+		<item code="030" note="其他" sort="30" />
+	</data>
+
+	<data type="MEM_FAMILY_DISEASE_HISTORY" note="家族疾病史" canedit="Y"
+		ispublic="Y">
+		<item code="001" note="心梗" sort="1" />
+		<item code="002" note="脑卒中" sort="2" />
+		<item code="003" note="冠动脉疾病" sort="3" />
+		<item code="004" note="充血性心脏" sort="4" />
+		<item code="005" note="高血压" sort="5" />
+		<item code="006" note="糖尿病" sort="6" />
+		<item code="007" note="冠动脉手术" sort="7" />
+		<item code="008" note="高胆固醇" sort="8" />
+		<item code="009" note="其他" sort="9" />
+	</data>
+	<data type="MEM_BODY_STATE" note="身体状况" canedit="Y" ispublic="Y">
+		<item code="001" note="正常" sort="1" />
+		<item code="002" note="有身体损伤,背痛或关节损伤" sort="2" />
+		<item code="003" note="现在或最近有过怀孕" sort="3" />
+		<item code="004" note="其他" sort="4" />
+	</data>
+
+	<data type="MEM_FITNESS_TIME" note="健身时段" canedit="Y" ispublic="Y">
+		<item code="001" note="清晨(6-9)" sort="1" />
+		<item code="002" note="中午(11-14)" sort="2" />
+		<item code="003" note="下午(15-18)" sort="3" />
+		<item code="004" note="傍晚(19-22)" sort="4" />
+		<item code="005" note="凌晨(23-01)" sort="5" />
+	</data>
+</root>

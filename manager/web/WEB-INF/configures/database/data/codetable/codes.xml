@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<data type="PUB_C001" note="是否" canedit="Y" ispublic="N">
+		<item code="Y" note="是" sort="1" />
+		<item code="N" note="否" sort="2" />
+	</data>
+	<data type="PUB_C001_1" note="是否2" canedit="Y" ispublic="N">
+		<item code="Y" note="是" sort="1" />
+		<item code="N" note="否" sort="2" />
+	</data>
+	<data type="PUB_C002" note="是否有效" canedit="Y" ispublic="N">
+		<item code="001" note="有效" sort="1" />
+		<item code="002" note="无效" sort="2" />
+		<item code="003" note="错误" sort="3" />
+	</data>
+	<data type="PUB_C003" note="真假" canedit="Y" ispublic="Y">
+		<item code="true" note="是" sort="1" />
+		<item code="false" note="否" sort="2" />
+	</data>
+	<data type="PUB_C004" note="字段类型" canedit="Y" ispublic="Y">
+		<item code="string" note="字符型" sort="1" />
+		<item code="datetime" note="日期时间型" sort="2" />
+		<item code="date" note="日期型" sort="3" />
+		<item code="long" note="长整形" sort="4" />
+		<item code="float" note="浮点型" sort="5" />
+	</data>
+	<data type="PUB_C005" note="按钮类型" canedit="Y" ispublic="Y">
+		<item code="button" note="按钮" sort="1" />
+	</data>
+	<data type="PUB_C006" note="排列方向" canedit="Y" ispublic="Y">
+		<item code="left" note="左" sort="1" />
+		<item code="right" note="右" sort="2" />
+	</data>
+	<data type="PUB_C007" note="绑定类型" canedit="Y" ispublic="Y">
+		<item code="codetable" note="一般码表" sort="1" />
+		<item code="treecodetable" note="树形码表" sort="2" />
+		<item code="sql" note="sql语句" sort="3" />
+	</data>
+	<data type="PUB_C008" note="搜索比较方法" canedit="Y" ispublic="Y">
+		<item code="=" note="=" sort="1" />
+		<item code="like" note="like" sort="2" />
+		<item code="&gt;" note="&gt;" sort="3" />
+		<item code="&lt;" note="&lt;" sort="4" />
+		<item code="&gt;=" note="&gt;=" sort="5" />
+		<item code="&lt;=" note="&lt;=" sort="6" />
+	</data>
+	<data type="PUB_C009" note="显示类型" canedit="Y" ispublic="Y">
+		<item code="validatebox" note="单行输入框" sort="0" />
+		<item code="password" note="密码输入框" sort="1" />
+		<item code="numberbox" note="数字输入框" sort="2" />
+		<item code="datetimebox" note="日期时间控件" sort="3" />
+		<item code="datebox" note="日期控件" sort="4" />
+		<item code="uploadFile" note="文件上传控件" sort="5" />
+		<item code="area_text" note="文本编辑框" sort="6" />
+		<item code="editor" note="富文本编辑框" sort="7" />
+		<item code="select" note="下拉框" sort="10" />
+		<item code="multiSelect" note="多选下拉框" sort="11" />
+		<item code="selectBySql" note="下拉框SQL" sort="12" />
+		<item code="multiSelectBySql" note="多选下拉框SQL" sort="13" />
+		<item code="tree" note="树形" sort="14" />
+		<item code="multiTree" note="多选树形" sort="15" />
+		<item code="linkedTree" note="关联父元素树形" sort="17" />
+		<item code="treeBySql" note="树形SQL" sort="18" />
+		<item code="multiTreeBySql" note="多选树形SQL" sort="19" />
+		<item code="multiLeafTreeBySql" note="多选叶子树形SQL" sort="20" />
+		<item code="linkedTreeBySql" note="关联父元素树形SQL" sort="21" />
+		<item code="leafTreeBySql" note="叶子树形SQL" sort="22" />
+	</data>
+	<data type="PUB_C010" note="模板" canedit="Y" ispublic="Y">
+		<item code="default" note="默认" sort="1" />
+	</data>
+	<data type="PUB_C011" note="星期码表" canedit="Y" ispublic="N">
+		<item code="000" note="星期天" sort="1" />
+		<item code="001" note="星期一" sort="2" />
+		<item code="002" note="星期二" sort="3" />
+		<item code="003" note="星期三" sort="4" />
+		<item code="004" note="星期四" sort="5" />
+		<item code="005" note="星期五" sort="6" />
+		<item code="006" note="星期六" sort="7" />
+	</data>
+	<data type="PUB_C012" note="日期码表" canedit="Y" ispublic="N">
+		<item code="001" note="1日" sort="1" />
+		<item code="002" note="2日" sort="2" />
+		<item code="003" note="3日" sort="3" />
+		<item code="004" note="4日" sort="4" />
+		<item code="005" note="5日" sort="5" />
+		<item code="006" note="6日" sort="6" />
+		<item code="007" note="7日" sort="7" />
+		<item code="008" note="8日" sort="8" />
+		<item code="009" note="9日" sort="9" />
+		<item code="010" note="10日" sort="10" />
+		<item code="011" note="11日" sort="11" />
+	</data>
+	<data type="PUB_C013" note="月份码表" canedit="Y" ispublic="N">
+		<item code="001" note="一月" sort="1" />
+		<item code="002" note="二月" sort="2" />
+		<item code="003" note="三月" sort="3" />
+		<item code="004" note="四月" sort="4" />
+		<item code="005" note="五月" sort="5" />
+		<item code="006" note="六月" sort="6" />
+		<item code="007" note="七月" sort="7" />
+		<item code="008" note="八月" sort="8" />
+		<item code="009" note="九月" sort="9" />
+		<item code="010" note="十月" sort="10" />
+		<item code="011" note="十一月" sort="11" />
+		<item code="012" note="十二月" sort="12" />
+	</data>
+	<data type="PUB_C014" note="时长单位" canedit="Y" ispublic="N">
+<!-- 		<item code="001" note="时" sort="1"/> -->
+		<item code="002" note="天" sort="1"/>
+<!-- 		<item code="003" note="月" sort="2"/> -->
+<!-- 		<item code="004" note="年" sort="3"/> -->
+	</data>
+	<data type="PUB_C015" note="状态" canedit="Y" ispublic="N">
+		<item code="001" note="启用" sort="1"/>
+		<item code="002" note="停用" sort="1"/>
+	</data>
+	<data type="PUB_C016" note="活动类型" canedit="Y" ispublic="N">
+		<item code="001" note="首次" sort="1"/>
+		<item code="002" note="平时" sort="1"/>
+	</data>
+	<data type="PUB_C017" note="活动赠送类型" canedit="Y" ispublic="N">
+		<item code="001" note="实品" sort="1"/>
+		<item code="002" note="时长" sort="1"/>
+		<item code="003" note="费用" sort="1"/>
+	</data>
+	<data type="PUB_C018" note="商品单位" canedit="Y" ispublic="N">
+		<item code="001" note="个" sort="1"/>
+		<item code="002" note="杯" sort="1"/>
+		<item code="003" note="瓶" sort="1"/>
+		<item code="004" note="袋" sort="1"/>
+	</data>
+	<data type="PUB_C019" note="商品操作类型" canedit="Y" ispublic="N">
+		<item code="001" note="入库" sort="1"/>
+		<item code="002" note="出库" sort="1"/>
+		<item code="003" note="报损" sort="1"/>
+		<item code="004" note="购买" sort="1"/>
+	</data>
+	<data type="PUB_C020" note="项目名称" canedit="Y" ispublic="N">
+		<item code="001" note="自由单车" sort="1"/>
+		<item code="002" note="燃烧瑜伽" sort="1"/>
+		<item code="003" note="韧带拉伸" sort="1"/>
+		<item code="004" note="强力肌肉" sort="1"/>
+	</data>
+	<data type="PUB_C030" note="统计状态" canedit="N" ispublic="N">
+		<item code="001" note="创建" sort="1" />
+		<item code="002" note="发布" sort="2" />
+	</data>
+	<data type="PUB_C1001" note="车辆申请状态" canedit="Y" ispublic="Y">
+		<item code="001" note="已通过" sort="1" />
+		<item code="002" note="未通过" sort="2" />
+	</data>
+	<data type="PUB_C101" note="流程类型" canedit="Y" ispublic="N">
+		<item code="001" note="表单流程" sort="1" />
+		<item code="002" note="固定审批流程" sort="2" />
+		<item code="003" note="半固定审批流程" sort="3" />
+		<item code="004" note="自由流程" sort="4" />
+	</data>
+	<data type="PUB_C103" note="委托类型" canedit="Y" ispublic="N">
+		<item code="002" note="固定委托" sort="1" />
+		<item code="001" note="自由委托" sort="2" />
+	</data>
+	<data type="PUB_C104" note="工作流状态" canedit="Y" ispublic="N">
+		<item code="001" note="有效" sort="1" />
+		<item code="002" note="禁用" sort="2" />
+	</data>
+	<data type="PUB_C105" note="表单字段显示类型" canedit="Y" ispublic="N">
+		<item code="validatebox" note="单行输入框" sort="1" />
+		<item code="numberbox" note="数字输入框" sort="2" />
+		<item code="datetimebox" note="日期时间控件" sort="3" />
+		<item code="datebox" note="日期控件" sort="4" />
+		<item code="uploadFile" note="文件上传控件" sort="5" />
+		<item code="area_text" note="文本编辑框" sort="6" />
+		<item code="editor" note="富文本编辑框" sort="7" />
+		<item code="select" note="下拉框" sort="8" />
+		<item code="multiSelect" note="多选下拉框" sort="9" />
+		<item code="selectBySql" note="下拉框SQL" sort="10" />
+		<item code="multiSelectBySql" note="多选下拉框SQL" sort="11" />
+		<item code="tree" note="树形" sort="12" />
+		<item code="multiTree" note="多选树形" sort="13" />
+		<item code="linkedTree" note="关联父元素树形" sort="14" />
+		<item code="treeBySql" note="树形SQL" sort="15" />
+		<item code="multiTreeBySql" note="多选树形SQL" sort="16" />
+		<item code="multiLeafTreeBySql" note="多选叶子树形SQL" sort="17" />
+		<item code="linkedTreeBySql" note="关联父元素树形SQL" sort="18" />
+		<item code="leafTreeBySql" note="叶子树形SQL" sort="19" />
+		<item code="table" note="表格" sort="20" />
+		<item code="password" note="密码" sort="21" />
+	</data>
+	<data type="PUB_C106" note="工作流处理状态" canedit="Y" ispublic="Y">
+		<item code="create" note="新建" sort="1" />
+		<item code="processing" note="处理中" sort="2" />
+		<item code="processed" note="已办结" sort="3" />
+		<item code="process_error" note="处理错误" sort="4" />
+	</data>
+	<data type="PUB_C107" note="指定类型" canedit="N" ispublic="N">
+		<item code="autoAssign" note="自取模式" sort="1" />
+		<item code="userAssign" note="用户指派" sort="2" />
+	</data>
+	<data type="PUB_C111" note="任务执行状态" canedit="Y" ispublic="Y">
+		<item code="success" note="成功" sort="1" />
+		<item code="failed" note="失败" sort="2" />
+	</data>
+	<data type="PUB_C201" note="用户状态" canedit="Y" ispublic="Y">
+		<item code="001" note="审核" sort="1" />
+		<item code="002" note="在职" sort="2" />
+		<item code="003" note="离职" sort="3" />
+		<item code="004" note="审核不通过" sort="4" />
+	</data>
+	<data type="PUB_C202" note="数据库操作类型" canedit="N" ispublic="N">
+		<item code="001" note="备份" sort="1" />
+		<item code="002" note="恢复" sort="2" />
+	</data>
+	<data type="PUB_C203" note="数据库保存方式" canedit="Y" ispublic="N">
+		<item code="001" note="全部保存" sort="1" />
+		<item code="002" note="保存文件个数" sort="2" />
+		<item code="003" note="保存天数" sort="3" />
+		<item code="004" note="保存文件总大小（M）" sort="4" />
+	</data>
+	<data type="PUB_C301" note="业务类型" canedit="Y" ispublic="Y">
+		<item code="001" note="订制软件" sort="1" />
+		<item code="002" note="网站开发" sort="2" />
+		<item code="003" note="信贷" sort="3" />
+	</data>
+	<data type="PUB_C302" note="商机来源" canedit="Y" ispublic="Y">
+		<item code="001" note="百度推广" sort="1" />
+		<item code="002" note="GOOGLE推广" sort="2" />
+	</data>
+	<data type="PUB_C303" note="获取方式" canedit="Y" ispublic="Y">
+		<item code="001" note="上级指派" sort="1" />
+		<item code="2" note="公共资源获取" sort="2" />
+	</data>
+	<data type="PUB_C304" note="客户满意度" canedit="Y" ispublic="Y">
+		<item code="001" note="满意" sort="1" />
+		<item code="002" note="不满意" sort="2" />
+	</data>
+	<data type="PUB_C305" note="状态" canedit="Y" ispublic="Y">
+		<item code="create" note="创建" sort="1" />
+		<item code="hand_out" note="分发" sort="2" />
+		<item code="accept" note="接收" sort="3" />
+		<item code="pub" note="公共资源" sort="4" />
+		<item code="dead" note="死单" sort="5" />
+		<item code="signed" note="成单" sort="6" />
+	</data>
+	<data type="PUB_C401" note="日程类型" canedit="Y" ispublic="N">
+		<item code="personal" note="个人日程" sort="1" />
+		<item code="common" note="公共日程" sort="2" />
+	</data>
+	<data type="PUB_C402" note="提醒类型" canedit="Y" ispublic="N">
+		<item code="001" note="不提醒" sort="1" />
+		<item code="002" note="按月" sort="2" />
+		<item code="003" note="按日" sort="3" />
+		<item code="004" note="按星期" sort="4" />
+	</data>
+	<data type="PUB_C403" note="提醒时间" canedit="Y" ispublic="N">
+		<item code="001" note="正点提醒" sort="1" />
+		<item code="002" note="提前5分钟提醒" sort="2" />
+		<item code="003" note="提前10分钟提醒" sort="3" />
+		<item code="004" note="提前15分钟提醒" sort="4" />
+		<item code="005" note="提前30分钟提醒" sort="5" />
+		<item code="006" note="提前1小时提醒" sort="6" />
+		<item code="007" note="提前3小时提醒" sort="7" />
+	</data>
+	<data type="PUB_C404" note="消息类型" canedit="Y" ispublic="N">
+		<item code="002" note="短信息" sort="1" />
+		<item code="001" note="站内信" sort="2" />
+		<item code="003" note="电子邮件" sort="3" />
+	</data>
+	<data type="PUB_C405" note="日程状态" canedit="Y" ispublic="N">
+		<item code="001" note="创建" sort="1" />
+		<item code="002" note="进行中" sort="2" />
+		<item code="003" note="已过期" sort="3" />
+	</data>
+	<data type="PUB_C501" note="表格状态" canedit="Y" ispublic="Y">
+		<item code="edit" note="编辑" sort="1" />
+		<item code="publish" note="发布" sort="2" />
+	</data>
+	<data type="PUB_C520" note="日志类型" canedit="Y" ispublic="N">
+		<item code="001" note="工作日志" sort="1" />
+		<item code="002" note="个人日志" sort="2" />
+	</data>
+	<data type="PUB_C601" note="会议室状态" canedit="Y" ispublic="Y">
+		<item code="free" note="空闲" sort="1" />
+		<item code="use" note="使用中" sort="2" />
+	</data>
+	<data type="PUB_C602" note="会议室可申请时间" canedit="Y" ispublic="Y">
+		<item code="001" note="星期一" sort="1" />
+		<item code="002" note="星期二" sort="2" />
+		<item code="003" note="星期三" sort="3" />
+		<item code="004" note="星期四" sort="4" />
+		<item code="005" note="星期五" sort="5" />
+		<item code="006" note="星期六" sort="6" />
+		<item code="007" note="星期天" sort="7" />
+	</data>
+	<data type="PUB_C603" note="会议申请状态" canedit="Y" ispublic="Y">
+		<item code="001" note="创建" sort="1" />
+		<item code="002" note="进行中" sort="2" />
+		<item code="003" note="完毕" sort="3" />
+	</data>
+	<data type="PUB_C623" note="指派类型" canedit="Y" ispublic="Y">
+		<item code="people" note="用户" sort="1" />
+		<item code="role" note="角色" sort="2" />
+	</data>
+	<data type="PUB_C624" note="节点类型" canedit="Y" ispublic="Y">
+		<item code="start" note="开始" sort="1" />
+		<item code="end" note="结束" sort="2" />
+	</data>
+	<data type="PUB_C701" note="系统消息状态" canedit="Y" ispublic="Y">
+		<item code="Y" note="已发送" sort="1" />
+		<item code="N" note="未发送" sort="2" />
+	</data>
+	<data type="PUB_C702" note="公告类型" canedit="Y" ispublic="Y">
+		<item code="001" note="全体公告" sort="1" />
+		<item code="002" note="部门公告" sort="2" />
+		<item code="003" note="行政公告" sort="3" />
+		<item code="004" note="通知" sort="4" />
+	</data>
+	<data type="PUB_C703" note="公告状态" canedit="Y" ispublic="Y">
+		<item code="001" note="创建" sort="1" />
+		<item code="002" note="发布" sort="2" />
+	</data>
+	<data type="PUB_C801" note="投诉处理结果" canedit="Y" ispublic="Y">
+		<item code="001" note="客户认同" sort="1" />
+		<item code="002" note="客户不认同" sort="2" />
+	</data>
+	<data type="PUB_C802" note="资产状态" canedit="Y" ispublic="Y">
+		<item code="001" note="使用中" sort="1" />
+		<item code="002" note="未使用" sort="2" />
+		<item code="003" note="损坏" sort="3" />
+	</data>
+	
+	<data type="PUB_C803" note="操作码表" canedit="Y" ispublic="Y">
+		<item code="01" note="添加" sort="1" />
+		<item code="02" note="删除" sort="2" />
+		<item code="03" note="修改" sort="3" />
+		<item code="04" note="查询" sort="4" />
+		<item code="05" note="引用" sort="5" />
+	</data>
+	<data type="PUB_C804" note="资产操作状态" canedit="Y" ispublic="Y">
+		<item code="addUnAsset" note="添加耗材资产" sort="1" />
+		<item code="updateUnAsset" note="修改耗材资产" sort="2" />
+		<item code="addAsset" note="添加固定资产" sort="3" />
+		<item code="updateAsset" note="修改固定资产" sort="4" />
+		<item code="outAsset" note="领用固定资产" sort="5" />
+		<item code="outUnAsset" note="领用耗材资产" sort="6" />
+		<item code="inAsset" note="增加固定资产数量" sort="7" />
+		<item code="inUnAsset" note="增加耗材资产数量" sort="8" />
+		<item code="revertAsset" note="归还固定资产" sort="9" />
+	</data>
+	<data type="PUB_C820" note="消息网关 消息类型" canedit="Y" ispublic="N">
+		<item code="001" note="短信" sort="1" />
+		<item code="002" note="电子邮件" sort="2" />
+		<item code="003" note="站内信" sort="3" />
+		<item code="004" note="即时消息" sort="4" />
+	</data>
+	<data type="PUB_C821" note="消息网关 收发存" canedit="Y" ispublic="N">
+		<item code="001" note="收到的信息" sort="1" />
+		<item code="002" note="发出的信息" sort="2" />
+		<item code="003" note="草稿信息" sort="3" />
+		<item code="004" note="删除的信息" sort="4" />
+	</data>
+	<data type="PUB_C901" note="论坛帖子回复状态" canedit="Y" ispublic="Y">
+		<item code="001" note="创建" sort="1" />
+		<item code="002" note="发布" sort="2" />
+	</data>
+	<data type="PUB_C903" note="帖子颜色" canedit="Y" ispublic="Y">
+		<item code="none" note="普通色" sort="1" />
+		<item code="red" note="红色" sort="2" />
+		<item code="green" note="绿色" sort="3" />
+		<item code="blue" note="蓝色" sort="4" />
+	</data>
+	<data type="PUB_C904" note="论坛帖子状态" canedit="Y" ispublic="Y">
+		<item code="001" note="未通过" sort="1" />
+		<item code="002" note="已通过" sort="2" />
+	</data>
+	<data type="PUB_C906" note="发布状态" canedit="Y" ispublic="Y">
+		<item code="001" note="未发布" sort="1" />
+		<item code="002" note="已发布" sort="2" />
+	</data>
+	<data type="PUB_C907" note="帖子类型" canedit="Y" ispublic="Y">
+		<item code="001" note="普通帖" sort="1" />
+		<item code="002" note="精华帖" sort="2" />
+		<item code="003" note="置顶帖" sort="3" />
+	</data>
+	<data type="PUB_C908" note="资产类型" canedit="Y" ispublic="Y">
+		<item code="fixed_asset" note="固定资产" sort="1" />
+		<item code="unfixed_asset" note="耗材资产" sort="2" />
+	</data>
+	<data type="PUB_C909" note="经销商产品状态" canedit="Y" ispublic="Y">
+		<item code="001" note="未停产" sort="1" />
+		<item code="002" note="已停产" sort="2" />
+	</data>
+	<data type="PUB_C910" note="经销商状态" canedit="Y" ispublic="Y">
+		<item code="01" note="正常" sort="1" />
+		<item code="02" note="未供货" sort="2" />
+	</data>
+	<data type="PUB_C911" note="经销商等级" canedit="Y" ispublic="Y">
+		<item code="01" note="一级" sort="1" />
+		<item code="02" note="二级" sort="2" />
+		<item code="03" note="三级" sort="3" />
+	</data>
+	<data type="PUB_C912" note="经销商性质" canedit="Y" ispublic="Y">
+		<item code="001" note="政府" sort="1" />
+		<item code="002" note="民营企业" sort="2" />
+		<item code="003" note="国有企业" sort="3" />
+		<item code="004" note="集体企业" sort="4" />
+		<item code="005" note="联营企业" sort="5" />
+		<item code="006" note="股份合作制企业" sort="6" />
+		<item code="007" note="私营企业" sort="7" />
+		<item code="008" note="合伙企业" sort="8" />
+		<item code="009" note="有限责任公司" sort="9" />
+		<item code="010" note="股份有限公司" sort="10" />
+	</data>
+	<data type="PUB_C913" note="车辆品牌" canedit="Y" ispublic="Y">
+		<item code="001" note="大众" sort="1" />
+		<item code="002" note="起亚" sort="2" />
+		<item code="003" note="现代" sort="3" />
+		<item code="004" note="宝马" sort="4" />
+		<item code="005" note="奔驰" sort="5" />
+		<item code="006" note="雪佛兰" sort="6" />
+		<item code="007" note="标致" sort="7" />
+		<item code="008" note="凯迪拉克" sort="8" />
+		<item code="009" note="路虎" sort="9" />
+		<item code="010" note="福特" sort="10" />
+		<item code="011" note="别克" sort="11" />
+		<item code="012" note="长安" sort="12" />
+	</data>
+	<data type="PUB_C914" note="车型" canedit="Y" ispublic="Y">
+		<item code="001" note="轿车" sort="1" />
+		<item code="002" note="面包车" sort="2" />
+		<item code="003" note="越野车" sort="3" />
+		<item code="004" note="吉普车" sort="4" />
+		<item code="005" note="巴士" sort="5" />
+		<item code="006" note="工具车" sort="6" />
+		<item code="007" note="卡车" sort="7" />
+	</data>
+	<data type="PUB_C915" note="车辆状态" canedit="Y" ispublic="Y">
+		<item code="001" note="空闲" sort="1" />
+		<item code="002" note="使用" sort="2" />
+		<item code="003" note="维修" sort="3" />
+		<item code="004" note="报废" sort="4" />
+	</data>
+	<data type="PUB_C919" note="性别" canedit="Y" ispublic="Y">
+		<item code="female" note="女" sort="1" />
+		<item code="male" note="男" sort="2" />
+	</data>
+	<data type="PUB_C921" note="仓库" canedit="Y" ispublic="Y">
+		<item code="001" note="仓库1" sort="1" />
+		<item code="002" note="仓库2" sort="2" />
+	</data>
+	<data type="PUB_FIELD_TYPE" note="数据类型" canedit="Y" ispublic="N">
+		<item code="string" note="字符" sort="1" />
+		<item code="date" note="日期" sort="2" />
+		<item code="datetime" note="日期时间" sort="3" />
+		<item code="float" note="小数" sort="4" />
+		<item code="long" note="整数" sort="5" />
+	</data>
+	<data type="PUB_T202" note="客户管理--公司规模" canedit="Y" ispublic="Y">
+		<item code="001" note="大型" sort="1" />
+		<item code="002" note="中型" sort="2" />
+		<item code="003" note="小型" sort="3" />
+	</data>
+	<data type="PUB_WORK_FLOW_STATUS" note="我的工作分类" canedit="Y"
+		ispublic="Y">
+		<item code="all" note="全部工作" sort="1" />
+		<item code="create" note="流程开始" sort="2" />
+		<item code="processing" note="办理中" sort="3" />
+		<item code="processed" note="流程完成" sort="4" />
+		<item code="process_error" note="审批失败" sort="5" />
+	</data>
+	<data type="PUB_REBACK_TYPE" note="反馈类型" canedit="Y" ispublic="Y">
+		<item code="001" note="建议" sort="1" />
+		<item code="002" note="错误" sort="2" />
+	</data>
+	<data type="PUB_update_TYPE" note="修改类型" canedit="Y" ispublic="Y">
+		<item code="001" note="商品价格修改" sort="1" />
+		<item code="002" note="课程价格修改" sort="2" />
+		<item code="003" note="会员信息修改" sort="3" />
+		<item code="004" note="买错退卡" sort="4" />
+		<item code="005" note="买错退课" sort="5" />
+	</data>
+	<data type="ID_TYPE" note="证件类型" canedit="Y" ispublic="N">
+		<item code="001" note="身份证" sort="1" />
+		<item code="002" note="居住证" sort="2" />
+		<item code="003" note="签证" sort="3" />
+		<item code="004" note="护照" sort="4" />
+		<item code="005" note="户口本" sort="5" />
+		<item code="006" note="军人证" sort="6" />
+	</data>
+
+</root>

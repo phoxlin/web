@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_prcs_record" comment="工作流数据记录">
+	<columns>
+		<column name="id" field="id" type="string" comment="ID" length="32" nullable="false" iskey="true" isAutoGenerate="true" />
+		<column name="fk_task_id" field="fk_task_id" type="string" comment="FK_TASK_ID" length="32" nullable="false" />
+		<column name="fk_prcs_id" field="fk_prcs_id" type="string" comment="FK_PROCESS_ID" length="32" nullable="false" />
+		<column name="create_time" field="create_time" type="datetime" comment="CREATE_TIME" nullable="false" />
+		<column name="cq_code" field="cq_code" type="string" comment="通用查询编码" length="100" nullable="false" />
+		<column name="cq_name" field="cq_name" type="string" comment="通用查询名称" length="100" nullable="false" />
+		<column name="cq_type" field="cq_type" type="string" comment="通用查询类型" length="20" nullable="false" />
+		<column name="date_type" field="date_type" type="string" comment="数据类型" length="20" nullable="false" />
+		<column name="fk_business_id" field="fk_business_id" type="string" comment="业务数据ID" length="32" nullable="false" />
+	</columns>
+</table>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_prcs_variable" comment="工作流任务变量">
+  <columns>
+    <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" iskey="true" isAutoGenerate="true"/>
+    <column name="instrance_id" field="instrance_id" type="string" comment="实例ID" length="32" nullable="false"/>
+    <column name="task_id" field="task_id" type="string" comment="任务ID" length="32" nullable="false"/>
+    <column name="var_name" field="var_name" type="string" comment="变量名称" length="100" nullable="false"/>
+    <column name="var_type" field="var_type" type="string" comment="变量类型" length="20" nullable="false"/>
+    <column name="int_val" field="int_val" type="long" comment="整数值" nullable="true"/>
+    <column name="date_val" field="date_val" type="datetime" format="yyyy-MM-dd HH:mm:ss" comment="日期值" nullable="true"/>
+    <column name="dou_val" field="dou_val" type="string" comment="小数值" length="50" nullable="true"/>
+    <column name="str_val" field="str_val" type="string" comment="字符串值" length="4000" nullable="true"/>
+    <column name="text_val" field="text_val" type="text" comment="文本值" length="65000" nullable="true"/>
+    <column name="fill_type" field="fill_type" type="string" comment="获取类型" length="20" nullable="false"/>
+    <column name="user_id" field="user_id" type="string" comment="用户ID" length="32" nullable="false"/>
+    <column name="op_type" field="op_type" type="string" comment="更新类型" length="20" nullable="false"/>
+    <column name="old_int_val" field="old_int_val" type="long" comment="旧整数值" nullable="true"/>
+    <column name="old_date_val" field="old_date_val" type="datetime" format="yyyy-MM-dd HH:mm:ss" comment="旧日期值" nullable="true"/>
+    <column name="old_dou_val" field="old_dou_val" type="string" comment="旧小数值" length="50" nullable="true"/>
+    <column name="old_str_val" field="old_str_val" type="string" comment="旧字符串值" length="4000" nullable="true"/>
+    <column name="old_text_val" field="old_text_val" type="text" comment="旧文本值" length="65000" nullable="true"/>
+    <column name="old_user_id" field="old_user_id" type="string" comment="旧用户ID" length="32" nullable="true"/>
+    <column name="create_time" field="create_time" type="datetime" format="yyyy-MM-dd HH:mm:ss" comment="填写时间" nullable="true"/>
+  </columns>
+</table>

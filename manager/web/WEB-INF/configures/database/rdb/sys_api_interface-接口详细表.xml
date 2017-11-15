@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_api_interface" comment="接口详细表">
+  <column name="id" field="id" type="string" comment="ID" length="24" nullable="false" controlType="easyui-validatebox" input_tablename="sys_api_interface" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="ID" search_compare="" iskey="true" isAutoGenerate="true"/>
+  <column name="api_id" field="api_id" type="string" comment="基本表ID" length="24" nullable="false" controlType="easyui-validatebox" input_tablename="sys_api_interface" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="基本表ID" search_compare=""/>
+  <column name="interface_name" field="interface_name" type="string" comment="接口名称" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="sys_api_interface" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="接口名称" search_compare=""/>
+  <column name="url" field="url" type="string" comment="调用地址" length="255" nullable="false" controlType="easyui-validatebox" input_tablename="sys_api_interface" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="调用地址" search_compare=""/>
+  <column name="summary" field="summary" type="text" comment="介绍" length="-1" nullable="false" controlType="textarea" input_tablename="sys_api_interface" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="介绍" search_compare=""/>
+  <column name="params" field="params" type="text" comment="调用参数" length="-1" nullable="true" controlType="textarea" input_tablename="sys_api_interface" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="调用参数" search_compare=""/>
+  <column name="resp" field="resp" type="text" comment="响应说明" length="-1" nullable="true" controlType="textarea" input_tablename="sys_api_interface" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="响应说明" search_compare=""/>
+  <column name="eg" field="eg" type="text" comment="实列描述" length="-1" nullable="true" controlType="textarea" input_tablename="sys_api_interface" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="实列描述" search_compare=""/>
+  <column name="version" field="version" type="string" comment="当前版本号" length="20" nullable="false" controlType="easyui-validatebox" input_tablename="sys_api_interface" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="当前版本号" search_compare=""/>
+  <column name="user_id" field="user_id" type="string" comment="创建人" length="24" nullable="false" controlType="easyui-validatebox" input_tablename="sys_api_interface" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="创建人" search_compare=""/>
+  <column name="create_time" field="create_time" type="datetime" comment="创建时间" nullable="false" controlType="easyui-datetimebox" input_tablename="sys_api_interface" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="创建时间" search_compare=""/>
+  <column name="pub_time" field="pub_time" type="datetime" comment="发布时间" nullable="true" controlType="easyui-datetimebox" input_tablename="sys_api_interface" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="发布时间" search_compare=""/>
+  <column name="status" field="status" type="string" comment="状态" length="20" nullable="false" bindType="codetable" bindData="PUB_C001" controlType="easyui-combobox" input_tablename="sys_api_interface" width="100" min="0" max="10000" decamial="0" otherset="" placeholder="状态" search_compare=""/>
+</table>

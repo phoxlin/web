@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_task_history" comment="流程记录表">
+  <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder="" iskey="true" isAutoGenerate="true"/>
+  <column name="instance_id" field="instance_id" type="string" comment="实例ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="step_id" field="step_id" type="string" comment="步骤ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="taskcode" field="taskcode" type="string" comment="流程代码" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="legendtype" field="legendtype" type="string" comment="LegendType" length="20" nullable="false" controlType="easyui-combobox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="legendname" field="legendname" type="string" comment="LegendName" length="100" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="fieldname" field="fieldname" type="string" comment="字段名称" length="100" nullable="true" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="oldvalue" field="oldvalue" type="string" comment="旧值" length="4000" nullable="true" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="newvalue" field="newvalue" type="string" comment="新值" length="4000" nullable="true" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="dataid" field="dataid" type="string" comment="数据ID" length="32" nullable="true" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="op_type" field="op_type" type="string" comment="数据操作类型" length="20" nullable="true" controlType="easyui-combobox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="userid" field="userid" type="string" comment="操作人ID" length="32" nullable="false" controlType="easyui-validatebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+  <column name="optime" field="optime" type="datetime" comment="操作时间" nullable="false" controlType="easyui-datetimebox" input_tablename="" width="100" min="0" max="" decamial="0" otherset="" placeholder=""/>
+</table>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_prcs_his_task" comment="工作流历史任务">
+  <columns>
+    <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" iskey="true" isAutoGenerate="true"/>
+    <column name="instrance_id" field="instrance_id" type="string" comment="实例ID" length="32" nullable="false"/>
+    <column name="pid" field="pid" type="string" comment="PID" length="32" nullable="false"/>
+    <column name="task_code" field="task_code" type="string" comment="任务代码" length="100" nullable="false"/>
+    <column name="task_name" field="task_name" type="string" comment="任务名称" length="100" nullable="false"/>
+    <column name="create_time" field="create_time" type="datetime" format="yyyy-MM-dd HH:mm:ss" comment="执行时间" nullable="false"/>
+    <column name="user_id" field="user_id" type="string" comment="任务执行用户ID" length="32" nullable="false"/>
+    <column name="user_pid" field="user_pid" type="string" comment="父任务执行用户ID" length="32" nullable="false"/>
+    <column name="deadline" field="deadline" type="datetime" format="yyyy-MM-dd HH:mm:ss" comment="任务截止时间" nullable="true"/>
+    <column name="task_result" field="task_result" type="string" comment="任务结果" length="20" nullable="false"/>
+    <column name="remark" field="remark" type="string" comment="备注" length="4000" nullable="true"/>
+    <column name="state" field="state" type="string" comment="状态" length="20" nullable="false"/>
+  </columns>
+</table>

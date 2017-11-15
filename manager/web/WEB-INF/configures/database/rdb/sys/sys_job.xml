@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table name="sys_job">
+  <columns>
+    <column name="id" field="id" type="string" comment="ID" length="32" nullable="false" iskey="true" isAutoGenerate="false"/>
+    <column name="task_name" field="task_name" type="string" comment="任务名称" length="400" nullable="false"/>
+    <column name="start_time" field="start_time" type="datetime" format="yyyy-MM-dd HH:mm:ss" comment="开始时间" nullable="false"/>
+    <column name="end_time" field="end_time" type="datetime" format="yyyy-MM-dd HH:mm:ss" comment="结束时间" nullable="true"/>
+    <column name="status" field="status" type="string" comment="状态" length="20" nullable="true"/>
+    <column name="result" field="result" type="string" comment="执行结果" length="4000" nullable="true"/>
+    <column name="regulation" field="regulation" type="string" comment="执行规则" length="400" nullable="true"/>
+  </columns>
+</table>
