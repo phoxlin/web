@@ -3,19 +3,11 @@
 <%@page import="java.io.File"%>
 <%@page import="com.jinhua.server.tools.Utils"%>
 <%@page import="com.jinhua.server.tools.SystemUtils"%>
-<%@page import="com.gd.m.GdUser"%>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	GdUser user = (GdUser) SystemUtils.getSessionUser(request, response);
 
 	String cust_name = request.getParameter("cust_name");
-	if(cust_name==null||cust_name.length()<=0){
-		if (user != null) {
-			cust_name = user.getXX("cust_name");
-		}else{
-			cust_name="yepao";
-		}
-	}
+
 %>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">

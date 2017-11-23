@@ -1,15 +1,8 @@
 <%@page import="java.util.List"%>
-<%@page import="com.gd.m.GdUser"%>
 <%@page import="com.jinhua.server.tools.SystemUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<%
-	GdUser user=(GdUser)SystemUtils.getSessionUser(request, response);
-	List<String>cds=null;
-	if(user!=null){
-		cds=user.getCD();
-	}
-%>
+
 
 <script type="text/html" id="common_query_Index_dataOnlyTpl">
 	<#
