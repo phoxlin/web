@@ -1,14 +1,16 @@
-package com.core.smart.Controller;
+package com.core.smart.controller;
 
-import com.core.smart.Service.CustomerService;
+import com.core.smart.service.CustomerService;
 import com.core.smart.annotation.Action;
 import com.core.smart.annotation.Controller;
 import com.core.smart.annotation.Inject;
+import com.core.smart.http.request.FileParam;
 import com.core.smart.http.request.Param;
 import com.core.smart.http.response.Data;
 import com.core.smart.http.response.View;
 import com.core.smart.model.Customer;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 客户请求控制
@@ -49,6 +51,19 @@ public class CustomerController {
         View view = new View("customer/customer.jsp");
         view.addModel("customers",customers);
         return view;
+    }
+
+    /**
+     * 处理 创建客户 请求
+     * @param param
+     * @return
+     */
+    @Action("post:/customer_create")
+    public Data createSubmit(Param param){
+        Map<String,Object> fieldMap = param.getFieldMap();
+        FileParam fileParam = param.getFile("photo");
+        boolean result = customerService.createCustomer(fieldMap,fileParam);
+        return new Data(result);
     }
 
 }

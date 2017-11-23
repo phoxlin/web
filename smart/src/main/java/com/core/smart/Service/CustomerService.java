@@ -1,8 +1,10 @@
-package com.core.smart.Service;
+package com.core.smart.service;
 
 import com.core.smart.annotation.Service;
 import com.core.smart.annotation.Transaction;
 import com.core.smart.helper.DatabaseHelper;
+import com.core.smart.helper.UploadHelper;
+import com.core.smart.http.request.FileParam;
 import com.core.smart.model.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,4 +52,16 @@ public class CustomerService {
         DatabaseHelper.deleteEntity(Customer.class,id);
     }
 
+    /**
+     * 创建客户
+     */
+    @Transaction
+    public boolean createCustomer(Map<String,Object> fieldMap, FileParam fileParam){
+        boolean result = DatabaseHelper.insertEntity(Customer.class,fieldMap);
+        if (result){
+            UploadHelper.uploadFile("",fileParam);
+        }
+
+        return result;
+    }
 }

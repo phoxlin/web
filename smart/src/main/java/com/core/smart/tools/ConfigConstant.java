@@ -15,4 +15,5 @@ public interface ConfigConstant {
     String APP_BASE_PACKAGE="app.base_package";
     String APP_JSP_PATH="app.jsp_path";
     String APP_ASSET_PATH="app.asset_path";
+    String APP_UPLOAD_LIMIT="app_upload_limit";
 }
