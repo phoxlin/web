@@ -1,5 +1,8 @@
 package com.core.server;
 
+import com.core.server.m.ContentType;
+import com.core.server.m.HttpMethod;
+
 import java.lang.annotation.*;
 
 /**

@@ -1,5 +1,7 @@
 package com.core.server.db.xml;
 
+import com.core.server.db.DBUtils;
+import com.core.server.ms.MsInfo;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;

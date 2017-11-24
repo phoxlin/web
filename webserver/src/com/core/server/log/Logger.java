@@ -2,6 +2,7 @@ package com.core.server.log;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.PropertyConfigurator;
 
 /**
  * Created by chen_lin on 2017/11/24.

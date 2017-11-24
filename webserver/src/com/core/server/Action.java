@@ -2,6 +2,9 @@ package com.core.server;
 
 import com.core.User;
 import com.core.server.db.Entity;
+import com.core.server.db.impl.EntityImpl;
+import com.core.server.log.JhLog;
+import com.core.server.log.Logger;
 import org.json.JSONObject;
 
 import javax.servlet.http.Cookie;

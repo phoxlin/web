@@ -1,6 +1,9 @@
 package com.core;
 
 import com.core.server.Action;
+import com.core.server.c.CItem;
+import com.core.server.db.impl.EntityImpl;
+import com.core.server.log.Logger;
 
 import java.io.Serializable;
 import java.sql.Connection;
@@ -134,10 +137,10 @@ public class User implements IUser,Serializable {
 
     public List<CItem> getUserListBySet(String key, String defaultVal, Connection conn) throws Exception {
         String userImpl = Resources.getProperty("UserImpl");
-        UserImpl impl = null;
+        IUser impl = null;
 
         try {
-            impl = (UserImpl)Class.forName(userImpl).newInstance();
+            impl = (IUser)Class.forName(userImpl).newInstance();
             return impl.getUserListBySet(key, defaultVal, conn);
         } catch (Exception var7) {
             throw new Exception("系统没有配置相关的用户管理类：【UserImpl】");

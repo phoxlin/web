@@ -1,5 +1,6 @@
 package com.core;
 
+import com.core.server.db.impl.EntityImpl;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

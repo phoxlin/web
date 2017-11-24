@@ -6,6 +6,11 @@ import com.core.server.Route;
 import com.core.server.db.DBUtils;
 import com.core.server.m.ContentType;
 import com.core.server.m.HttpMethod;
+import com.qiniu.common.Config;
+import com.qiniu.common.QiniuException;
+import com.qiniu.common.Zone;
+import com.qiniu.storage.UploadManager;
+import com.qiniu.util.Auth;
 
 import javax.servlet.ServletOutputStream;
 import java.io.File;

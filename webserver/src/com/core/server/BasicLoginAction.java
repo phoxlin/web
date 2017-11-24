@@ -1,6 +1,8 @@
 package com.core.server;
 
 import com.core.User;
+import com.core.server.m.ContentType;
+import com.core.server.m.HttpMethod;
 
 
 public class BasicLoginAction extends BasicAction {

@@ -1,5 +1,6 @@
 package com.core.server.db;
 
+import com.core.server.log.Logger;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
