@@ -3,6 +3,9 @@ package com.core.server;
 import com.core.User;
 import com.core.server.m.ContentType;
 import com.core.server.m.HttpMethod;
+import com.core.server.tools.RandomValidateCode;
+import com.core.server.tools.SystemUtils;
+import com.core.server.tools.ZxingUtils;
 
 public class BasicAction extends Action {
     private User sessionUser;

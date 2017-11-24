@@ -1,11 +1,16 @@
 package com.core;
 
+import com.core.server.db.DBUtils;
 import com.core.server.db.IDB;
 import com.core.server.db.MongoDB;
 import com.core.server.db.impl.DBM;
 import com.core.server.db.impl.EntityImpl;
 import com.core.server.log.JhLog;
 import com.core.server.log.Logger;
+import com.core.server.tools.RedisUtils;
+import com.core.server.tools.Resources;
+import com.core.server.tools.SystemUtils;
+import com.core.server.tools.Utils;
 import com.mongodb.client.MongoDatabase;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
@@ -130,7 +135,7 @@ public abstract class Task implements Job{
                             if(conn != null) {
                                 conn.rollback();
                             }
-                        } catch (Exception var29) {
+                        } catch (Exception e) {
                             ;
                         }
 

@@ -9,5 +9,5 @@ public enum ContentType {
     XML,
     JPG,
     Excel,
-    Forward;
+    Forward, ContentType;
 }

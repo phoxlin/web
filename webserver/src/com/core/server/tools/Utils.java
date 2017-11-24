@@ -1,5 +1,8 @@
 package com.core.server.tools;
 
+import com.core.SFile;
+import com.core.server.db.DBUtils;
+import com.core.server.log.Logger;
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
 import org.apache.commons.io.FileUtils;
@@ -59,13 +62,7 @@ public class Utils {
     private static int UNIT_WIDTH = 15;
     private static String basePath = null;
 
-    public Utils() {
-    }
 
-    public static void main(String[] args) throws Exception {
-        List li = split("a,b;c,d,e;f", (String[])(new String[]{",", ";"}));
-        System.out.println(li);
-    }
 
     public static List<String> split(String str, String[] flag) {
         if(str != null && str.trim().length() > 0 && flag != null && flag.length > 0) {

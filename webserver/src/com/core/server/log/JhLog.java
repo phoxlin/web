@@ -2,6 +2,8 @@ package com.core.server.log;
 
 import com.core.server.Action;
 import com.core.server.db.impl.EntityImpl;
+import com.core.server.tools.Resources;
+import com.core.server.tools.Utils;
 import org.bson.types.ObjectId;
 
 import java.io.ByteArrayOutputStream;

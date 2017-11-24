@@ -1,5 +1,6 @@
 package com.core.server.log;
 
+import com.core.server.tools.Utils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.log4j.PropertyConfigurator;
@@ -15,8 +16,7 @@ public class Logger {
         log = LogFactory.getLog("fw");
     }
 
-    public Logger() {
-    }
+
 
     public static final void info(Object message) {
         log.info(message);
