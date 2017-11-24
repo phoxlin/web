@@ -1,6 +1,8 @@
 package com.core;
 
 import com.mongodb.client.MongoDatabase;
+import org.quartz.*;
+import org.quartz.impl.StdSchedulerFactory;
 import redis.clients.jedis.Jedis;
 
 import java.sql.Connection;
@@ -8,10 +10,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Administrator on 2017/11/24.
- */
-public abstract class Task {
+public abstract class Task implements Job{
     private MongoDB mb = new MongoDB();
     private IDB dbManager = new DBM();
     public JobDetail job = null;
