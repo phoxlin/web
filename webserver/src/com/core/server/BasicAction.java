@@ -2,9 +2,6 @@ package com.core.server;
 
 import com.core.User;
 
-/**
- * Created by Administrator on 2017/11/24.
- */
 public class BasicAction extends Action {
     private User sessionUser;
 
