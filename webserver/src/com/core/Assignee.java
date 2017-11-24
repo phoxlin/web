@@ -1,5 +1,8 @@
 package com.core;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -79,7 +82,7 @@ public class Assignee {
         return li;
     }
 
-    public JSONObject toJson() {
+    public JSONObject toJson()throws Exception{
         JSONObject o = new JSONObject();
         JSONArray ids = new JSONArray();
         JSONArray roles = new JSONArray();
