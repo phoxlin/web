@@ -3,9 +3,6 @@ package com.core.server;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Administrator on 2017/11/24.
- */
 public class RouteMapping {
     private Map<String, RouteObj> rp = new HashMap();
 

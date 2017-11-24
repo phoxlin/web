@@ -1,8 +1,5 @@
 package com.core;
 
-/**
- * Created by Administrator on 2017/11/24.
- */
 public class JhOrg {
     private String id;
     private String pid;

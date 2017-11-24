@@ -1,5 +1,6 @@
 package com.core;
 
+import com.core.enuts.SFileType;
 import org.json.JSONObject;
 import redis.clients.jedis.Jedis;
 
@@ -9,9 +10,6 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.util.Date;
 
-/**
- * Created by Administrator on 2017/11/24.
- */
 public class SFile {
     private String id;
     private String hashId;

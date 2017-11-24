@@ -5,9 +5,6 @@ import org.json.JSONObject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Created by Administrator on 2017/11/24.
- */
 public class RouteObj {
     private boolean found = true;
     private String url;

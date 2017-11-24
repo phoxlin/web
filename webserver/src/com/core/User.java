@@ -1,5 +1,7 @@
 package com.core;
 
+import com.core.server.Action;
+
 import java.io.Serializable;
 import java.sql.Connection;
 import java.util.ArrayList;

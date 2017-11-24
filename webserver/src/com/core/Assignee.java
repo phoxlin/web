@@ -8,9 +8,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * Created by Administrator on 2017/11/24.
- */
 public class Assignee {
     private List<String> ids = new ArrayList();
     private List<String> roles = new ArrayList();

@@ -1,6 +1,7 @@
 package com.core.server;
 
 import com.core.User;
+import com.core.server.db.Entity;
 import org.json.JSONObject;
 
 import javax.servlet.http.Cookie;

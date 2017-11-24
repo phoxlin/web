@@ -10,9 +10,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by Administrator on 2017/11/24.
- */
 public class HtmlServlet extends HttpServlet {
     public static Map<String, Boolean> fileInfos = new HashMap();
     private static String WebContentPath = null;

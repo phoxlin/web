@@ -1,13 +1,13 @@
 package com.core.server;
 
+import com.core.User;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- */
 public abstract class ActionMail {
     private static List<String> tos = Resources.getListProperty("action.performance.receiver.to");
     private static List<String> ccs = Resources.getListProperty("action.performance.receiver.cc");
