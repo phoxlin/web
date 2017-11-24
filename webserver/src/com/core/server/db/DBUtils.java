@@ -1,5 +1,10 @@
 package com.core.server.db;
 
+import com.core.SFile;
+import com.core.enuts.DBType;
+import com.core.server.db.impl.EntityImpl;
+import com.core.server.log.Logger;
+import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.apache.commons.io.FileUtils;
 import org.bson.types.ObjectId;
 import org.dom4j.Document;

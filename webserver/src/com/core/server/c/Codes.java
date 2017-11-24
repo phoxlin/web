@@ -1,5 +1,9 @@
 package com.core.server.c;
 
+import com.core.server.db.impl.DBM;
+import com.core.server.db.impl.EntityImpl;
+import com.core.server.log.Logger;
+import com.core.server.ms.MsInfo;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.Element;

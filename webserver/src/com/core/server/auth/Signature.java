@@ -1,5 +1,9 @@
 package com.core.server.auth;
 
+import com.core.server.db.DBUtils;
+import com.core.server.db.xml.Data;
+import com.core.server.db.xml.Datas;
+
 import java.security.MessageDigest;
 import java.util.Formatter;
 
