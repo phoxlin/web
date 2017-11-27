@@ -31,8 +31,7 @@ public class QiniuAction extends BasicAction {
     public static boolean configV1 = Resources.getBooleanProperty("qiniu.filesotre.v1");
     private static String bucketUrl = Resources.getProperty("qiniu.filesotre.bucketUrl", "http://oixty02vf.bkt.clouddn.com/");
 
-    public QiniuAction() {
-    }
+
 
     @Route(
             value = "/upload-qiniu-uptoken",

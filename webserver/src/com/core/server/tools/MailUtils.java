@@ -5,9 +5,13 @@ import com.core.User;
 import com.core.enuts.DBType;
 import com.core.server.db.DBUtils;
 import com.core.server.db.impl.EntityImpl;
+import com.core.server.msg.email.Address;
+import com.core.server.msg.email.MailAccount;
+import com.core.server.msg.email.Receiver;
 
 import javax.imageio.ImageIO;
-import javax.sound.midi.Receiver;
+import javax.mail.Session;
+import javax.mail.Store;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.io.BufferedWriter;
@@ -52,7 +56,7 @@ public final class MailUtils {
 
             while(l.hasNext()) {
                 Receiver i = (Receiver)l.next();
-                switch($SWITCH_TABLE$com$jinhua$server$msg$email$ReceiverType()[i.getReceiverType().ordinal()]) {
+                switch(i.getReceiverType().ordinal()) {
                     case 1:
                         email.addTo(i.getAddr(), i.getName());
                         break;
