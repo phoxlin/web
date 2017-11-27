@@ -1,11 +1,20 @@
 package com.core.server.tools;
 
 import com.core.SFile;
+import com.core.enuts.DBType;
+import com.core.enuts.XmlShowType;
 import com.core.server.db.DBUtils;
+import com.core.server.db.impl.DBM;
+import com.core.server.db.impl.EntityImpl;
 import com.core.server.log.Logger;
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
+import com.swetake.util.Qrcode;
 import org.apache.commons.io.FileUtils;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.OutputFormat;
