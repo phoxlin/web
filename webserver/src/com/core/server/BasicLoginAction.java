@@ -7,12 +7,8 @@ import com.core.server.tools.SystemUtils;
 
 
 public class BasicLoginAction extends BasicAction {
-    @Route(
-            value = "/BasicUserLogin",
-            conn = false,
-            m = {HttpMethod.POST},
-            type = ContentType.JSON
-    )
+
+    @Route(value = "/BasicUserLogin", conn = false, m = {HttpMethod.POST}, type = ContentType.JSON)
     public void userLogin() throws Exception {
         String name = this.request.getParameter("name");
         String pwd = this.request.getParameter("pwd");

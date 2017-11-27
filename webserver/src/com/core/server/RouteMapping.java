@@ -9,8 +9,6 @@ import java.util.Map;
 public class RouteMapping {
     private Map<String, RouteObj> rp = new HashMap();
 
-    public RouteMapping() {
-    }
 
     public RouteObj getRouteObj(HttpMethod method, String key, int parsSize) {
         String[] keys = null;

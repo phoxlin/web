@@ -9,8 +9,6 @@ import java.util.Map;
 public class MapUtils {
     private static double EARTH_RADIUS = 6378.137D;
 
-    public MapUtils() {
-    }
 
     private static double rad(double d) {
         return d * 3.141592653589793D / 180.0D;

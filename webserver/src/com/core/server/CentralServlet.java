@@ -40,8 +40,6 @@ public class CentralServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private RouteMapping routeMapping = new RouteMapping();
 
-    public CentralServlet() {
-    }
 
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");

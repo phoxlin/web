@@ -26,8 +26,6 @@ public class RouteObj {
     private boolean realSlience = false;
     private int paramNum;
 
-    public RouteObj() {
-    }
 
     public String toString() {
         JSONObject o = new JSONObject();

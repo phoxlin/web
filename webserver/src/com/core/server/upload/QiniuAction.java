@@ -33,12 +33,7 @@ public class QiniuAction extends BasicAction {
 
 
 
-    @Route(
-            value = "/upload-qiniu-uptoken",
-            conn = false,
-            m = {HttpMethod.GET},
-            type = ContentType.JSON
-    )
+    @Route(value = "/upload-qiniu-uptoken", conn = false, m = {HttpMethod.GET}, type = ContentType.JSON)
     public void uptoken() throws Exception {
         Auth auth = Auth.create(accessKey, secretKey);
         String key = DBUtils.oid();
@@ -47,12 +42,7 @@ public class QiniuAction extends BasicAction {
         this.obj.put("uptoken", token);
     }
 
-    @Route(
-            value = "/getUploadPic/fid",
-            conn = false,
-            m = {HttpMethod.GET},
-            type = ContentType.JPG
-    )
+    @Route(value = "/getUploadPic/fid", conn = false, m = {HttpMethod.GET}, type = ContentType.JPG)
     public void getUploadPic(String fid) throws Exception {
         SFile file = null;
         if(fid != null) {

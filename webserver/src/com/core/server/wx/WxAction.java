@@ -17,12 +17,7 @@ import java.util.Iterator;
  * Created by chen_lin on 2017/11/27.
  */
 public class WxAction extends BasicAction{
-    @Route(
-            value = "/jh_wx_pay",
-            conn = true,
-            m = {HttpMethod.POST},
-            type = ContentType.JSON
-    )
+    @Route(value = "/jh_wx_pay", conn = true, m = {HttpMethod.POST}, type = ContentType.JSON)
     public void wechatPay() throws Exception {
         String out_trade_no = this.getParameter("out_trade_no");
         String subject = this.getParameter("subject");
@@ -87,12 +82,7 @@ public class WxAction extends BasicAction{
         }
     }
 
-    @Route(
-            value = "/jh_wx_pay_confirm",
-            conn = true,
-            m = {HttpMethod.POST},
-            type = ContentType.JSON
-    )
+    @Route(value = "/jh_wx_pay_confirm", conn = true, m = {HttpMethod.POST}, type = ContentType.JSON)
     public void wechatPayConfirm() throws Exception {
         String out_trade_no = this.getParameter("out_trade_no");
         String businessClass = this.getParameter("businessClass");

@@ -14,8 +14,6 @@ import java.util.List;
 public class TaskRow {
     private List<Column> cols = new ArrayList();
 
-    public TaskRow() {
-    }
 
     public void addCol(Column column) {
         this.cols.add(column);

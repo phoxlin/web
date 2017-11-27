@@ -1,6 +1,10 @@
 package com.core.server.wx;
 
 import com.core.server.log.Logger;
+import com.core.server.wxtools.CreateNonce_str;
+import com.core.server.wxtools.GetRealIp;
+import com.core.server.wxtools.GetWxOrderno;
+import com.core.server.wxtools.RequestHandler;
 import org.json.JSONObject;
 
 import java.util.TreeMap;
@@ -11,8 +15,6 @@ import java.util.TreeMap;
 public class WXPayToPay {
     private String createOrderURL = "https://api.mch.weixin.qq.com/pay/unifiedorder";
 
-    public WXPayToPay() {
-    }
 
     public static void main(String[] args) throws NumberFormatException, Exception {
         WXPayToPay wx = new WXPayToPay();

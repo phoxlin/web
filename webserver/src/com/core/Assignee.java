@@ -85,18 +85,18 @@ public class Assignee {
         JSONObject o = new JSONObject();
         JSONArray ids = new JSONArray();
         JSONArray roles = new JSONArray();
-        Iterator var5 = this.ids.iterator();
+        Iterator it = this.ids.iterator();
 
         String role;
-        while(var5.hasNext()) {
-            role = (String)var5.next();
+        while(it.hasNext()) {
+            role = (String)it.next();
             ids.put(role);
         }
 
-        var5 = this.roles.iterator();
+        it = this.roles.iterator();
 
-        while(var5.hasNext()) {
-            role = (String)var5.next();
+        while(it.hasNext()) {
+            role = (String)it.next();
             roles.put(role);
         }
 

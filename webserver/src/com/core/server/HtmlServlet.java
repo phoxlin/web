@@ -1,7 +1,9 @@
 package com.core.server;
 
 import com.core.server.log.Logger;
+import com.core.server.tools.Resources;
 import com.core.server.tools.Utils;
+import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,10 +23,10 @@ public class HtmlServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     public static final String exprRegx = ".*(<!--#\\{([\\w.]*)\\}-->).*";
 
-    public HtmlServlet() {
-    }
 
-    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void service(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException
+    {
         if(WebContentPath == null) {
             WebContentPath = Utils.getWebRootPath();
             WebContentPath = WebContentPath.substring(0, WebContentPath.length() - 1);
@@ -35,12 +37,14 @@ public class HtmlServlet extends HttpServlet {
 
         try {
             this.staticFileFlush(request.getServletPath(), request, response);
-        } catch (Exception var4) {
-            throw new ServletException(var4);
+        } catch (Exception e) {
+            throw new ServletException(e);
         }
     }
 
-    public void staticFileFlush(String url, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public void staticFileFlush(String url, HttpServletRequest request, HttpServletResponse response)
+            throws Exception
+    {
         if(!url.toLowerCase().endsWith(".jsp")) {
             File f = new File(WebContentPath + url);
             String fpath = f.getAbsolutePath();
@@ -101,7 +105,9 @@ public class HtmlServlet extends HttpServlet {
         System.out.println(line);
     }
 
-    private static String getStaticFileContent(File f, boolean hasExper, HttpServletRequest request) throws Exception {
+    private static String getStaticFileContent(File f, boolean hasExper, HttpServletRequest request)
+            throws Exception
+    {
         String ext = Utils.getExt(f.getName());
         String text = null;
         BufferedReader br;
@@ -112,12 +118,13 @@ public class HtmlServlet extends HttpServlet {
 
             try {
                 br = new BufferedReader(new InputStreamReader(new FileInputStream(f), "UTF-8"));
-                StringBuilder var47 = new StringBuilder();
+                StringBuilder sb = new StringBuilder();
                 isr = null;
 
-                String var49;
-                for(Pattern var48 = Pattern.compile(".*(<!-- +#include +file *= *[\"\']([\\w\\-./]*)[\"\'] *-->).*"); (var49 = br.readLine()) != null; var47.append(var49 + "\r\n")) {
-                    Matcher var50 = var48.matcher(var49);
+                String str;
+                for(Pattern pattern = Pattern.compile(".*(<!-- +#include +file *= *[\"\']([\\w\\-./]*)[\"\'] *-->).*");
+                    (str = br.readLine()) != null; sb.append(str + "\r\n")) {
+                    Matcher var50 = pattern.matcher(str);
                     if(var50.find()) {
                         int groupsize = var50.groupCount();
                         if(groupsize > 0) {
@@ -126,9 +133,9 @@ public class HtmlServlet extends HttpServlet {
 
                             for(int f1 = 1; f1 <= groupsize; ++f1) {
                                 if(f1 == 1) {
-                                    oldStr = var49.substring(var50.start(f1), var50.end(f1));
+                                    oldStr = str.substring(var50.start(f1), var50.end(f1));
                                 } else if(f1 == 2) {
-                                    filename = var49.substring(var50.start(f1), var50.end(f1));
+                                    filename = str.substring(var50.start(f1), var50.end(f1));
                                 }
                             }
 
@@ -145,16 +152,16 @@ public class HtmlServlet extends HttpServlet {
                                     }
 
                                     boolean hasE = hasExpr(var51);
-                                    var49 = var49.replace(oldStr, getStaticFileContent(var51, hasE, request));
+                                    str = str.replace(oldStr, getStaticFileContent(var51, hasE, request));
                                 }
                             }
                         }
                     } else {
-                        var49 = checkExpr(var49, request);
+                        str = checkExpr(str, request);
                     }
                 }
 
-                text = var47.toString();
+                text = sb.toString();
                 String var16 = text;
                 return var16;
             } catch (Exception var43) {

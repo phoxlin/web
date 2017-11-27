@@ -2,6 +2,9 @@ package com.core.server;
 
 import com.core.User;
 import com.core.server.log.Logger;
+import com.core.server.msg.email.MailMessage;
+import com.core.server.msg.email.Receiver;
+import com.core.server.msg.email.ReceiverType;
 import com.core.server.tools.Resources;
 import com.core.server.tools.Utils;
 
@@ -25,8 +28,6 @@ public abstract class ActionMail {
     public HttpServletRequest request;
     public HttpServletResponse response;
 
-    public ActionMail() {
-    }
 
     public void send() {
         (new Thread(new Runnable() {
