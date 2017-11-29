@@ -2175,7 +2175,7 @@ public class Utils {
         final String value = "" + defaultValue;
         Jedis jd = null;
 
-        long var14;
+        long result;
         try {
             jd = RedisUtils.getConnection();
             final boolean exsit = jd.hexists(SystemUtils.PROJECT_NAME, name).booleanValue();
@@ -2189,8 +2189,8 @@ public class Utils {
 
                     try {
                         xx = Long.parseLong(value);
-                    } catch (Exception var13) {
-                        ;
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
 
                     DBM db = new DBM();
@@ -2231,18 +2231,18 @@ public class Utils {
 
             try {
                 tempXX = Long.parseLong(value);
-            } catch (Exception var18) {
-                ;
+            } catch (Exception e) {
+                e.printStackTrace();
             }
 
             long xx = tempXX + adjust;
             jd.hset(SystemUtils.PROJECT_NAME, name, String.valueOf(xx));
-            var14 = xx;
+            result = xx;
         } finally {
             RedisUtils.freeConnection(jd);
         }
 
-        return var14;
+        return result;
     }
 
     public static String getSysParamValue(final String name, final String defaultValue) throws Exception {

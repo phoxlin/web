@@ -1,5 +1,13 @@
 package com.core.server.tools;
 
+import com.core.IUser;
+import com.core.User;
+import com.core.server.c.CItem;
+import com.core.server.c.Code;
+import com.core.server.c.Codes;
+import com.core.server.db.impl.DBM;
+import com.core.server.db.impl.EntityImpl;
+import com.core.server.log.Logger;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.json.JSONException;
@@ -27,8 +35,8 @@ public class UI {
         }
 
         StringBuilder var27 = new StringBuilder();
-        String viewUrl = User.getUserUrl(userType, URLS.VIEW_URL);
-        String chooseUrl = User.getUserUrl(userType, URLS.CHOOSE_URL);
+        String viewUrl = User.getUserUrl(userType, User.URLS.VIEW_URL);
+        String chooseUrl = User.getUserUrl(userType, User.URLS.CHOOSE_URL);
         if(defaultValue != null && defaultValue.length() > 0) {
             Connection sb = null;
             DBM db = new DBM();
@@ -37,7 +45,7 @@ public class UI {
                 sb = db.getConnection();
                 sb.setAutoCommit(true);
                 String e = Resources.getProperty("UserImpl");
-                UserImpl impl = null;
+                IUser impl = null;
                 List users = null;
 
                 int i;
@@ -45,7 +53,7 @@ public class UI {
                 String id;
                 String name1;
                 try {
-                    impl = (UserImpl)Class.forName(e).newInstance();
+                    impl = (IUser)Class.forName(e).newInstance();
                     users = impl.getUserListBySet(userType, defaultValue, sb);
                     if(users != null && users.size() > 0) {
                         for(i = 0; i < users.size(); ++i) {
@@ -1396,4 +1404,5 @@ public class UI {
         }
 
     }
+
 }

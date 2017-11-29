@@ -10,10 +10,20 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.htmlparser.Node;
+import org.htmlparser.Parser;
+import org.htmlparser.nodes.TagNode;
+import org.htmlparser.nodes.TextNode;
+import org.htmlparser.tags.TableRow;
+import org.htmlparser.tags.TableTag;
+import org.htmlparser.util.NodeList;
+import org.htmlparser.util.ParserException;
+import org.htmlparser.visitors.HtmlPage;
 
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * Created by chen_lin on 2017/11/27.
@@ -36,10 +46,10 @@ public class HtmlUtils {
         NameValuePair[] ps = new NameValuePair[params.size()];
         int i = 0;
 
-        Map.Entry reader;
+        Entry reader;
         NameValuePair simcard;
         for(Iterator e = params.entrySet().iterator(); e.hasNext(); ps[i++] = simcard) {
-            reader = (Map.Entry)e.next();
+            reader = (Entry)e.next();
             simcard = new NameValuePair((String)reader.getKey(), (String)reader.getValue());
         }
 
@@ -49,22 +59,16 @@ public class HtmlUtils {
 
         String var10;
         try {
-            int var22 = httpClient.executeMethod(postMethod);
-            if(var22 != 200) {
+            int statusCode = httpClient.executeMethod(postMethod);
+            if(statusCode != 200) {
                 throw new Exception("连接失败");
             }
 
             var10 = postMethod.getResponseBodyAsString();
-        } catch (Exception var20) {
-            throw var20;
+        } catch (Exception e) {
+            throw e;
         } finally {
             if(reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException var19) {
-                    ;
-                }
-
                 reader = null;
             }
 

@@ -1,5 +1,7 @@
 package com.core.server.tools;
 
+import com.core.server.log.Logger;
+import com.core.server.m.ContentType;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
@@ -38,8 +40,6 @@ public class NettyUtils {
         RootContent = Utils.getRootClassPath() + "..";
     }
 
-    public NettyUtils() {
-    }
 
     public static String trimUrl(String url) {
         if(!url.startsWith("/")) {

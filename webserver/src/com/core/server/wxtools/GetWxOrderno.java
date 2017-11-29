@@ -8,6 +8,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
+import org.jdom.Element;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -25,8 +26,6 @@ public class GetWxOrderno {
         httpclient = (DefaultHttpClient)HttpClientConnectionManager.getSSLInstance(httpclient);
     }
 
-    public GetWxOrderno() {
-    }
 
     public static String getPayNo(String url, String xmlParam) {
         DefaultHttpClient client = new DefaultHttpClient();

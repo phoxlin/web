@@ -6,6 +6,8 @@ import com.core.server.db.Column;
 import com.core.server.db.impl.EntityImpl;
 import com.core.server.m.ContentType;
 import com.core.server.m.HttpMethod;
+import com.core.server.task.DesQmUtils;
+import com.core.server.task.TaskDesignerUtils;
 import com.core.server.tools.Utils;
 import org.json.JSONArray;
 import org.json.JSONObject;

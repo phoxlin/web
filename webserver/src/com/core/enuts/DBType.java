@@ -7,5 +7,5 @@ public enum DBType {
     Sqlserver,
     DB2,
     MONGODB,
-    RDB, DBType;
+    RDB, DBType, DBType;
 }

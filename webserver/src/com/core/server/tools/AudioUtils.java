@@ -1,5 +1,8 @@
 package com.core.server.tools;
 
+import it.sauronsoftware.jave.AudioAttributes;
+import it.sauronsoftware.jave.Encoder;
+import it.sauronsoftware.jave.EncodingAttributes;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;

@@ -81,7 +81,7 @@ public class Assignee {
         return li;
     }
 
-    public JSONObject toJson()throws Exception{
+    public JSONObject toJson(){
         JSONObject o = new JSONObject();
         JSONArray ids = new JSONArray();
         JSONArray roles = new JSONArray();

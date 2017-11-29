@@ -15,8 +15,6 @@ public class MartrixToImageWriter {
     private static final int BLACK = -16777216;
     private static final int WHITE = -1;
 
-    private MatrixToImageWriter() {
-    }
 
     public static BufferedImage toBufferedImage(BitMatrix matrix) {
         int width = matrix.getWidth();

@@ -1,5 +1,7 @@
 package com.core.server.tools;
 
+import com.core.server.log.Logger;
+import com.core.server.msg.phone.PhoneMessage;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.methods.PostMethod;

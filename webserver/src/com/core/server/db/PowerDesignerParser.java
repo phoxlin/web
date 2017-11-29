@@ -1,6 +1,7 @@
 package com.core.server.db;
 
 import com.core.server.log.Logger;
+import com.core.server.task.TaskDesignerUtils;
 import com.core.server.tools.Utils;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -687,7 +688,7 @@ public class PowerDesignerParser {
                 String refid = primaryKeyRef.attributeValue("Id");
                 String bindType = primaryKeyRef.valueOf("./a:Format/text()");
                 String bindValue = primaryKeyRef.valueOf("./a:PhysicalOptions/text()");
-                Object columns = (List)this.tableInfos.get(tableid);
+                List columns = (List)this.tableInfos.get(tableid);
                 if(columns == null) {
                     columns = new ArrayList();
                     this.tableInfos.put(tableid, columns);

@@ -1,10 +1,19 @@
 package com.core.server.tools;
 
+import com.core.server.log.Logger;
 import com.qiniu.common.Config;
 import com.qiniu.common.QiniuException;
 import com.qiniu.common.Zone;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -23,8 +32,7 @@ public class QiniuUtils {
     public static String bucketUrl = Resources.getProperty("qiniu.filesotre.bucketUrl", "http://oixty02vf.bkt.clouddn.com/");
     private static boolean qiniu = Resources.getProperty("yun.filestore.type").equalsIgnoreCase("qiniu");
 
-    public QiniuUtils() {
-    }
+
 
     public static String upload(byte[] file, String fileName) throws Exception {
         if(qiniu) {

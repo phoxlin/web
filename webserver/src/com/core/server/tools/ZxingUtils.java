@@ -15,6 +15,6 @@ public class ZxingUtils {
         hints.put(EncodeHintType.CHARACTER_SET, "UTF-8");
         hints.put(EncodeHintType.MARGIN, Integer.valueOf(2));
         BitMatrix bitMatrix = multiFormatWriter.encode(str, BarcodeFormat.QR_CODE, 400, 400, hints);
-        MatrixToImageWriter.writeToStream(bitMatrix, "jpg", os);
+        MartrixToImageWriter.writeToStream(bitMatrix, "jpg", os);
     }
 }

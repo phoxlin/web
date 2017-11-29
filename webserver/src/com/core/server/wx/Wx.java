@@ -6,6 +6,8 @@ import com.core.server.tools.RedisUtils;
 import com.core.server.tools.Resources;
 import com.core.server.tools.Utils;
 import com.core.server.upload.QiniuAction;
+import com.core.server.wxtools.HtmlUtils;
+import com.core.server.wxtools.MyX509TrustManager;
 import org.json.JSONObject;
 import redis.clients.jedis.Jedis;
 

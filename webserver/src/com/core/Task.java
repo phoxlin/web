@@ -74,7 +74,7 @@ public abstract class Task implements Job{
         } else {
             final String executeId = DBUtils.uuid();
             this.name = name;
-            final String rs = "";
+            final String rs ;
             Jedis jedis = null;
 
             try {
@@ -88,7 +88,7 @@ public abstract class Task implements Job{
                         this.L.warn("开始执行Task【" + name + "】,executeId【" + executeId + "】");
                     }
 
-                    final boolean ok = false;
+                    final boolean ok ;
                     Utils.execute.execute(new Runnable() {
                         public void run() {
                             Connection conn2 = null;
@@ -144,6 +144,7 @@ public abstract class Task implements Job{
                         this.L.error("错误执行Task【" + name + "】,executeId【" + executeId + "】:.............not ok(" + es1 + "ms)");
                         this.L.error(ex);
                         rs = ex.getMessage();
+                        ok=false;
                     } finally {
                         db.freeConnection(conn);
                         this.mb.closeMongoDB();
