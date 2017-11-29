@@ -2,6 +2,7 @@ package com.core.server.tools;
 
 import com.core.SFile;
 import com.core.enuts.DBType;
+import com.core.enuts.SFileType;
 import com.core.enuts.XmlShowType;
 import com.core.server.db.DBUtils;
 import com.core.server.db.impl.DBM;
@@ -10,11 +11,25 @@ import com.core.server.log.Logger;
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
 import com.swetake.util.Qrcode;
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+import jcifs.smb.SmbFile;
+import jcifs.smb.SmbFileOutputStream;
+import net.sourceforge.pinyin4j.PinyinHelper;
+import oracle.sql.DATE;
+import oracle.sql.TIMESTAMP;
 import org.apache.commons.io.FileUtils;
+import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+import org.apache.tools.zip.ZipEntry;
+import org.apache.tools.zip.ZipFile;
+import org.apache.tools.zip.ZipOutputStream;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import org.bouncycastle.util.encoders.Hex;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.OutputFormat;
@@ -25,7 +40,6 @@ import org.json.JSONObject;
 import redis.clients.jedis.Jedis;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
-
 import javax.imageio.ImageIO;
 import javax.imageio.stream.ImageInputStream;
 import java.awt.*;
@@ -49,7 +63,6 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.zip.ZipOutputStream;
 
 /**
  * Created by chen_lin on 2017/11/24.
@@ -1248,7 +1261,7 @@ public class Utils {
                 var14 = baseDir + inFile.getName();
             }
 
-            java.util.zip.ZipEntry var15 = new java.util.zip.ZipEntry(var14);
+            ZipEntry var15 = new ZipEntry(var14);
             zos.putNextEntry(var15);
             BufferedInputStream var16 = null;
 

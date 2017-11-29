@@ -130,20 +130,20 @@ public abstract class Task implements Job{
                         }
 
                         ok = true;
-                    } catch (Exception var30) {
+                    } catch (Exception ex) {
                         try {
                             if(conn != null) {
                                 conn.rollback();
                             }
-                        } catch (Exception e) {
-                            ;
+                        } catch (Exception e1) {
+                            e1.printStackTrace();
                         }
 
                         long result = System.currentTimeMillis();
                         long es1 = result - start;
                         this.L.error("错误执行Task【" + name + "】,executeId【" + executeId + "】:.............not ok(" + es1 + "ms)");
-                        this.L.error(var30);
-                        rs = var30.getMessage();
+                        this.L.error(ex);
+                        rs = ex.getMessage();
                     } finally {
                         db.freeConnection(conn);
                         this.mb.closeMongoDB();
@@ -174,8 +174,8 @@ public abstract class Task implements Job{
                                     sys_job.setValue("id", executeId);
                                     sys_job.update();
                                     conn2.commit();
-                                } catch (Exception var9) {
-                                    ;
+                                } catch (Exception e1) {
+                                    e1.printStackTrace();
                                 }
 
                                 conn2.commit();
@@ -195,9 +195,8 @@ public abstract class Task implements Job{
                 } else {
                     this.L.warn("开始执行Task【" + name + "】，直接退出，集群其他机器正在试行当前任务,executeId【" + executeId + "】");
                 }
-            } catch (Exception var32) {
-                this.L.error(var32);
-                return;
+            } catch (Exception e) {
+                this.L.error(e);
             } finally {
                 jedis.del(new String[]{SystemUtils.PROJECT_NAME + "__task__" + name});
                 RedisUtils.freeConnection(jedis);
