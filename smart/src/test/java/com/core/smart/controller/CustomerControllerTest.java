@@ -1,4 +1,4 @@
-package com.core.smart;
+package com.core.smart.controller;
 
 import com.core.smart.tools.PropsUtil;
 import org.junit.Before;
@@ -13,7 +13,7 @@ import java.util.Properties;
  * 测试CustomerService
  * Created by Administrator on 2017/11/9.
  */
-public class CustomerServiceTest {
+public class CustomerControllerTest {
 
     private static  Connection conn ;
 
