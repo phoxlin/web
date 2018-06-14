@@ -23,6 +23,8 @@ public final class ControllerHelper {
     private static final Map<Request,Handler> ACTION_MAP = new HashMap<>();
     private static final Map<Request,MethodParam> METHOD_MAP = new HashMap<>();
 
+    private static final Map<Request,Parameter> NO_ANNOTATION_METHOD_PARAM_MAP = new HashMap<>();
+
     static {
         //Action注解方法的请求处理等
         Set<Class<?>> controllerClassSet = ClassHelper.getControllerClassSet();
@@ -55,6 +57,8 @@ public final class ControllerHelper {
                                                 MethodParam methodParam = new MethodParam(parameter.getName(),parameter.getType(),p.value());
                                                 METHOD_MAP.put(request,methodParam);
                                             }
+                                        }else {
+                                            NO_ANNOTATION_METHOD_PARAM_MAP.put(request,parameter);
                                         }
                                     }
 
@@ -77,11 +81,19 @@ public final class ControllerHelper {
     }
 
     /**
-     * 获取Action方法参数
+     * 获取Action方法带注解的参数
      */
     public static MethodParam getMethodParam(String requestMethod,String requestPath){
         Request request = new Request(requestMethod,requestPath);
         return METHOD_MAP.get(request);
+    }
+
+    /**
+     * 获取Action方法不带注解的参数
+     */
+    public static Parameter getMethodNoAnnotationParam(String requestMethod,String requestPath){
+        Request request = new Request(requestMethod,requestPath);
+        return NO_ANNOTATION_METHOD_PARAM_MAP.get(request);
     }
 
 }

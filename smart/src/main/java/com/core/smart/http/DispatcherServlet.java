@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
@@ -52,6 +53,7 @@ public class DispatcherServlet extends HttpServlet{
 
         Handler handler = ControllerHelper.getHandler(requestMethod,requestPath);
         MethodParam methodParam = ControllerHelper.getMethodParam(requestMethod,requestPath);
+        Parameter noAnnotationParam = ControllerHelper.getMethodNoAnnotationParam(requestMethod,requestPath);
         if (handler!=null){
             /*if (methodParam!=null){
                 if (methodParam.getIsNeed()){
@@ -71,7 +73,7 @@ public class DispatcherServlet extends HttpServlet{
 
             Object result;
             Method actionMethod = handler.getActionMethod();
-            if (param.isEmpty())
+            if (param.isEmpty()&&noAnnotationParam==null)
                 result = ReflectionUtil.invokeMethod(controllerBean,actionMethod);
             else
                 result = ReflectionUtil.invokeMethod(controllerBean,actionMethod,param);
